@@ -1,0 +1,23 @@
+<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:plex="splitwirez://AvaloniaPlexTheme"
+		xmlns:sys="clr-namespace:System;assembly=netstandard">
+	<Style Selector="ContentControl">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Panel>
+					<TemplatedControl Classes="toolsMenuBackground"/>
+					<ContentPresenter x:Name="PART_ContentPresenter"
+									Background="{TemplateBinding Background}"
+									BorderBrush="{TemplateBinding BorderBrush}"
+									BorderThickness="{TemplateBinding BorderThickness}"
+									ContentTemplate="{TemplateBinding ContentTemplate}"
+									Content="{TemplateBinding Content}"
+									Padding="{TemplateBinding Padding}"
+									VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+									HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+</Styles>

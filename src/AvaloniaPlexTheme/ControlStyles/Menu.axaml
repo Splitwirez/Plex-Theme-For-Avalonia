@@ -1,0 +1,38 @@
+<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:plex="splitwirez://AvaloniaPlexTheme">
+	<Style Selector="Menu">
+		<Setter Property="Foreground" Value="{DynamicResource Menu-Foreground}"/>
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="BorderBrush" Value="Transparent" />
+		<Setter Property="BorderThickness" Value="0" />
+		<Setter Property="Height" Value="27" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Panel>
+					<TemplatedControl Classes="toolsMenuBackground"/>
+					<Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							HorizontalAlignment="Stretch"
+							Padding="{TemplateBinding Padding}">
+						<ItemsPresenter Name="PART_ItemsPresenter"
+									Items="{TemplateBinding Items}"
+									ItemsPanel="{TemplateBinding ItemsPanel}"
+									ItemTemplate="{TemplateBinding ItemTemplate}"
+									VerticalAlignment="Stretch"
+									KeyboardNavigation.TabNavigation="Continue" />
+					</Border>
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+    </Style>
+	<Style Selector="Menu.toolsMenuArea,
+					:is(TemplatedControl).toolsMenuArea Menu:not(.noToolsMenuArea)">
+		<Setter Property="Foreground" Value="{DynamicResource Menu-ToolsMenuArea-Foreground}"/>
+    </Style>
+	<Style Selector="Menu.noToolsMenuArea,
+					:is(TemplatedControl).noToolsMenuArea Menu:not(.toolsMenuArea)">
+		<Setter Property="Foreground" Value="{DynamicResource Menu-Foreground}"/>
+    </Style>
+</Styles>

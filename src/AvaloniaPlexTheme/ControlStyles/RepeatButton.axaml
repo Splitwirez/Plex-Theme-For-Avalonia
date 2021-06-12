@@ -1,0 +1,137 @@
+<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:plex="splitwirez://AvaloniaPlexTheme">
+	<Style Selector="RepeatButton">
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Panel>
+					<Border x:Name="IdleBackground"
+							Classes="buttonBackground"
+							Background="{DynamicResource Button-Idle-Background0}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+						<Panel>
+							<Border BorderBrush="{DynamicResource Button-Idle-BorderBrush1}"
+									BorderThickness="1,0"/>
+							<Border BorderBrush="{DynamicResource Button-Idle-BorderBrush2}"
+									BorderThickness="0,0,0,1">
+								<Border Background="{DynamicResource Button-Idle-Background1}"
+										Margin="1,0"/>
+							</Border>
+							<Border Background="{TemplateBinding Background}"/>
+						</Panel>
+					</Border>
+					<Border x:Name="HoverBackground"
+							Classes="buttonBackground"
+							IsVisible="{TemplateBinding IsPointerOver}"
+							Background="{DynamicResource Button-Hover-Background0}"
+							BorderBrush="{DynamicResource Button-Hover-BorderBrush0}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+						<Panel>
+							<Border BorderBrush="{DynamicResource Button-Hover-BorderBrush2}"
+									BorderThickness="0,0,0,1">
+								<Border Background="{DynamicResource Button-Hover-Background1}"
+									Margin="1,0"/>
+							</Border>
+							<Border BorderBrush="{DynamicResource Button-Hover-BorderBrush1}"
+									BorderThickness="1,0"/>
+						</Panel>
+					</Border>
+					<Border x:Name="PressedBackground"
+							Classes="buttonBackground"
+							IsVisible="{TemplateBinding IsPressed}"
+							Background="{DynamicResource Button-Pressed-Background}"
+							BorderBrush="{DynamicResource Button-Pressed-BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+						<!--Panel>
+							<Border BorderBrush="{DynamicResource Button-Hover-BorderBrush2}"
+									BorderThickness="0,0,0,1">
+							<Border BorderBrush="{DynamicResource Button-Hover-BorderBrush1}"
+									BorderThickness="1,0"/>
+							</Border>
+						</Panel-->
+					</Border>
+					<Border x:Name="DisabledBackground"
+							Classes="buttonBackground"
+							IsVisible="{Binding !IsEnabled, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+							Background="{DynamicResource Button-Disabled-Background0}"
+							BorderBrush="{DynamicResource Button-Disabled-BorderBrush0}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+						<Panel>
+							<Border BorderBrush="{DynamicResource Button-Disabled-BorderBrush2}"
+									BorderThickness="0,0,0,1">
+								<Border Background="{DynamicResource Button-Disabled-Background1}"
+									Margin="1,0"/>
+							</Border>
+							<Border BorderBrush="{DynamicResource Button-Disabled-BorderBrush1}"
+									BorderThickness="1,0"/>
+						</Panel>
+					</Border>
+					<ContentPresenter x:Name="PART_ContentPresenter"
+										Background="Transparent"
+										BorderBrush="Transparent"
+										BorderThickness="0"
+										Content="{TemplateBinding Content}"
+										ContentTemplate="{TemplateBinding ContentTemplate}"
+										Padding="{TemplateBinding Padding}"
+										HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+										VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Style Selector="RepeatButton:not(:is(TemplatedControl).toolsMenuArea RepeatButton)">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="Foreground" Value="{DynamicResource Button-Foreground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource Button-Idle-BorderBrush0}" />
+		<Setter Property="BorderThickness" Value="1" />
+		<Setter Property="FontWeight" Value="DemiBold" />
+		<Setter Property="Padding" Value="8" />
+	</Style>
+	
+	
+	<Style Selector="RepeatButton /template/ Border.buttonBackground">
+		<Setter Property="CornerRadius" Value="3"/>
+	</Style>
+	<Style Selector="RepeatButton /template/ Border.buttonBackground > Panel > Border">
+		<Setter Property="CornerRadius" Value="2"/>
+	</Style>
+	<Style Selector="RepeatButton /template/ Border.buttonBackground > Panel > Border > Border">
+		<Setter Property="CornerRadius" Value="1"/>
+		<Setter Property="OpacityMask">
+			<LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+				<GradientStop Offset="0" Color="Transparent"/>
+				<GradientStop Offset="0.4" Color="Black"/>
+				<GradientStop Offset="0.6" Color="Black"/>
+				<GradientStop Offset="1" Color="Transparent"/>
+			</LinearGradientBrush>
+		</Setter>
+	</Style>
+	<Style Selector="RepeatButton:pressed,
+					RepeatButton:pressed /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="TextBlock.Foreground" Value="{DynamicResource Button-Pressed-Foreground}" />
+	</Style>
+
+	<Style Selector=":is(TemplatedControl).toolsMenuArea RepeatButton">
+		<Setter Property="Padding" Value="12,8" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Panel>
+					<TemplatedControl Classes="toolsMenuControlBackground hover noAnim"/>
+					<TemplatedControl Classes="toolsMenuControlBackground pressed" IsVisible="{TemplateBinding IsPressed}"/>
+					<ContentPresenter x:Name="PART_ContentPresenter"
+										Background="Transparent"
+										BorderBrush="Transparent"
+										BorderThickness="0"
+										Content="{TemplateBinding Content}"
+										ContentTemplate="{TemplateBinding ContentTemplate}"
+										Padding="{TemplateBinding Padding}"
+										HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+										VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+</Styles>

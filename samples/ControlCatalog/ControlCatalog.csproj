@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Update="**\*.xaml.cs">
+			<DependentUpon>%(Filename)</DependentUpon>
+		</Compile>
+		<AvaloniaResource Include="**\*.xaml">
+			<SubType>Designer</SubType>
+		</AvaloniaResource>
+		<AvaloniaResource Include="Assets\*" />
+		<AvaloniaResource Include="Assets\Fonts\*" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Assets\Fonts\SourceSansPro-Bold.ttf" />
+		<EmbeddedResource Include="Assets\Fonts\SourceSansPro-BoldItalic.ttf" />
+		<EmbeddedResource Include="Assets\Fonts\SourceSansPro-Italic.ttf" />
+		<EmbeddedResource Include="Assets\Fonts\SourceSansPro-Regular.ttf" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\src\AvaloniaPlexTheme\AvaloniaPlexTheme.csproj" />
+		<ProjectReference Include="..\..\src\AvaloniaThemeColorization\AvaloniaThemeColorization.csproj" />
+		<ProjectReference Include="..\MiniMvvm\MiniMvvm.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Avalonia" Version="0.10.0" />
+		<PackageReference Include="Avalonia.Desktop" Version="0.10.0" />
+		<PackageReference Include="Avalonia.Diagnostics" Version="0.10.0" />
+	</ItemGroup>
+</Project>

@@ -1,0 +1,140 @@
+<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:plex="splitwirez://AvaloniaPlexTheme">
+	<!--Styles.Resources>
+		<ControlTemplate x:Key="PlexMenuBackgroundTemplate" TargetType="{x:Type TemplatedControl}">
+			<DockPanel Background="Green">
+				<Rectangle Fill="{DynamicResource ToolsMenuArea-BottomBorderBrush2}"/>
+				<Rectangle Fill="{DynamicResource ToolsMenuArea-BottomBorderBrush1}"/>
+				<Rectangle Fill="{DynamicResource ToolsMenuArea-BottomBorderBrush0}"/>
+				<Border Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						HorizontalAlignment="Stretch"/>
+			</DockPanel>
+		</ControlTemplate>
+	</Styles.Resources-->
+
+	<Style Selector="TemplatedControl.toolsMenuBackground">
+		<Setter Property="BorderThickness" Value="1,0"/>
+		<Setter Property="Background" Value="{DynamicResource ToolsMenuArea-Background}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource ToolsMenuArea-SideBorderBrush}"/>
+		<Setter Property="Template">
+			<ControlTemplate>
+				<DockPanel Background="Green">
+					<Rectangle Classes="bottomEdge" Fill="{DynamicResource ToolsMenuArea-BottomBorderBrush2}"/>
+					<Rectangle Classes="bottomEdge" Fill="{DynamicResource ToolsMenuArea-BottomBorderBrush1}"/>
+					<Rectangle Classes="bottomEdge" Fill="{DynamicResource ToolsMenuArea-BottomBorderBrush0}"/>
+					<Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							HorizontalAlignment="Stretch"/>
+				</DockPanel>
+			</ControlTemplate>
+		</Setter>
+    </Style>
+	<Style Selector="TemplatedControl.toolsMenuBackground /template/ Rectangle.bottomEdge">
+		<Setter Property="Height" Value="1"/>
+		<Setter Property="HorizontalAlignment" Value="Stretch"/>
+		<Setter Property="DockPanel.Dock" Value="Bottom"/>
+    </Style>
+
+	<Style Selector=":is(TemplatedControl).toolsMenuArea">
+		<Setter Property="TextBlock.Foreground" Value="{DynamicResource ToolsMenuArea-Foreground}"/>
+    </Style>
+
+
+
+	<!--Style Selector=":is(TemplatedControl).toolsMenuArea /template/ TemplatedControl.toolsMenuBackground">
+		<Setter Property="Template" Value="{DynamicResource PlexMenuBackgroundTemplate}"/>
+    </Style-->
+	<!--Style Selector=":is(TemplatedControl).toolsMenuArea :is(TemplatedControl) /template/ TemplatedControl.toolsMenuBackground">
+		<Setter Property="Template" Value="{DynamicResource PlexMenuBackgroundTemplate}"/>
+    </Style-->
+
+
+	<Style Selector=":is(TemplatedControl):not(.toolsMenuArea) /template/ TemplatedControl.toolsMenuBackground,
+	
+					:is(TemplatedControl).toolsMenuArea :is(TemplatedControl) /template/ TemplatedControl.toolsMenuBackground">
+		<Setter Property="IsVisible" Value="False"/>
+    </Style>
+				<!--,:is(TemplatedControl).noMenuArea /template/ TemplatedControl.toolsMenuBackground,
+					:is(TemplatedControl).noMenuArea :is(TemplatedControl) /template/ TemplatedControl.toolsMenuBackground-->
+
+	<Style Selector=":is(TemplatedControl).toolsMenuArea /template/ TemplatedControl.toolsMenuBackground">
+		<Setter Property="IsVisible" Value="True"/>
+    </Style>
+
+
+
+	<Style Selector="TemplatedControl.toolsMenuControlBackground">
+		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="Margin" Value="1"/>
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border Classes="rootBorder"
+						Background="{DynamicResource ToolsMenuAreaControl-BorderBrush0}"
+						CornerRadius="4"
+						Margin="0,1,0,0">
+						<!--BoxShadow="inset 0 -2 0 2 #40FFFFFF"-->
+						<!--0 0 0 1 #FF487CC4-->
+					<Panel>
+						<Border BorderBrush="{DynamicResource ToolsMenuAreaControl-BorderBrush1}"
+								CornerRadius="0,0,4,4"
+								BorderThickness="1,0,1,1"
+								VerticalAlignment="Bottom"
+								Height="6"/>
+						<Border Classes="controlFrame"
+								BorderBrush="{DynamicResource ToolsMenuAreaControl-BorderBrush2}"
+								BorderThickness="1"
+								CornerRadius="3"
+								Margin="1,-1,1,1">
+							<Border/>
+						</Border>
+					</Panel>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+    </Style>
+	<Style Selector=":is(TemplatedControl) /template/ TemplatedControl.toolsMenuControlBackground.hover">
+		<Setter Property="Opacity" Value="0"/>
+    </Style>
+	<Style Selector=":is(TemplatedControl):pointerover /template/ TemplatedControl.toolsMenuControlBackground.hover.noAnim">
+		<Setter Property="Opacity" Value="1"/>
+    </Style>
+	<Style Selector=":is(TemplatedControl):pointerover /template/ TemplatedControl.toolsMenuControlBackground.hover:not(.noAnim)">
+		<Style.Animations>
+			<Animation Duration="0:0:0.125" FillMode="Both">
+				<KeyFrame Cue="100%">
+					<Setter Property="Opacity" Value="1"/>
+				</KeyFrame>
+			</Animation>
+		</Style.Animations>
+    </Style>
+	<Style Selector=":is(TemplatedControl):not(:pointerover) /template/ TemplatedControl.toolsMenuControlBackground.hover:not(.noAnim)">
+		<Style.Animations>
+			<Animation Duration="0:0:0.125" FillMode="Both">
+				<KeyFrame Cue="100%">
+					<Setter Property="Opacity" Value="0"/>
+				</KeyFrame>
+			</Animation>
+		</Style.Animations>
+    </Style>
+
+
+	<Style Selector="TemplatedControl.toolsMenuControlBackground.hover /template/ Border.rootBorder Border.controlFrame">
+		<Setter Property="Background" Value="{DynamicResource ToolsMenuAreaControl-Hover-Background0}"/>
+    </Style>
+	<Style Selector="TemplatedControl.toolsMenuControlBackground.hover /template/ Border.rootBorder Border.controlFrame > Border">
+		<Setter Property="Background" Value="{DynamicResource ToolsMenuAreaControl-Hover-Background1}"/>
+		<Setter Property="BoxShadow" Value="inset -1 -1 0 0 #20000000"/>
+    </Style>
+	<Style Selector="TemplatedControl.toolsMenuControlBackground.pressed /template/ Border.rootBorder Border.controlFrame">
+		<Setter Property="Background" Value="{DynamicResource ToolsMenuAreaControl-Pressed-Background}"/>
+		<Setter Property="BoxShadow" Value="inset 0 2 2 1 #20000000,
+											inset 0 -3 1 2 #40FFFFFF"/>
+    </Style>
+	<Style Selector="TemplatedControl.toolsMenuControlBackground.pressed /template/ Border.rootBorder Border.controlFrame > Border">
+		<Setter Property="IsVisible" Value="False"/>
+    </Style>
+</Styles>

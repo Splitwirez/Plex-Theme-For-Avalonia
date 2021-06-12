@@ -1,0 +1,133 @@
+<Style xmlns="https://github.com/avaloniaui"
+	   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	   xmlns:sys="clr-namespace:System;assembly=netstandard">
+	<Style.Resources>
+		<!--BEGIN window common-->
+
+		<!--Window-Background-->
+		<GradientStops x:Key="Window-Background-GrStops">
+			<GradientStop Offset="0"
+						Color="{DynamicResource Window-Background-Color0}" />
+			<GradientStop Offset="1"
+						Color="{DynamicResource Window-Background-Color1}" />
+		</GradientStops>
+		<LinearGradientBrush x:Key="Window-Background"
+							StartPoint="0%,0%"
+							EndPoint="0%,100%"
+							GradientStops="{DynamicResource Window-Background-GrStops}"/>
+		<!--Window-BorderBrush-->
+		<SolidColorBrush x:Key="Window-BorderBrush"
+						Color="{DynamicResource Window-BorderBrush-Color0}"/>
+		<!--Window-Foreground-->
+		<SolidColorBrush x:Key="Window-Foreground"
+						Color="{DynamicResource Window-Foreground-Color0}"/>
+		
+		<!--Window-TitleBar-BottomBorderBrush-->
+		<GradientStops x:Key="Window-TitleBar-BottomBorderBrush-GrStops">
+			<GradientStop Offset="0"
+						Color="{DynamicResource Window-TitleBar-BottomBorderBrush-Color0}" />
+			<GradientStop Offset="0.375"
+						Color="{DynamicResource Window-TitleBar-BottomBorderBrush-Color1}" />
+			<GradientStop Offset="0.625"
+						Color="{DynamicResource Window-TitleBar-BottomBorderBrush-Color1}" />
+			<GradientStop Offset="1"
+						Color="{DynamicResource Window-TitleBar-BottomBorderBrush-Color0}" />
+		</GradientStops>
+		<LinearGradientBrush x:Key="Window-TitleBar-BottomBorderBrush"
+							StartPoint="0%,0%"
+							EndPoint="100%,0%"
+							GradientStops="{DynamicResource Window-TitleBar-BottomBorderBrush-GrStops}"/>
+
+
+
+		<!--BEGIN active window titlebar-->
+		
+		<!--Window-ActiveTitleBar-Background-->
+		<GradientStops x:Key="Window-ActiveTitleBar-Background-GrStops">
+			<GradientStop Offset="0"
+						Color="{DynamicResource Window-ActiveTitleBar-Background-Color0}" />
+			<GradientStop Offset="0.5"
+						Color="{DynamicResource Window-ActiveTitleBar-Background-Color1}" />
+			<GradientStop Offset="1"
+						Color="{DynamicResource Window-ActiveTitleBar-Background-Color0}" />
+		</GradientStops>
+		<LinearGradientBrush x:Key="Window-ActiveTitleBar-Background"
+							StartPoint="0%,0%"
+							EndPoint="100%,0%"
+							GradientStops="{DynamicResource Window-ActiveTitleBar-Background-GrStops}"/>
+		<!--Window-ActiveTitleBar-BorderBrush-->
+		<GradientStops x:Key="Window-ActiveTitleBar-BorderBrush-GrStops">
+			<GradientStop Offset="0"
+						Color="{DynamicResource Window-ActiveTitleBar-BorderBrush-Color0}" />
+			<GradientStop Offset="0.375"
+						Color="{DynamicResource Window-ActiveTitleBar-BorderBrush-Color1}" />
+			<GradientStop Offset="0.625"
+						Color="{DynamicResource Window-ActiveTitleBar-BorderBrush-Color1}" />
+			<GradientStop Offset="1"
+						Color="{DynamicResource Window-ActiveTitleBar-BorderBrush-Color0}" />
+		</GradientStops>
+		<LinearGradientBrush x:Key="Window-ActiveTitleBar-BorderBrush"
+							StartPoint="0%,0%"
+							EndPoint="100%,0%"
+							GradientStops="{DynamicResource Window-ActiveTitleBar-BorderBrush-GrStops}"/>
+		<!--Window-ActiveTitleBar-Foreground-->
+		<SolidColorBrush x:Key="Window-ActiveTitleBar-Foreground"
+						Color="{DynamicResource Window-ActiveTitleBar-Foreground-Color0}"/>
+
+
+
+		<!--BEGIN inactive window titlebar-->
+		
+		<!--Window-InactiveTitleBar-Background-->
+		<GradientStops x:Key="Window-InactiveTitleBar-Background-GrStops">
+			<GradientStop Offset="0"
+						Color="{DynamicResource Window-InactiveTitleBar-Background-Color0}" />
+			<GradientStop Offset="0.5"
+						Color="{DynamicResource Window-InactiveTitleBar-Background-Color1}" />
+			<GradientStop Offset="1"
+						Color="{DynamicResource Window-InactiveTitleBar-Background-Color0}" />
+		</GradientStops>
+		<LinearGradientBrush x:Key="Window-InactiveTitleBar-Background"
+							StartPoint="0%,0%"
+							EndPoint="100%,0%"
+							GradientStops="{DynamicResource Window-InactiveTitleBar-Background-GrStops}"/>
+		<!--Window-InactiveTitleBar-BorderBrush-->
+		<GradientStops x:Key="Window-InactiveTitleBar-BorderBrush-GrStops">
+			<GradientStop Offset="0"
+						Color="{DynamicResource Window-InactiveTitleBar-BorderBrush-Color0}" />
+			<GradientStop Offset="0.375"
+						Color="{DynamicResource Window-InactiveTitleBar-BorderBrush-Color1}" />
+			<GradientStop Offset="0.625"
+						Color="{DynamicResource Window-InactiveTitleBar-BorderBrush-Color1}" />
+			<GradientStop Offset="1"
+						Color="{DynamicResource Window-InactiveTitleBar-BorderBrush-Color0}" />
+		</GradientStops>
+		<LinearGradientBrush x:Key="Window-InactiveTitleBar-BorderBrush"
+							StartPoint="0%,0%"
+							EndPoint="100%,0%"
+							GradientStops="{DynamicResource Window-InactiveTitleBar-BorderBrush-GrStops}"/>
+		<!--Window-InactiveTitleBar-Foreground-->
+		<SolidColorBrush x:Key="Window-InactiveTitleBar-Foreground"
+						Color="{DynamicResource Window-InactiveTitleBar-Foreground-Color0}"/>
+
+
+		
+		<!--BEGIN window caption buttons-->
+		
+		<!--Window-CaptionButton-Stroke-->
+		<SolidColorBrush x:Key="Window-CaptionButton-Stroke"
+						Color="{DynamicResource Window-CaptionButton-Stroke-Color0}"/>
+		<!--Window-CaptionButton-ActiveIdle-->
+		<SolidColorBrush x:Key="Window-CaptionButton-ActiveIdle"
+						Color="{DynamicResource Window-CaptionButton-ActiveIdle-Color0}"/>
+		<!--Window-CaptionButton-InactiveIdle-->
+		<SolidColorBrush x:Key="Window-CaptionButton-InactiveIdle"
+						Color="{DynamicResource Window-CaptionButton-InactiveIdle-Color0}"/>
+		<!--Window-CaptionButton-Hover-->
+		<SolidColorBrush x:Key="Window-CaptionButton-Hover"
+						Color="{DynamicResource Window-CaptionButton-Hover-Color0}"/>
+		<!--Window-CaptionButton-Pressed-->
+		<SolidColorBrush x:Key="Window-CaptionButton-Pressed"
+						Color="{DynamicResource Window-CaptionButton-Pressed-Color0}"/>
+	</Style.Resources>
+</Style>

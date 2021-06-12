@@ -1,0 +1,3 @@
+[submodule "build/Avalonia-Theme-Colorization"]
+	path = build/Avalonia-Theme-Colorization
+	url = https://github.com/Splitwirez/Avalonia-Theme-Colorization

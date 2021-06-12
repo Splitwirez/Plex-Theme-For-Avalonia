@@ -1,0 +1,35 @@
+<Styles xmlns="https://github.com/avaloniaui"
+	   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	   xmlns:sys="clr-namespace:System;assembly=netstandard">
+	<Styles.Resources>
+		<!--BEGIN font stuff-->
+		<sys:Double x:Key="ControlContentThemeFontSize">12</sys:Double>
+		<FontFamily x:Key="ContentControlThemeFontFamilyOld">avares://AvaloniaPlexTheme/Assets/Font1#Libre Franklin</FontFamily>
+		<FontFamily x:Key="ContentControlThemeFontFamily">avares://AvaloniaPlexTheme/Assets/Font2#Liberation Sans</FontFamily>
+
+		<!--BEGIN window CornerRadius stuff-->
+		<sys:Double x:Key="Window-CornerRadius">10</sys:Double>
+		<CornerRadius x:Key="Window-CornerRadius-All">10,10,10,10</CornerRadius>
+		<CornerRadius x:Key="Window-CornerRadius-Left">10,0,0,10</CornerRadius>
+		<CornerRadius x:Key="Window-CornerRadius-TopLeft">10,0,0,0</CornerRadius>
+		<CornerRadius x:Key="Window-CornerRadius-Top">10,10,0,0</CornerRadius>
+		<CornerRadius x:Key="Window-CornerRadius-TopRight">0,10,0,0</CornerRadius>
+		<CornerRadius x:Key="Window-CornerRadius-Right">0,10,10,0</CornerRadius>
+		<CornerRadius x:Key="Window-CornerRadius-BottomRight">0,0,10,0</CornerRadius>
+		<CornerRadius x:Key="Window-CornerRadius-Bottom">0,0,10,10</CornerRadius>
+		<CornerRadius x:Key="Window-CornerRadius-BottomLeft">0,0,0,10</CornerRadius>
+	</Styles.Resources>
+	
+	<!--TEMP Fluent placeholders-->
+	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Accents/BaseLight.xaml" />
+	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Accents/Base.xaml" />  
+	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Accents/FluentBaseLight.xaml" />
+	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Accents/FluentControlResourcesLight.xaml" />
+
+
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/Internal/AllBrushRes.axaml"/-->
+
+
+	<!--BEGIN control styles-->
+	<StyleInclude Source="avares://AvaloniaPlexTheme/Internal/AllControls.axaml"/>
+</Styles>

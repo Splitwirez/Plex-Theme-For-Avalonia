@@ -1,0 +1,148 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+		xmlns:pages="clr-namespace:ControlCatalog.Pages"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		x:Class="ControlCatalog.MainView">
+  <Panel>
+	<Panel.Styles>
+		<Style Selector="TextBlock.h2">
+			<Setter Property="TextWrapping" Value="Wrap"/>
+			<Setter Property="MaxWidth" Value="400"/>
+			<Setter Property="HorizontalAlignment" Value="Left"/>
+		</Style>
+	</Panel.Styles>  
+	<TabControl Classes="sidebar" Name="Sidebar" Tag="{Binding $parent[UserControl].Tag}" SelectedIndex="1">
+		<TabItem Header="AutoCompleteBox"
+				Tag="A control into which the user can input text.">
+			<pages:AutoCompleteBoxPage/>
+		</TabItem>
+		<TabItem Header="Button"
+				Tag="A button control.">
+			<pages:ButtonPage/>
+		</TabItem>
+		<TabItem Header="ButtonSpinner"
+				Tag="The ButtonSpinner control allows you to add button spinners to any element and then respond to the Spin event to manipulate that element.">
+			<pages:ButtonSpinnerPage/>
+		</TabItem>
+		<TabItem Header="Calendar"
+				Tag="A calendar control for selecting dates.">
+			<pages:CalendarPage/>
+		</TabItem>
+		<TabItem Header="Carousel"
+				Tag="An items control that displays its items as pages that fill the control.">
+			<pages:CarouselPage/>
+		</TabItem>
+		<TabItem Header="CheckBox"
+				Tag="A check box control.">
+			<pages:CheckBoxPage/>
+		</TabItem>
+		<TabItem Header="ComboBox"
+				Tag="A drop-down list.">
+			<pages:ComboBoxPage/>
+		</TabItem>
+		<TabItem Header="ContextMenu"
+				Tag="A right click menu that can be applied to any control.">
+			<pages:ContextMenuPage/>
+		</TabItem>
+		<TabItem Header="DataGrid"
+				Tag="A control for displaying and interacting with a data source."
+				ScrollViewer.VerticalScrollBarVisibility="Disabled"
+				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+			<pages:DataGridPage/>
+		</TabItem>
+		<TabItem Header="Date/Time Picker"
+				Tag="A control to let users pick a date and/or time in your app.">
+			<pages:DateTimePickerPage/>
+		</TabItem>
+		<TabItem Header="Dialogs"
+				Tag="Assorted things that happen in their own window.">
+			<pages:DialogsPage/>
+		</TabItem>
+		<TabItem Header="CalendarDatePicker"
+				Tag="A control for selecting dates with a calendar drop-down.">
+			<pages:CalendarDatePickerPage/>
+		</TabItem>
+		<TabItem Header="Expander"
+				Tag="Expands to show nested content.">
+			<pages:ExpanderPage/>
+		</TabItem>
+		<TabItem Header="ItemsRepeater"
+				Tag="A data-driven collection control that incorporates a flexible layout system, custom views, and virtualization."
+				ScrollViewer.VerticalScrollBarVisibility="Disabled"
+				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+			<pages:ItemsRepeaterPage/>
+		</TabItem>
+		<TabItem Header="Label"
+				Tag="You're looking at one right now.">
+			<pages:LabelsPage/>
+		</TabItem>
+		<TabItem Header="ListBox"
+				Tag="Hosts a collection of ListBoxItem."
+				ScrollViewer.VerticalScrollBarVisibility="Disabled">
+			<pages:ListBoxPage/>
+		</TabItem>
+		<TabItem Header="Menu"
+				Tag="A window menu.">
+			<pages:MenuPage/>
+		</TabItem>
+		<TabItem Header="Notifications"
+				Tag="TaSk CoMpLeTeD sUcCeSfUlLy.">
+			<pages:NotificationsPage/>
+		</TabItem>
+		<TabItem Header="NumericUpDown"
+				Tag="Numeric up-down control provides a TextBox with button spinners that allow incrementing and decrementing numeric values by using the spinner buttons, keyboard up/down arrows, or mouse wheel.">
+			<pages:NumericUpDownPage/>
+		</TabItem>
+		<TabItem Header="ProgressBar"
+				Tag="A progress bar control. Please wait while the setup wizard installs who-knows-what.">
+			<pages:ProgressBarPage/>
+		</TabItem>
+		<TabItem Header="RadioButton"
+				Tag="Allows the selection of a single option of many.">
+			<pages:RadioButtonPage/>
+		</TabItem>
+		<TabItem Header="ScrollViewer"
+				Tag="Allows for horizontal and vertical content scrolling.">
+			<pages:ScrollViewerPage/>
+		</TabItem>
+		<TabItem Header="Slider"
+				Tag="A control that lets the user select from a range of values by moving a Thumb control along a Track.">
+			<pages:SliderPage/>
+		</TabItem>
+		<TabItem Header="SplitView"
+				Tag="SplitView is a UI control, Splitwirez is the idiot who wrote this library. Please do not mix them up.">
+			<pages:SplitViewPage/>
+		</TabItem>
+		<TabItem Header="TabControl"
+				Tag="A tab control that displays a tab strip along with the content of the selected tab.">
+			<pages:TabControlPage/>
+		</TabItem>
+		<TabItem Header="TabStrip"
+				Tag="A control which displays a selectable strip of tabs.">
+			<pages:TabStripPage/>
+		</TabItem>
+		<TabItem Header="TextBox"
+				Tag="A control into which the user can input text.">
+			<pages:TextBoxPage/>
+		</TabItem>
+		<TabItem Header="TextBlock"
+				Tag="A control that can display text.">
+			<pages:TextBlockPage/>
+		</TabItem>
+		<TabItem Header="ToggleSwitch"
+				Tag="Lightswitch-flavoured alternative to a CheckBox. Best suited for 'on'/'off'-type questions.">
+			<pages:ToggleSwitchPage/>
+		</TabItem>
+		<TabItem Header="ToolTip"
+				Tag="A control which pops up a hint when a control is hovered.">
+			<pages:ToolTipPage/>
+		</TabItem>
+		<TabItem Header="TreeView"
+				Tag="Displays a hierachical tree of data.">
+			<pages:TreeViewPage/>
+		</TabItem>
+		<!--TabItem Header="Window Customizations"
+				Tag="Yeehaw">
+		</TabItem-->
+	</TabControl>
+  </Panel>
+</UserControl>

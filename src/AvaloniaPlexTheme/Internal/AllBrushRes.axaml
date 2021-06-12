@@ -1,0 +1,64 @@
+<Styles xmlns="https://github.com/avaloniaui"
+	   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!--Actual Plex stuff-->
+	<StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/CommonRes.axaml"/>
+
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/ToolTipRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/DataValidationErrorsRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/FocusAdornerRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/ButtonRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/CaptionButtonsRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/CarouselRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/CheckBoxRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/ComboBoxRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/ComboBoxItemRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/ContentControlRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/LabelRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/GridSplitterRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/ItemsControlRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/ListBoxRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/ListBoxItemRes.axaml"/-->
+	<StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/MenuRes.axaml"/>
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/ContextMenuRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/MenuItemRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/OverlayPopupHostRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/PathIcon.axaml" /-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/PopupRootRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/ProgressBarRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/RadioButtonRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/RepeatButton.axaml" /-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/SeparatorRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/SliderRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/ScrollBarRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/ScrollViewerRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/TabStripRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/TabStripItemRes.axaml"/-->
+
+	<!-- TabControl needs to come after TabStrip as it redefines the inner TabStrip.ItemsPanel-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/TabControlRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/TabItemRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/TextBoxRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/ToggleButtonRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/ExpanderRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/TitleBarRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/TreeViewRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/TreeViewItemRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/UserControlRes.axaml"/-->
+	<StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/WindowRes.axaml"/>
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/EmbeddableControlRootRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/CalendarButtonRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/CalendarDayButtonRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/CalendarItemRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/CalendarRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/CalendarDatePickerRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/ButtonSpinnerRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/NumericUpDownRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/AutoCompleteBoxRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/WindowNotificationManagerRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/NotificationCardRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/NativeMenuBarRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/ToggleSwitchRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/SplitViewRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/DatePickerRes.axaml"/-->
+	<!--StyleInclude Source="avares://AvaloniaPlexTheme/BrushRes/TimePickerRes.axaml"/-->
+</Styles>

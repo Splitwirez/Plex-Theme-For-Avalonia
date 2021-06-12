@@ -1,0 +1,32 @@
+<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:plex="splitwirez://AvaloniaPlexTheme">
+	<!--Styles.Resources>
+       	xmlns:fluent="clr-namespace:Avalonia.Themes.Fluent;assembly=Avalonia.Themes.Fluent"
+    	<fluent:InverseBooleanValueConverter x:Key="AvaloniaThemesDefaultNativeMenuBarInverseBooleanValueConverter" Default="True"/>
+	</Styles.Resources-->
+	<Style Selector="NativeMenuBar">
+		<!--Setter Property="Foreground" Value="{DynamicResource Menu-Foreground}"/>
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="BorderBrush" Value="Transparent" />
+		<Setter Property="BorderThickness" Value="0" />
+		<Setter Property="Height" Value="27" /-->
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Menu
+					Items="{Binding $parent[TopLevel].(NativeMenu.Menu).Items}"
+					IsVisible="{Binding !$parent[TopLevel].(NativeMenu.IsNativeMenuExported)}">
+					<!--IsVisible="{Binding $parent[TopLevel].(NativeMenu.IsNativeMenuExported), Converter={StaticResource AvaloniaThemesDefaultNativeMenuBarInverseBooleanValueConverter}}">-->
+				</Menu>
+			</ControlTemplate>
+		</Setter>
+    </Style>
+	<Style Selector="NativeMenuBar /template/ Menu MenuItem">
+		<Setter Property="Header" Value="{Binding Header}"/>
+		<Setter Property="InputGesture" Value="{Binding Gesture}"/>
+		<Setter Property="Items" Value="{Binding Menu.Items}"/>
+		<Setter Property="Command" Value="{Binding Command}"/>
+		<Setter Property="CommandParameter" Value="{Binding CommandParameter}"/>
+		<Setter Property="(NativeMenuBar.EnableMenuItemClickForwarding)" Value="True"/>
+	</Style>
+</Styles>

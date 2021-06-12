@@ -1,0 +1,451 @@
+<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:plex="splitwirez://AvaloniaPlexTheme">
+	<Styles.Resources>
+		<plex:BooleanToFontWeightConverter x:Key="BooleanToFontWeightConverter"/>
+		<plex:RectAndCornerRadiusToRoundedRectConverter x:Key="RectAndCornerRadiusToRoundedRectConverter"/>
+	</Styles.Resources>
+	<Style Selector="Window">
+		<Setter Property="Background" Value="{DynamicResource Window-Background}"/>
+		<Setter Property="TransparencyBackgroundFallback" Value="{DynamicResource Window-Background}" />
+		<Setter Property="Foreground" Value="{DynamicResource Window-Foreground}"/>
+		<Setter Property="FontSize" Value="{DynamicResource ControlContentThemeFontSize}"/>
+		<Setter Property="FontFamily" Value="{DynamicResource ContentControlThemeFontFamily}" />
+		<Setter Property="SystemDecorations" Value="None"/>
+		<Setter Property="TransparencyLevelHint" Value="Transparent"/>
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Panel>
+					<Border x:Name="WindowShadowBorder">
+						<Panel>
+							<Panel Margin="0,1,0,0">
+								<Border Name="PART_TransparencyFallback" IsHitTestVisible="False" CornerRadius="{Binding #BackgroundBorder.CornerRadius}"/>
+								<!--Border x:Name="BackgroundBorder" Background="{TemplateBinding Background}" IsHitTestVisible="False"/>
+								<Border BorderBrush="{DynamicResource Window-BorderBrush}" BorderThickness="1" CornerRadius="{Binding #BackgroundBorder.CornerRadius}"/-->
+							</Panel>
+							<DockPanel>
+								<Panel x:Name="TitleBarContainer" DockPanel.Dock="Top">
+									<plex:WindowTitleBar x:Name="TitleBar" Margin="0,0,0,-8" VerticalAlignment="Stretch"/>
+								</Panel>
+								<Border Background="{TemplateBinding Background}"
+										CornerRadius="{Binding #PART_TransparencyFallback.CornerRadius}"
+										BorderBrush="Transparent"
+										IsHitTestVisible="False"/>
+							</DockPanel>
+							<DockPanel>
+								<Control x:Name="ContentSpacer" IsHitTestVisible="False" DockPanel.Dock="Top"/>
+								<!--Margin="0,0,0,-5" -->
+								<!--Height="{Binding #TitleBar.Bounds.Height}" Margin="{Binding #TitleBar.Margin}"-->
+								<!--Panel-->
+									<VisualLayerManager>
+										<!--VisualLayerManager.ChromeOverlayLayer>
+											<TitleBar />
+										</VisualLayerManager.ChromeOverlayLayer-->
+										<ContentPresenter x:Name="PART_ContentPresenter"
+															Background="Transparent"
+															BorderBrush="Transparent"
+															BorderThickness="0"
+															CornerRadius="{Binding #PART_TransparencyFallback.CornerRadius}"
+
+															ContentTemplate="{TemplateBinding ContentTemplate}"
+															Content="{TemplateBinding Content}"
+															Margin="{TemplateBinding Padding}"
+															HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+															VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+									</VisualLayerManager>
+									<!--Panel Classes="titleBarBottomCorners" VerticalAlignment="Top">
+										<Border>
+											<Border/>
+										</Border>
+									</Panel-->
+								<!--/Panel-->
+							</DockPanel>
+						</Panel>
+					</Border>
+					<plex:WindowResizeEdge/>
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	
+	<Style Selector="Window:not(Window[WindowState=Maximized], Window[WindowState=FullScreen]) /template/ Border#WindowShadowBorder,
+					Window:not(Window[WindowState=Maximized], Window[WindowState=FullScreen]) /template/ Border#PART_TransparencyFallback">
+		<Setter Property="CornerRadius" Value="{DynamicResource Window-CornerRadius-All}"/>
+	</Style>
+
+	<Style Selector="Window:not(Window[WindowState=Maximized], Window[WindowState=FullScreen]) /template/ Border#WindowShadowBorder">
+		<Setter Property="Margin" Value="8,0,8,12"/>
+	</Style>
+	<Style Selector="Window[IsActive=True]:not(Window[WindowState=Maximized], Window[WindowState=FullScreen]) /template/ Border#WindowShadowBorder">
+		<Setter Property="BoxShadow" Value="0 6 8 0 #7F000000"/>
+	</Style>
+	<Style Selector="Window[IsActive=False]:not(Window[WindowState=Maximized], Window[WindowState=FullScreen]) /template/ Border#WindowShadowBorder">
+		<Setter Property="BoxShadow" Value="0 6 8 0 #5F000000"/>
+	</Style>
+
+	<Style Selector="plex|WindowResizeEdge">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid ColumnDefinitions="8,*,8" RowDefinitions="8,*,12">
+					<Rectangle x:Name="PART_Left" Grid.Column="0" Grid.Row="1"/>
+					<Rectangle x:Name="PART_TopLeft" Grid.Column="0" Grid.Row="0"/>
+					<Rectangle x:Name="PART_Top" Grid.Column="1" Grid.Row="0"/>
+					<Rectangle x:Name="PART_TopRight" Grid.Column="2" Grid.Row="0"/>
+					<Rectangle x:Name="PART_Right" Grid.Column="2" Grid.Row="1"/>
+					<Rectangle x:Name="PART_BottomRight" Grid.Column="2" Grid.Row="2"/>
+					<Rectangle x:Name="PART_Bottom" Grid.Column="1" Grid.Row="2"/>
+					<Rectangle x:Name="PART_BottomLeft" Grid.Column="0" Grid.Row="2"/>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Style Selector="plex|WindowResizeEdge /template/ Rectangle">
+		<Setter Property="Fill" Value="#01000000"/>
+	</Style>
+	
+	<Style Selector="Window[WindowState=Maximized] /template/ plex|WindowResizeEdge,
+					Window[WindowState=FullScreen] /template/ plex|WindowResizeEdge
+					Window[CanResize=False] /template/ plex|WindowResizeEdge">
+		<Setter Property="IsVisible" Value="False"/>
+	</Style>
+	
+	
+	<Style Selector="Window[ExtendClientAreaToDecorationsHint=True][ExtendClientAreaTitleBarHeightHint=-1] /template/ Control#ContentSpacer,
+					Window[ExtendClientAreaToDecorationsHint=False] /template/ Control#ContentSpacer,
+					Window[ExtendClientAreaToDecorationsHint=True][ExtendClientAreaTitleBarHeightHint=-1] /template/ Panel#TitleBarContainer,
+					Window[ExtendClientAreaToDecorationsHint=False] /template/ Panel#TitleBarContainer">
+		<Setter Property="Height" Value="32"/>
+	</Style>
+	<Style Selector="Window[ExtendClientAreaToDecorationsHint=True]:not(Window[ExtendClientAreaTitleBarHeightHint=-1]) /template/ Control#ContentSpacer,
+					Window[ExtendClientAreaToDecorationsHint=True]:not(Window[ExtendClientAreaTitleBarHeightHint=-1]) /template/ Panel#TitleBarContainer">
+		<Setter Property="Height" Value="{Binding $parent[Window].ExtendClientAreaTitleBarHeightHint}"/>
+	</Style>
+
+
+
+	<Style Selector="Window[SystemDecorations=Full] /template/ Control#ContentSpacer,
+					Window[SystemDecorations=Full] /template/ plex|WindowTitleBar#TitleBar,
+					Window[ExtendClientAreaToDecorationsHint=true] /template/ Control#ContentSpacer">
+		<Setter Property="IsVisible" Value="False"/>
+	</Style>
+
+	<Style Selector="Window[ExtendClientAreaToDecorationsHint=False]:not(Window[WindowState=Maximized], Window[WindowState=FullScreen]) /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="ClipToBounds" Value="True"/>
+		<Setter Property="CornerRadius" Value="{DynamicResource Window-CornerRadius-Bottom}"/>
+		<Setter Property="Clip">
+			<MultiBinding Converter="{StaticResource RectAndCornerRadiusToRoundedRectConverter}">
+				<Binding Path="Bounds" RelativeSource="{RelativeSource Mode=Self}"/>
+				<Binding Path="CornerRadius" RelativeSource="{RelativeSource Mode=Self}"/>
+			</MultiBinding>
+		</Setter>
+		<!--Setter Property="Clip">
+			<RoundedRect>
+				<RoundedRect.Rect>
+					<Rect Width="{Binding Bounds.Width, RelativeSource={RelativeSource Mode=Self}}"
+						  Height="{Binding Bounds.Height, RelativeSource={RelativeSource Mode=Self}}"/>
+				</RoundedRect.Rect>
+				<RoundedRect.RadiiTopLeft>
+					<Vector X="{DynamicResource Window-CornerRadius}"
+							Y="{DynamicResource Window-CornerRadius}"/>
+				</RoundedRect.RadiiTopLeft>
+				<RoundedRect.RadiiTopRight>
+					<Vector X="{DynamicResource Window-CornerRadius}"
+							Y="{DynamicResource Window-CornerRadius}"/>
+				</RoundedRect.RadiiTopRight>
+				<RoundedRect.RadiiBottomRight>
+					<Vector X="{DynamicResource Window-CornerRadius}"
+							Y="{DynamicResource Window-CornerRadius}"/>
+				</RoundedRect.RadiiBottomRight>
+				<RoundedRect.RadiiBottomLeft>
+					<Vector X="{DynamicResource Window-CornerRadius}"
+							Y="{DynamicResource Window-CornerRadius}"/>
+				</RoundedRect.RadiiBottomLeft>
+			</RoundedRect>
+		</Setter-->
+	</Style>
+
+
+	<Style Selector="plex|WindowTitleBar">
+		<Setter Property="Items" Value="{Binding $parent[Window].(plex:WindowTitleBar.Title)}"/>
+		<Setter Property="UnformattedTitle" Value="{Binding $parent[Window].Title}"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+		<!--Setter Property="DefaultHeight" Value="40"/>
+		<Setter Property="Margin" Value="0,0,0,-8"/-->
+		<Setter Property="FontSize" Value="13"/>
+        <Setter Property="Template">
+            <ControlTemplate>
+				<!--DockPanel>
+					<Panel Classes="titleBarBottomCorners" DockPanel.Dock="Bottom">
+						<Border>
+							<Border/>
+						</Border>
+					</Panel-->
+					<Border x:Name="Root">
+						<Panel>
+							<Border x:Name="OuterTopLine" CornerRadius="{Binding #Root.CornerRadius}" BorderThickness="0,1,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+								<Rectangle x:Name="InnerTopLine" Margin="15,1" Height="1" VerticalAlignment="Top"/>
+							</Border>
+							<!--Rectangle x:Name="BottomEdgeLine" Height="9" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="10,0" Fill="{DynamicResource Window-TitleBar-BottomBorderBrush}"/-->
+							<Border Background="{DynamicResource Window-TitleBar-BottomBorderBrush}"
+									Height="9"
+									CornerRadius="{DynamicResource Window-CornerRadius-Top}"
+									VerticalAlignment="Bottom"
+									Margin="0"/>
+							<DockPanel VerticalAlignment="Top" Height="{Binding $parent[Border].Bounds.Height}" MaxHeight="32">
+								<StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
+									<Button x:Name="PART_MinimizeButton" Classes="captionButton">
+										<Panel Width="11" Height="11">
+											<Border Margin="1,6,2,0">
+												<Rectangle/>
+											</Border>
+										</Panel>
+									</Button>
+									<Button x:Name="PART_MaximizeButton" IsVisible="{Binding $parent[Window].CanResize}" Classes="captionButton">
+										<TemplatedControl/>
+									</Button>
+									<Button x:Name="PART_CloseButton" Classes="captionButton">
+										<Panel Width="11" Height="11">
+											<Path Data="M 2.5 0.5 L 5.5 3.5 L 8.5 0.5
+														L 10.5 2.5 L 7.5 5.5 L 10.5 8.5
+														L 8.5 10.5 L 5.5 7.5 L 2.5 10.5
+														L 0.5 8.5 L 3.5 5.5 L 0.5 2.5 Z" Fill="Transparent"/>
+											<Path Data="M 2.5 1.2 L 5.5 4.2 L 8.5 1.2
+														L 9.8 2.5 L 6.8 5.5 L 9.8 8.5
+														L 8.5 9.8 L 5.5 6.8 L 2.5 9.8
+														L 1.2 8.5 L 4.2 5.5 L 1.2 2.5 Z" Stroke="Transparent" StrokeThickness="0"/>
+										</Panel>
+									</Button>
+								</StackPanel>
+								<Panel>
+									<TemplatedControl x:Name="PART_DragGrip"/>
+									<Panel
+										Margin="{TemplateBinding Padding}"
+										HorizontalAlignment="Center"
+										VerticalAlignment="Center"
+										IsHitTestVisible="False">
+										<Border Background="#40000000" Margin="5,7" BoxShadow="0 3 6 6 #40000000" MinHeight="1"/>
+										<TextBlock x:Name="UnformattedTitlePresenter"
+												Text="{TemplateBinding UnformattedTitle}"
+												IsVisible="{Binding !HasEmphasizeableTitle, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+												Foreground="{DynamicResource Window-ActiveTitleBar-Foreground}"/>
+										<ItemsPresenter x:Name="PART_ItemsPresenter"
+														TextBlock.Foreground="{Binding #UnformattedTitlePresenter.Foreground}"
+														Items="{TemplateBinding Items}"
+														ItemsPanel="{TemplateBinding ItemsPanel}"
+														ItemTemplate="{TemplateBinding ItemTemplate}"/>
+									</Panel>
+								</Panel>
+							</DockPanel>
+						</Panel>
+					</Border>
+				<!--/DockPanel-->
+            </ControlTemplate>
+        </Setter>
+    </Style>
+	<Style Selector="Panel.titleBarBottomCorners">
+		<Setter Property="Height" Value="5"/>
+		<Setter Property="ClipToBounds" Value="True"/>
+    </Style>
+
+	<!--Style Selector="plex|WindowTitleBar /template/ Rectangle#BottomEdgeLine">
+		<Setter Property="OpacityMask">
+			<LinearGradientBrush StartPoint="0%,0%"
+								EndPoint="100%,0%">
+				<GradientStop Offset="0"
+							Color="Transparent" />
+				<GradientStop Offset="0.375"
+							Color="Black" />
+				<GradientStop Offset="0.625"
+							Color="Black" />
+				<GradientStop Offset="1"
+							Color="Transparent" />
+			</LinearGradientBrush>
+		</Setter>
+    </Style-->
+
+
+	<Style Selector="Panel.titleBarBottomCorners > Border">
+		<Setter Property="BorderThickness" Value="5,5,5,0"/>
+		<Setter Property="CornerRadius" Value="{DynamicResource Window-CornerRadius-Top}"/>
+		<Setter Property="Margin" Value="-5"/>
+    </Style>
+	
+	<Style Selector="Panel.titleBarBottomCorners > Border > Border">
+		<Setter Property="BorderThickness" Value="0,1,0,0"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource Window-TitleBar-BottomBorderBrush}"/>
+		<Setter Property="CornerRadius" Value="{DynamicResource Window-CornerRadius-Top}"/>
+		<Setter Property="Margin" Value="-1,0"/>
+    </Style>
+
+	<Style Selector="Window[IsActive=True] /template/ Panel.titleBarBottomCorners > Border,
+					Window[IsActive=True] /template/ plex|WindowTitleBar /template/ Panel.titleBarBottomCorners > Border">
+		<Setter Property="BorderBrush" Value="{DynamicResource Window-ActiveTitleBar-Background}"/>
+	</Style>
+	<Style Selector="Window[IsActive=False] /template/ Panel.titleBarBottomCorners > Border,
+					Window[IsActive=False] /template/ plex|WindowTitleBar /template/ Panel.titleBarBottomCorners > Border">
+		<Setter Property="BorderBrush" Value="{DynamicResource Window-InactiveTitleBar-Background}"/>
+	</Style>
+	
+	<!--Style Selector="Window[ExtendClientAreaToDecorationsHint=False] /template/ plex|WindowTitleBar /template/ Panel.titleBarBottomCorners,
+					Window[ExtendClientAreaToDecorationsHint=True] /template/ Panel.titleBarBottomCorners">
+		<Setter Property="IsVisible" Value="False"/>
+    </Style-->
+
+
+
+	<!--Style Selector="Window[ExtendClientAreaToDecorationsHint=True] /template/ plex|WindowTitleBar">
+		<Setter Property="DefaultHeight" Value="37"/>
+		<Setter Property="Margin" Value="0,0,0,-5"/>
+    </Style-->
+	
+	
+
+	
+	<Style Selector="Window:not(Window[WindowState=Maximized]):not(Window[WindowState=FullScreen]) /template/ plex|WindowTitleBar /template/ Border#Root">
+		<Setter Property="CornerRadius" Value="{DynamicResource Window-CornerRadius-Top}"/>
+	</Style>
+
+	<Style Selector="Window[IsActive=True] /template/ plex|WindowTitleBar /template/ Border#Root">
+		<Setter Property="Background" Value="{DynamicResource Window-ActiveTitleBar-Background}"/>
+	</Style>
+	<Style Selector="Window[IsActive=True] /template/ plex|WindowTitleBar /template/ Border#OuterTopLine">
+		<Setter Property="BorderBrush" Value="{DynamicResource Window-ActiveTitleBar-BorderBrush}"/>
+	</Style>
+	<Style Selector="Window[IsActive=True] /template/ plex|WindowTitleBar /template/ Rectangle#InnerTopLine">
+		<Setter Property="Fill" Value="{DynamicResource Window-ActiveTitleBar-BorderBrush}"/>
+	</Style>
+	
+	<Style Selector="Window[IsActive=False] /template/ plex|WindowTitleBar /template/ Border#Root">
+		<Setter Property="Background" Value="{DynamicResource Window-InactiveTitleBar-Background}"/>
+	</Style>
+	<Style Selector="Window[IsActive=False] /template/ plex|WindowTitleBar /template/ Border#OuterTopLine">
+		<Setter Property="BorderBrush" Value="{DynamicResource Window-InactiveTitleBar-BorderBrush}"/>
+	</Style>
+	<Style Selector="Window[IsActive=False] /template/ plex|WindowTitleBar /template/ Rectangle#InnerTopLine">
+		<Setter Property="Fill" Value="{DynamicResource Window-InactiveTitleBar-BorderBrush}"/>
+	</Style>
+
+	<Style Selector="plex|WindowTitleBar /template/ TemplatedControl#PART_DragGrip">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Rectangle Fill="#01000000"/>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+
+
+	<!--Style Selector="Window[ExtendClientAreaTitleBarHeightHint=-1] /template/ plex|WindowTitleBar">
+   		<Setter Property="Height" Value="{Binding DefaultHeight, RelativeSource={RelativeSource Mode=Self}}"/>
+    </Style-->
+
+	<Style Selector="plex|WindowTitleBar">
+		<Setter Property="ItemsPanel">
+			<ItemsPanelTemplate>
+				<StackPanel Orientation="Horizontal"/>
+			</ItemsPanelTemplate>
+		</Setter>
+		<Setter Property="ItemTemplate">
+			<DataTemplate>
+				<TextBlock Classes="titleSegment" Foreground="{Binding (TextBlock.Foreground), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ItemsPresenter}}}" Text="{Binding Text}" FontWeight="{Binding IsEmphasized, Converter={StaticResource BooleanToFontWeightConverter}, ConverterParameter='Normal,Bold'}"/>
+			</DataTemplate>
+		</Setter>
+    </Style>
+
+	<Style Selector="Button.captionButton">
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="{DynamicResource Window-CaptionButton-ActiveIdle}"/>
+		<Setter Property="Padding" Value="6,0"/>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <ContentPresenter x:Name="PART_ContentPresenter"
+								Background="Transparent"
+								BorderBrush="Transparent"
+								BorderThickness="0"
+								CornerRadius="0"
+								Content="{TemplateBinding Content}"
+								ContentTemplate="{TemplateBinding ContentTemplate}"
+								Padding="{TemplateBinding Padding}"
+								HorizontalAlignment="Stretch"
+								VerticalAlignment="Stretch"
+								HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+								VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+								TextBlock.Foreground="{TemplateBinding Foreground}"/>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+	<Style Selector="Button.captionButton#PART_CloseButton">
+		<Setter Property="Padding" Value="6,0,14,0"/>
+    </Style>
+
+	<Style Selector="Window[IsActive=False] Button.captionButton">
+        <Setter Property="Foreground" Value="{DynamicResource Window-CaptionButton-InactiveIdle}"/>
+    </Style>
+	<Style Selector="Button.captionButton:pointerover">
+        <Setter Property="Foreground" Value="{DynamicResource Window-CaptionButton-Hover}"/>
+    </Style>
+	<Style Selector="Button.captionButton:pressed">
+        <Setter Property="Foreground" Value="{DynamicResource Window-CaptionButton-Pressed}"/>
+    </Style>
+	<Style Selector="Button.captionButton:disabled /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Opacity" Value="0.25"/>
+    </Style>
+
+	<Style Selector="Button.captionButton > Panel > Path,
+					Button.captionButton#PART_MaximizeButton TemplatedControl /template/ Path.glyph">
+        <Setter Property="Fill" Value="{Binding $parent[Button].Foreground}"/>
+        <Setter Property="Stroke" Value="{DynamicResource Window-CaptionButton-Stroke}"/>
+        <Setter Property="StrokeThickness" Value="1"/>
+    </Style>
+	<Style Selector="Button.captionButton#PART_CloseButton > Panel > Path">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+	<Style Selector="Button.captionButton > Panel > Border">
+		<Setter Property="BorderBrush" Value="{DynamicResource Window-CaptionButton-Stroke}"/>
+		<Setter Property="BorderThickness" Value="1"/>
+    </Style>
+	<Style Selector="Button.captionButton > Panel > Border > Rectangle">
+		<Setter Property="Fill" Value="{Binding $parent[Button].Foreground}"/>
+    </Style>
+
+	<Style Selector="Button.captionButton#PART_MaximizeButton > TemplatedControl">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border Classes="glyphOuter" Width="11" Height="11">
+					<Border BorderThickness="1,3,1,1" BorderBrush="{Binding $parent[Button].Foreground}">
+						<Border/>
+					</Border>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+    </Style>
+	<Style Selector="Window[WindowState=Maximized] Button.captionButton#PART_MaximizeButton > TemplatedControl">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Panel Width="11" Height="11">
+					<Border Classes="glyphOuter" Width="9" Height="8" HorizontalAlignment="Right" VerticalAlignment="Top">
+						<Border BorderThickness="1,3,1,1" BorderBrush="{Binding $parent[Button].Foreground}">
+							<Border/>
+						</Border>
+					</Border>
+					<Border Classes="glyphOuter" Width="9" Height="8" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+						<Border BorderThickness="1,3,1,1" BorderBrush="{Binding $parent[Button].Foreground}">
+							<Border/>
+						</Border>
+					</Border>
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+    </Style>
+	<Style Selector="Button.captionButton#PART_MaximizeButton > TemplatedControl /template/ Border.glyphOuter,
+					Button.captionButton#PART_MaximizeButton > TemplatedControl /template/ Border.glyphOuter > Border > Border">
+		<Setter Property="BorderBrush" Value="{DynamicResource Window-CaptionButton-Stroke}"/>
+		<Setter Property="BorderThickness" Value="1"/>
+    </Style>
+	<Style Selector="Button.captionButton#PART_MaximizeButton > TemplatedControl /template/ Border.glyphOuter > Border > Rectangle">
+		<Setter Property="Stroke" Value="{DynamicResource Window-CaptionButton-Stroke}"/>
+		<Setter Property="StrokeThickness" Value="1"/>
+    </Style>
+</Styles>

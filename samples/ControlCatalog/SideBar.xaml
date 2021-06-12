@@ -1,0 +1,261 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style Selector="TabControl.sidebar">
+        <Setter Property="TabStripPlacement" Value="Left"/>
+        <Setter Property="Padding" Value="8"/>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <!--Border 
+                    Margin="{TemplateBinding Margin}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"-->
+                <DockPanel>
+                    <DockPanel Width="180"
+                            IsVisible="{TemplateBinding Tag}"
+                            DockPanel.Dock="Left">
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="9,11"
+                                    Spacing="6"
+                                    HorizontalAlignment="Left"
+                                    DockPanel.Dock="Top">
+                            <TextBlock Text="Plex-styled" Classes="groupHeader"/>
+                            <TextBlock Text="Controls" Classes="groupHeader emphasize"/>
+                        </StackPanel>
+                        <ScrollViewer
+                            Name="PART_ScrollViewer"
+                            HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+                            VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}"
+                            Background="{TemplateBinding Background}"
+                            DockPanel.Dock="Left">
+                            <ItemsPresenter
+                                Name="PART_ItemsPresenter"                          
+                                Items="{TemplateBinding Items}"
+                                ItemsPanel="{TemplateBinding ItemsPanel}"
+                                ItemTemplate="{TemplateBinding ItemTemplate}">
+                            </ItemsPresenter>
+                        </ScrollViewer>
+                    </DockPanel>
+                    <Panel DockPanel.Dock="Top">
+                        <Panel x:Name="HeaderContainer"
+                            VerticalAlignment="Top"
+                            ZIndex="99999999">
+                            <Border x:Name="Backdrop"
+                                    IsHitTestVisible="False"
+                                    ClipToBounds="True">
+                                <Border.OpacityMask>
+                                    <LinearGradientBrush StartPoint="0%,0%"
+                                                        EndPoint="0%,100%">
+                                        <GradientStop Offset="0.375"
+                                                    Color="Black"/>
+                                        <GradientStop Offset="0.875"
+                                                    Color="#90000000"/>
+                                        <GradientStop Offset="1"
+                                                    Color="Transparent"/>
+                                    </LinearGradientBrush>
+                                </Border.OpacityMask>
+                                <Rectangle Fill="{DynamicResource Window-Background}" Margin="0,0,0,-400"/>
+                            </Border>
+                            <Rectangle MinHeight="41">
+                                <!--OpacityMask="{Binding #Backdrop.OpacityMask}"-->
+                                <Rectangle.OpacityMask>
+                                    <LinearGradientBrush StartPoint="0%,0%"
+                                                        EndPoint="0%,100%">
+                                        <GradientStop Offset="0"
+                                                    Color="Black"/>
+                                        <GradientStop Offset="0.125"
+                                                    Color="#E0000000"/>
+                                        <GradientStop Offset="0.375"
+                                                    Color="#90000000"/>
+                                        <GradientStop Offset="1"
+                                                    Color="Transparent"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.OpacityMask>
+                                <Rectangle.Fill>
+                                    <VisualBrush Stretch="Fill">
+                                        <VisualBrush.Visual>
+                                            <LayoutTransformControl>
+                                                <LayoutTransformControl.LayoutTransform>
+                                                    <ScaleTransform ScaleX="4" ScaleY="4"/>
+                                                </LayoutTransformControl.LayoutTransform>
+                                                <Canvas Name="svg8" Width="152.4" Height="41.010418" Margin="0,0,100,0">
+                                                    <!--Canvas.OpacityMask>
+                                                        <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                                                            <GradientStop Offset="0" Color="Black"/>
+                                                            <GradientStop Offset="1" Color="Transparent"/>
+                                                        </LinearGradientBrush>
+                                                    </Canvas.OpacityMask-->
+                                                    <!--Rectangle Name="rect8733" Canvas.Left="2.3186993e-07" Canvas.Top="2.3186993e-07" Width="152.39999" Height="41.010418" Fill="{StaticResource radialGradient1017}" StrokeThickness="0.529167"/-->
+                                                    <Canvas Name="WhiteZone_g930" ClipToBounds="True">
+                                                        <!--Canvas.RenderTransform>
+                                                            <TranslateTransform X="0" Y="5.2916668"/>
+                                                        </Canvas.RenderTransform-->
+                                                        <Canvas.OpacityMask>
+                                                            <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                                                                <GradientStop Offset="0" Color="Black"/>
+                                                                <GradientStop Offset="1" Color="Transparent"/>
+                                                            </LinearGradientBrush>
+                                                        </Canvas.OpacityMask>
+                                                        <Path Name="path901"
+                                                            Fill="#80FFFFFF"
+                                                            StrokeThickness="0.264583"
+                                                            Data="M 111.62714 38.050825 C 93.916145 14.371432 27.555963 11.704152 1.2345393 -1.3083494 H -2.9324184 V 72.930064 H 113.37416"/>
+                                                        <Path Name="path895"
+                                                            Fill="#80FFFFFF"
+                                                            StrokeThickness="0.264583"
+                                                            Data="M 101.04381 48.634159 C 83.332811 24.954766 27.555963 11.704152 1.2345393 -1.3083494 H -2.9324184 V 72.930064 H 113.37416"/>
+                                                    </Canvas>
+                                                    <Canvas Name="g926">
+                                                        <!--Canvas.OpacityMask>
+                                                            <LinearGradientBrush StartPoint="100%,25%" EndPoint="62.5%,75%">
+                                                                <GradientStop Offset="0" Color="Black"/>
+                                                                <GradientStop Offset="1" Color="Transparent"/>
+                                                            </LinearGradientBrush>
+                                                        </Canvas.OpacityMask-->
+                                                        <Path Name="RightArcLightGrey_path877" StrokeThickness="0.264583"
+                                                            Data="M 33.723133 -6.5188829 C 85.979843 4.3555345 125.58886 0.56460048 137.06012 20.433396 145.2395 34.600488 118.51968 51.359231 118.51968 51.359231">
+                                                            <Path.Fill>
+                                                                <LinearGradientBrush StartPoint="78%,0%" EndPoint="72%,50%">
+                                                                    <GradientStop Offset="0" Color="#80DBE0F7"/>
+                                                                    <GradientStop Offset="1" Color="#00DBE0F7"/>
+                                                                </LinearGradientBrush>
+                                                            </Path.Fill>
+                                                        </Path>
+                                                        <Path Name="RightArcPurple_path875" Fill="#FF99A4EA" StrokeThickness="0.264583"
+                                                            Data="M 30.548131 -6.7834663 C 82.105563 7.0313059 122.41384 0.30001713 133.8851 20.168812 142.06448 34.335904 118.55654 47.977378 112.69883 51.35933 47.36975 89.07709 -31.172466 -23.32145 30.548131 -6.7834663 Z">
+                                                            <Path.Fill>
+                                                                <LinearGradientBrush StartPoint="78%,0%" EndPoint="72%,50%">
+                                                                    <GradientStop Offset="0" Color="#FF99A4EA"/>
+                                                                    <GradientStop Offset="1" Color="#0099A4EA"/>
+                                                                </LinearGradientBrush>
+                                                            </Path.Fill>
+                                                        </Path>
+                                                        <Ellipse Name="CenterWhitePoofRing_path883" Canvas.Left="56.8" Width="68.9" Canvas.Top="-13.1" Height="68.9" StrokeThickness="0.529167">
+                                                            <Ellipse.Fill>
+                                                                <RadialGradientBrush>
+                                                                    <GradientStop Offset="0" Color="#00FFFFFF"/>
+                                                                    <GradientStop Offset="0.5" Color="#FFFFFFFF"/>
+                                                                    <GradientStop Offset="1" Color="#00FFFFFF"/>
+                                                                </RadialGradientBrush>
+                                                            </Ellipse.Fill>
+                                                            <Ellipse.OpacityMask>
+                                                                <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                                                                    <GradientStop Offset="0" Color="Black"/>
+                                                                    <GradientStop Offset="0.25" Color="Transparent"/>
+                                                                    <GradientStop Offset="0.375" Color="Black"/>
+                                                                </LinearGradientBrush>
+                                                            </Ellipse.OpacityMask>
+                                                            <!--Ellipse.RenderTransform>
+                                                                <RotateTransform Angle="12.179054" CenterX="34.460796" CenterY="17.199707"/>
+                                                            </Ellipse.RenderTransform-->
+                                                            <Ellipse.RenderTransform>
+                                                                <TransformGroup>
+                                                                    <ScaleTransform ScaleX="1" ScaleY="0.499274310595"/>
+                                                                    <RotateTransform Angle="12.179054"/>
+                                                                </TransformGroup>
+                                                            </Ellipse.RenderTransform>
+                                                        </Ellipse>
+                                                    </Canvas>
+                                                    <Path Name="CenterBlue_path903" Fill="#BFA8C7FF" StrokeThickness="0.264583"
+                                                        Data="m 41.057077 13.170198 c 15.185258 3.02977 38.082282 6.921849 48.388369 17.227935 C 56.265618 39.288641 55.254189 21.366904 41.057077 13.170198 Z">
+                                                        <Path.RenderTransform>
+                                                            <TranslateTransform X="0" Y="-5.2916672"/>
+                                                        </Path.RenderTransform>
+                                                    </Path>
+                                                    <Canvas Name="TopCenter_g921">
+                                                        <Canvas.RenderTransform>
+                                                            <TranslateTransform X="0" Y="15.875001"/>
+                                                        </Canvas.RenderTransform>
+                                                        <Canvas.OpacityMask>
+                                                            <LinearGradientBrush StartPoint="0,0" EndPoint="150,0">
+                                                                <GradientStop Offset="0" Color="Black"/>
+                                                                <GradientStop Offset="1" Color="Transparent"/>
+                                                            </LinearGradientBrush>
+                                                        </Canvas.OpacityMask>
+                                                        <Path Name="TopCenterBlue_path917" Fill="#BF9FBEFF" StrokeThickness="0.264583"
+                                                            Data="M 177.27978 -34.498291 156.13313 -6.9673032 C 137.87653 -11.859144 66.390954 -10.70004 53.767913 -8.4721951 41.144875 -6.2443504 35.725567 -9.6580128 22.872687 -22.510892 l 15.365087 -13.248419"/>
+                                                        <Path Name="TopCenterPurple_path915" Fill="#BF97A0FC" StrokeThickness="0.264583"
+                                                            Data="M 175.69227 -35.027458 154.54562 -7.4964699 C 136.28902 -12.388311 66.236304 -11.975192 53.767912 -9.0013618 41.299523 -6.0275314 35.725567 -9.6580125 22.872687 -22.510892 l 13.777586 -13.777586"/>
+                                                    </Canvas>
+                                                    <Path Name="TopLeftSwoopLarge_path1043" Fill="#FFC4E1FF" StrokeThickness="0.264583"
+                                                        Data="M 41.202774 14.287124 C 27.905199 10.643346 17.382096 10.650361 7.2547555 4.3558263 -7.450876 -4.7842935 8.8938858 -7.969932 8.8938858 -7.969932 c 0 0 -8.15994071 1.4688675 -2.5158965 7.11291174 C 16.138393 8.9033845 36.08396 10.249636 41.202774 14.287124 Z"/>
+                                                    <Path Name="TopLeftSwoopSmall_path1045" Fill="#FFC4E1FF" StrokeThickness="0.264583"
+                                                        Data="M 19.806244 5.7015013 C 27.634084 6.3339014 32.374487 7.2666571 35.143309 8.1494364 31.001054 8.4259428 29.822997 7.8429031 27.697802 7.6114493 25.3826 7.3593018 22.258497 7.0297428 19.806244 5.7015013 Z"/>
+                                                </Canvas>
+                                            </LayoutTransformControl>
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <StackPanel Orientation="Vertical"
+                                        Margin="28,21,28,42"
+                                        HorizontalAlignment="Stretch">
+                                <TextBlock Classes="beegHeader"
+                                        Text="{Binding SelectedItem.Header, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                                <TextBlock Classes="beegSubHeader"
+                                        Text="{Binding SelectedItem.Tag, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                            </StackPanel>
+                        </Panel>
+                        <ScrollViewer
+                            HorizontalScrollBarVisibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SelectedItem.(ScrollViewer.HorizontalScrollBarVisibility)}"
+                            VerticalScrollBarVisibility="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SelectedItem.(ScrollViewer.VerticalScrollBarVisibility)}">
+                            <StackPanel Orientation="Vertical">
+                                <Control Height="{Binding #HeaderContainer.Bounds.Height}"/>
+                                <ContentPresenter
+                                        Name="PART_SelectedContentHost"
+                                        Margin="{TemplateBinding Padding}"                           
+                                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                        Content="{TemplateBinding SelectedContent}"
+                                        ContentTemplate="{TemplateBinding SelectedContentTemplate}">
+                                </ContentPresenter>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </Panel>
+                </DockPanel>
+                <!--/Border-->
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <Style Selector="TabControl.sidebar > TabItem">       
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Foreground" Value="#FF656565"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Width" Value="180"/>
+        <Setter Property="FontSize" Value="{DynamicResource ControlContentThemeFontSize}"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="Padding" Value="9,7"/>
+        <Setter Property="MinHeight" Value="0" />
+        <!--Setter Property="Opacity" Value="0.5"/>
+        <Setter Property="Transitions">
+            <Transitions>
+                <DoubleTransition Property="Opacity" Duration="0:0:0.150"/>
+            </Transitions>
+        </Setter-->
+        <Setter Property="(ScrollViewer.HorizontalScrollBarVisibility)" Value="Auto"/>
+        <Setter Property="(ScrollViewer.VerticalScrollBarVisibility)" Value="Auto"/>
+    </Style>
+    <Style Selector="TabControl.sidebar > TabItem /template/ Border#PART_SelectedPipe">
+        <Setter Property="Width" Value="0" />
+        <Setter Property="Height" Value="0" />
+    </Style>
+    <Style Selector="TabControl.sidebar > TabItem:selected /template/ Border#PART_SelectedPipe">
+        <Setter Property="IsVisible" Value="False" />
+    </Style>
+    <Style Selector="TabControl.sidebar > TabItem:pointerover /template/ Border#PART_LayoutRoot">
+        <!--Setter Property="Opacity" Value="1"/-->
+        <Setter Property="Background" Value="Blue"/>
+        <Setter Property="TextBlock.Foreground" Value="Red"/>
+    </Style>
+    <!--Style Selector="TabControl.sidebar > TabItem:pointerover">
+        <Setter Property="Background" Value="{DynamicResource SystemAccentColorLight2}"/>
+    </Style>
+    <Style Selector="TabControl.sidebar > TabItem:selected">
+        <Setter Property="Opacity" Value="1"/>
+    </Style-->
+    <Style Selector="TabControl.sidebar > TabItem:selected">
+        <Setter Property="Background" Value="#FFFF00FF"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <!--Setter Property="Background" Value="{DynamicResource SystemAccentColorLight1}"/-->
+    </Style>
+</Styles>

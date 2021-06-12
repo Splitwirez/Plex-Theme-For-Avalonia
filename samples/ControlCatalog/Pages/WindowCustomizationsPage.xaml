@@ -1,0 +1,22 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ControlCatalog.Pages.WindowCustomizationsPage">
+  <StackPanel Spacing="10" Margin="25">
+    <CheckBox x:Name="ExtendClientAreaToDecorationsCheckBox" Content="Allow window content to bleed into Titlebar" IsChecked="{Binding ExtendClientAreaEnabled}" />
+    <!--CheckBox Content="Title Bar" IsChecked="{Binding SystemTitleBarEnabled}" />    
+    <CheckBox Content="Prefer System Chrome" IsChecked="{Binding PreferSystemChromeEnabled}" /-->
+    <StackPanel Spacing="0" Margin="0,20,0,0" IsVisible="{Binding #ExtendClientAreaToDecorationsCheckBox.IsChecked}">
+      <TextBlock Text="Titlebar height (drag to extreme left for default)"/>
+      <Slider Minimum="-1" Maximum="200" Value="{Binding TitleBarHeight}" IsVisible="{Binding #ExtendClientAreaToDecorationsCheckBox.IsChecked}"/>
+    </StackPanel>
+    <!--ComboBox x:Name="TransparencyLevels" SelectedIndex="{Binding TransparencyLevel}">
+      <ComboBoxItem>None</ComboBoxItem>
+      <ComboBoxItem>Transparent</ComboBoxItem>
+      <ComboBoxItem>Blur</ComboBoxItem>
+      <ComboBoxItem>AcrylicBlur</ComboBoxItem>
+    </ComboBox-->
+  </StackPanel>
+</UserControl>
