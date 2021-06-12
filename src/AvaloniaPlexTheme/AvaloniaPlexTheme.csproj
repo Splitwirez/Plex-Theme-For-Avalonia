@@ -8,7 +8,7 @@
 		<AvaloniaResource Include="Assets\**" />
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\AvaloniaThemeColorization\AvaloniaThemeColorization.csproj" />
+		<ProjectReference Include="..\..\build\Avalonia-Theme-Colorization\src\AvaloniaThemeColorization\AvaloniaThemeColorization.csproj" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Avalonia" Version="0.10.0" />
