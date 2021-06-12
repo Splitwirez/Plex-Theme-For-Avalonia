@@ -1,1 +1,1 @@
-# PlexThemeForAvalonia
+# Plex-Theme-For-Avalonia
