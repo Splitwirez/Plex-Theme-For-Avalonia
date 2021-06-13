@@ -315,7 +315,8 @@ namespace AvaloniaPlexTheme
                     new ThemeRuleGroup("Idle")
                     {
                         new SolidColorBrushThemeRule("Background", SCM_CTRL, saturation: Over100ToOver255(63), value: Over100ToOver255(56)),
-                        new SolidColorBrushThemeRule("BorderBrush", SCM_CTRL, saturation: Over100ToOver255(63), value: Over100ToOver255(46)),
+                        new SolidColorBrushThemeRule("BorderBrush0", SCM_CTRL, saturation: Over100ToOver255(63), value: Over100ToOver255(46)),
+                        new SolidColorBrushThemeRule("BorderBrush1", SCM_CTRL, saturation: Over100ToOver255(29), value: Over100ToOver255(100)), //Over100ToOver255(63), value: Over100ToOver255(46)),
                         new SolidColorBrushThemeRule("CheckMark", SCM_CTRL, saturation: Over100ToOver255(0), value: Over100ToOver255(100))
                     }
                 }

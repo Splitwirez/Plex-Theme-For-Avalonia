@@ -88,7 +88,7 @@
 
 	<Style Selector=":is(TemplatedControl).toolsMenuArea CheckBox">
 		<Setter Property="Background" Value="{DynamicResource CheckBox-ToolsMenuArea-Idle-Background}" />
-		<Setter Property="BorderBrush" Value="{DynamicResource CheckBox-ToolsMenuArea-Idle-BorderBrush}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource CheckBox-ToolsMenuArea-Idle-BorderBrush0}" />
 		<Setter Property="Template">
 			<ControlTemplate>
 				<DockPanel>
@@ -99,7 +99,11 @@
 						Margin="1,0,1,1">
 						<Border x:Name="PART_Border"
 								CornerRadius="3"
-								BorderThickness="{TemplateBinding BorderThickness}"/>
+								BorderThickness="{TemplateBinding BorderThickness}">
+							<Border CornerRadius="2"
+								BorderBrush="{DynamicResource CheckBox-ToolsMenuArea-Idle-BorderBrush1}"
+								BorderThickness="1"/>
+						</Border>
 						<TemplatedControl Classes="toolsMenuControlBackground hover"
 										Margin="-1,0,-1,-1"/>
 						<TemplatedControl Classes="toolsMenuControlBackground pressed"
@@ -127,7 +131,14 @@
 			</ControlTemplate>
 		</Setter>
 	</Style>
-
+	<Style Selector=":is(TemplatedControl).toolsMenuArea CheckBox /template/ Border#PART_Border > Border">
+		<Setter Property="OpacityMask">
+			<LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+				<GradientStop Offset="0" Color="Black"/>
+				<GradientStop Offset="1" Color="#7F000000"/>
+			</LinearGradientBrush>
+		</Setter>
+	</Style>
 
 	<Style Selector=":is(TemplatedControl).toolsMenuArea CheckBox /template/ Panel#CheckArea :is(Shape)">
 		<Setter Property="Fill" Value="{DynamicResource CheckBox-ToolsMenuArea-Idle-CheckMark}" />

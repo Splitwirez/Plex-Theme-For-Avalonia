@@ -94,7 +94,11 @@
 						Margin="1,0,1,1">
 						<Border x:Name="PART_Border"
 								CornerRadius="99999999"
-								BorderThickness="{TemplateBinding BorderThickness}"/>
+								BorderThickness="{TemplateBinding BorderThickness}">
+							<Border CornerRadius="99999999"
+								BorderBrush="{DynamicResource CheckBox-ToolsMenuArea-Idle-BorderBrush1}"
+								BorderThickness="1"/>
+						</Border>
 						<TemplatedControl Classes="toolsMenuControlBackground hover"
 										Margin="-1,0,-1,-1"/>
 						<TemplatedControl Classes="toolsMenuControlBackground pressed"
@@ -122,15 +126,15 @@
 			</ControlTemplate>
 		</Setter>
 	</Style>
+	<Style Selector=":is(TemplatedControl).toolsMenuArea RadioButton /template/ Border#PART_Border > Border">
+		<Setter Property="OpacityMask">
+			<LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+				<GradientStop Offset="0" Color="Black"/>
+				<GradientStop Offset="1" Color="#7F000000"/>
+			</LinearGradientBrush>
+		</Setter>
+	</Style>
 	<Style Selector=":is(TemplatedControl).toolsMenuArea RadioButton /template/ TemplatedControl.toolsMenuControlBackground /template/ Border">
-				<!--:is(TemplatedControl).toolsMenuArea RadioButton /template/ TemplatedControl.toolsMenuControlBackground.hover /template/ Border.rootBorder,
-					:is(TemplatedControl).toolsMenuArea RadioButton /template/ TemplatedControl.toolsMenuControlBackground.hover /template/ Border.rootBorder > Panel > Border:not(.controlFrame),
-					:is(TemplatedControl).toolsMenuArea RadioButton /template/ TemplatedControl.toolsMenuControlBackground.hover /template/ Border.rootBorder > Panel > Border.controlFrame,
-					:is(TemplatedControl).toolsMenuArea RadioButton /template/ TemplatedControl.toolsMenuControlBackground.hover /template/ Border.rootBorder > Panel > Border.controlFrame > Border,
-					:is(TemplatedControl).toolsMenuArea RadioButton /template/ TemplatedControl.toolsMenuControlBackground.pressed /template/ Border.rootBorder,
-					:is(TemplatedControl).toolsMenuArea RadioButton /template/ TemplatedControl.toolsMenuControlBackground.pressed /template/ Border.rootBorder > Panel > Border:not(.controlFrame),
-					:is(TemplatedControl).toolsMenuArea RadioButton /template/ TemplatedControl.toolsMenuControlBackground.pressed /template/ Border.rootBorder > Panel > Border.controlFrame,
-					:is(TemplatedControl).toolsMenuArea RadioButton /template/ TemplatedControl.toolsMenuControlBackground.pressed /template/ Border.rootBorder > Panel > Border.controlFrame > Border-->
 		<Setter Property="CornerRadius" Value="99999999" />
 	</Style>
 	<!--Style Selector="TemplatedControl.toolsMenuControlBackground /template/ Border.rootBorder">
