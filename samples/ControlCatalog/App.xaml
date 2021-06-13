@@ -1,74 +1,96 @@
 <Application xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:plex="splitwirez://AvaloniaPlexTheme"
-             x:Class="ControlCatalog.App">
-  <Application.Styles>
-    <!--FluentTheme/-->
-    
-    <plex:PlexTheme/>
-    <!--StyleInclude Source="avares://AvaloniaUI.Themes.Plex/Internal/Plex.axaml"/-->
+						 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+						 xmlns:plex="splitwirez://AvaloniaPlexTheme"
+						 x:Class="ControlCatalog.App">
+	<Application.Styles>
+		<!--FluentTheme/-->
+		
+		<plex:PlexTheme/>
+		<!--StyleInclude Source="avares://AvaloniaUI.Themes.Plex/Internal/Plex.axaml"/-->
 
-    <Style Selector="TextBlock.h1">
-      <Setter Property="FontSize" Value="16" />
-      <Setter Property="FontWeight" Value="Medium" />
-      <Setter Property="Foreground" Value="#FF0166C0"/>
-    </Style>
-    <Style Selector="TextBlock.h2">
-      <Setter Property="FontSize" Value="14" />
-      <Setter Property="Foreground" Value="#FF458ED3"/>
-    </Style>
-    <Style Selector="TextBlock.h3">
-      <Setter Property="FontSize" Value="12" />
-    </Style>
-    <Style Selector="Label.h1">
-      <Setter Property="FontSize" Value="16" />
-      <Setter Property="FontWeight" Value="Medium" />
-      <Setter Property="Foreground" Value="#FF0166C0"/>
-    </Style>
-    <Style Selector="Label.h2">
-      <Setter Property="FontSize" Value="14" />
-      <Setter Property="Foreground" Value="#FF458ED3"/>
-    </Style>
-    <Style Selector="Label.h3">
-      <Setter Property="FontSize" Value="12" />
-    </Style>
+		<Style Selector="TextBlock.h1">
+			<Setter Property="FontSize" Value="16" />
+			<Setter Property="FontWeight" Value="Medium" />
+			<Setter Property="Foreground" Value="#FF0166C0"/>
+		</Style>
+		<Style Selector="TextBlock.h2">
+			<Setter Property="FontSize" Value="14" />
+			<Setter Property="Foreground" Value="#FF458ED3"/>
+		</Style>
+		<Style Selector="TextBlock.h3">
+			<Setter Property="FontSize" Value="12" />
+		</Style>
+		<Style Selector="Label.h1">
+			<Setter Property="FontSize" Value="16" />
+			<Setter Property="FontWeight" Value="Medium" />
+			<Setter Property="Foreground" Value="#FF0166C0"/>
+		</Style>
+		<Style Selector="Label.h2">
+			<Setter Property="FontSize" Value="14" />
+			<Setter Property="Foreground" Value="#FF458ED3"/>
+		</Style>
+		<Style Selector="Label.h3">
+			<Setter Property="FontSize" Value="12" />
+		</Style>
 
-    <Style Selector="TextBlock.beegHeader,
-                    TextBlock.beegSubHeader,
-                    TextBlock.groupHeader,
-                    TextBlock.description">
-      <Setter Property="TextWrapping" Value="Wrap" />
-      <Setter Property="TextAlignment" Value="Left" />
-    </Style>
-    <Style Selector="Label.beegSubHeader">
-      <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
-      <Setter Property="TextBlock.TextAlignment" Value="Left" />
-    </Style>
-    <Style Selector="TextBlock.beegHeader">
-      <Setter Property="FontSize" Value="23" />
-      <Setter Property="Foreground" Value="#FF0166C0"/>
-    </Style>
-    <Style Selector="Label.beegSubHeader">
-      <Setter Property="Foreground" Value="#FF656565"/>
-      <!--Setter Property="Foreground" Value="#FF458ED3"/-->
-    </Style>
-    <Style Selector="TextBlock.beegSubHeader">
-      <Setter Property="Foreground" Value="#FF656565"/>
-    </Style>
-    <Style Selector="TextBlock.groupHeader">
-      <Setter Property="FontSize" Value="17" />
-      <Setter Property="Foreground" Value="#FF619DE5"/>
-    </Style>
-    <Style Selector="TextBlock.groupHeader.emphasize">
-      <Setter Property="Foreground" Value="#FF0267C1"/>
-    </Style>
-    <Style Selector="TextBlock.description">
-      <Setter Property="Foreground" Value="#FF656565"/>
-    </Style>
-    <Style Selector="TextBlock.description">
-      <Setter Property="Foreground" Value="#FF656565"/>
-    </Style>
+		<Style Selector="TextBlock.beegHeader,
+										TextBlock.beegSubHeader,
+										TextBlock.groupHeader,
+										TextBlock.description">
+			<Setter Property="TextWrapping" Value="Wrap" />
+			<Setter Property="TextAlignment" Value="Left" />
+		</Style>
+		<Style Selector="Label.beegSubHeader">
+			<Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+			<Setter Property="TextBlock.TextAlignment" Value="Left" />
+		</Style>
+		<Style Selector="TextBlock.beegHeader">
+			<Setter Property="FontSize" Value="23" />
+			<Setter Property="Foreground" Value="#FF0166C0"/>
+		</Style>
+		<Style Selector="Label.beegSubHeader">
+			<Setter Property="Foreground" Value="#FF656565"/>
+			<!--Setter Property="Foreground" Value="#FF458ED3"/-->
+		</Style>
+		<Style Selector="TextBlock.beegSubHeader">
+			<Setter Property="Foreground" Value="#FF656565"/>
+		</Style>
+		<Style Selector="TextBlock.groupHeader">
+			<Setter Property="FontSize" Value="17" />
+			<Setter Property="Foreground" Value="#FF619DE5"/>
+		</Style>
+		<Style Selector="TextBlock.groupHeader.emphasize">
+			<Setter Property="Foreground" Value="#FF0267C1"/>
+		</Style>
+		<Style Selector="TextBlock.description">
+			<Setter Property="Foreground" Value="#FF656565"/>
+		</Style>
+		<Style Selector="TextBlock.description">
+			<Setter Property="Foreground" Value="#FF656565"/>
+		</Style>
 
-    <StyleInclude Source="/SideBar.xaml"/>
-  </Application.Styles>
+		<Style Selector="HeaderedContentControl.groupBox">
+			<Setter Property="Padding" Value="2"/>
+			<Setter Property="Template">
+				<ControlTemplate>
+					<StackPanel Spacing="8">
+						<ContentPresenter Content="{TemplateBinding Header}"
+										HorizontalAlignment="Left"
+										TextBlock.Foreground="{DynamicResource Window-Foreground}"/>
+						<Panel>
+							<TemplatedControl Classes="toolsMenuBackground"/>
+							<ContentPresenter x:Name="PART_ContentPresenter"
+											ContentTemplate="{TemplateBinding ContentTemplate}"
+											Content="{TemplateBinding Content}"
+											HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+											VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+											Padding="{TemplateBinding Padding}" />
+						</Panel>
+					</StackPanel>
+				</ControlTemplate>
+			</Setter>
+		</Style>
+
+		<StyleInclude Source="/SideBar.xaml"/>
+	</Application.Styles>
 </Application>

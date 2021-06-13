@@ -16,7 +16,7 @@ namespace ControlCatalog
         public MainView()
         {
             AvaloniaXamlLoader.Load(this);
-            if (AvaloniaLocator.Current.GetService<IRuntimePlatform>().GetRuntimeInfo().IsDesktop)
+            /*if (AvaloniaLocator.Current.GetService<IRuntimePlatform>().GetRuntimeInfo().IsDesktop)
             {
                 IList tabItems = ((IList)this.FindControl<TabControl>("Sidebar").Items);
                 tabItems.Add(new TabItem()
@@ -24,7 +24,7 @@ namespace ControlCatalog
                     Header = "Dialogs",
                     Content = new DialogsPage()
                 });
-            }
+            }*/
 
             /*var themes = this.Find<ComboBox>("Themes");
             themes.SelectionChanged += (sender, e) =>

@@ -217,7 +217,7 @@
         </Setter>
     </Style>
 
-    <Style Selector="TabControl.sidebar > TabItem">       
+    <Style Selector="TabControl.sidebar > TabItem">
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Foreground" Value="#FF656565"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -257,5 +257,10 @@
         <Setter Property="Background" Value="#FFFF00FF"/>
         <Setter Property="Foreground" Value="Black"/>
         <!--Setter Property="Background" Value="{DynamicResource SystemAccentColorLight1}"/-->
+    </Style>
+
+
+    <Style Selector="TabControl.sidebar > TabItem.nyiTab">
+        <Setter Property="IsVisible" Value="False"/>
     </Style>
 </Styles>

@@ -1,0 +1,157 @@
+<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:plex="splitwirez://AvaloniaPlexTheme">
+	<Style Selector="RadioButton">
+		<Setter Property="Padding" Value="4,0,0,0" />
+		<Setter Property="HorizontalContentAlignment" Value="Left" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="Background" Value="{DynamicResource CheckBox-Idle-Background}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource CheckBox-Idle-BorderBrush}" />
+		<Setter Property="BorderThickness" Value="1" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<DockPanel>
+					<Border x:Name="PART_Border"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							DockPanel.Dock="Left"
+							CornerRadius="99999999"
+							Width="13"
+							Height="13">
+						<Panel>
+							<Ellipse Width="7"
+									Height="7"
+									IsVisible="{TemplateBinding IsChecked}"
+									HorizontalAlignment="Center"
+									VerticalAlignment="Center"/>
+							<Rectangle Width="7"
+									Height="7"
+									HorizontalAlignment="Center"
+									VerticalAlignment="Center"/>
+						</Panel>
+					</Border>
+					<ContentPresenter x:Name="ContentPresenter"
+									ContentTemplate="{TemplateBinding ContentTemplate}"
+									Content="{TemplateBinding Content}"
+									Margin="{TemplateBinding Padding}"
+									HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+									VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+									Grid.Column="1" />
+				</DockPanel>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+
+
+	<Style Selector="RadioButton /template/ Border#PART_Border">
+		<Setter Property="Background" Value="{TemplateBinding Background}" />
+		<Setter Property="BorderBrush" Value="{TemplateBinding BorderBrush}" />
+	</Style>
+
+
+	<Style Selector="RadioButton /template/ Border#PART_Border :is(Shape)">
+		<Setter Property="Fill" Value="{DynamicResource CheckBox-Idle-CheckMark}" />
+	</Style>
+	<Style Selector="RadioButton:not(:indeterminate) /template/ Border#PART_Border Rectangle,
+					RadioButton:not(:indeterminate) /template/ Panel#CheckArea Rectangle">
+		<Setter Property="IsVisible" Value="False" />
+	</Style>
+
+	<Style Selector="RadioButton:pointerover /template/ Border#PART_Border">
+		<Setter Property="Background" Value="{DynamicResource CheckBox-Hover-Background}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource CheckBox-Hover-BorderBrush}" />
+	</Style>
+	<Style Selector="RadioButton:pointerover /template/ Border#PART_Border :is(Shape)">
+		<Setter Property="Fill" Value="{DynamicResource CheckBox-Hover-CheckMark}" />
+	</Style>
+
+	<Style Selector="RadioButton:pressed /template/ Border#PART_Border">
+		<Setter Property="Background" Value="{DynamicResource CheckBox-Pressed-Background}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource CheckBox-Pressed-BorderBrush}" />
+	</Style>
+	<Style Selector="RadioButton:pressed /template/ Border#PART_Border :is(Shape)">
+		<Setter Property="Fill" Value="{DynamicResource CheckBox-Pressed-CheckMark}" />
+	</Style>
+
+	<Style Selector="RadioButton:disabled /template/ Border#PART_Border">
+		<Setter Property="Background" Value="{DynamicResource CheckBox-Disabled-Background}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource CheckBox-Disabled-BorderBrush}" />
+	</Style>
+	<Style Selector="RadioButton:disabled /template/ Border#PART_Border :is(Shape)">
+		<Setter Property="Fill" Value="{DynamicResource CheckBox-Disabled-CheckMark}" />
+	</Style>
+
+
+	<Style Selector=":is(TemplatedControl).toolsMenuArea RadioButton">
+		<Setter Property="Background" Value="{DynamicResource CheckBox-ToolsMenuArea-Idle-Background}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource CheckBox-ToolsMenuArea-Idle-BorderBrush}" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<DockPanel>
+					<Panel x:Name="CheckArea"
+						DockPanel.Dock="Left"
+						Width="13"
+						Height="13"
+						Margin="1,0,1,1">
+						<Border x:Name="PART_Border"
+								CornerRadius="99999999"
+								BorderThickness="{TemplateBinding BorderThickness}"/>
+						<TemplatedControl Classes="toolsMenuControlBackground hover"
+										Margin="-1,0,-1,-1"/>
+						<TemplatedControl Classes="toolsMenuControlBackground pressed"
+										Margin="-1,0,-1,-1"
+										IsVisible="{TemplateBinding IsPressed}"/>
+						
+						<Ellipse Width="7"
+								Height="7"
+								IsVisible="{TemplateBinding IsChecked}"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"/>
+						<Rectangle Width="7"
+								Height="7"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"/>
+					</Panel>
+					<ContentPresenter x:Name="ContentPresenter"
+									ContentTemplate="{TemplateBinding ContentTemplate}"
+									Content="{TemplateBinding Content}"
+									Margin="{TemplateBinding Padding}"
+									HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+									VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+									Grid.Column="1" />
+				</DockPanel>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Style Selector=":is(TemplatedControl).toolsMenuArea RadioButton /template/ TemplatedControl.toolsMenuControlBackground /template/ Border">
+				<!--:is(TemplatedControl).toolsMenuArea RadioButton /template/ TemplatedControl.toolsMenuControlBackground.hover /template/ Border.rootBorder,
+					:is(TemplatedControl).toolsMenuArea RadioButton /template/ TemplatedControl.toolsMenuControlBackground.hover /template/ Border.rootBorder > Panel > Border:not(.controlFrame),
+					:is(TemplatedControl).toolsMenuArea RadioButton /template/ TemplatedControl.toolsMenuControlBackground.hover /template/ Border.rootBorder > Panel > Border.controlFrame,
+					:is(TemplatedControl).toolsMenuArea RadioButton /template/ TemplatedControl.toolsMenuControlBackground.hover /template/ Border.rootBorder > Panel > Border.controlFrame > Border,
+					:is(TemplatedControl).toolsMenuArea RadioButton /template/ TemplatedControl.toolsMenuControlBackground.pressed /template/ Border.rootBorder,
+					:is(TemplatedControl).toolsMenuArea RadioButton /template/ TemplatedControl.toolsMenuControlBackground.pressed /template/ Border.rootBorder > Panel > Border:not(.controlFrame),
+					:is(TemplatedControl).toolsMenuArea RadioButton /template/ TemplatedControl.toolsMenuControlBackground.pressed /template/ Border.rootBorder > Panel > Border.controlFrame,
+					:is(TemplatedControl).toolsMenuArea RadioButton /template/ TemplatedControl.toolsMenuControlBackground.pressed /template/ Border.rootBorder > Panel > Border.controlFrame > Border-->
+		<Setter Property="CornerRadius" Value="99999999" />
+	</Style>
+	<!--Style Selector="TemplatedControl.toolsMenuControlBackground /template/ Border.rootBorder">
+		<Setter Property="CornerRadius" Value="4"/>
+    </Style>
+	<Style Selector="TemplatedControl.toolsMenuControlBackground /template/ Border.rootBorder > Panel > Border:not(.controlFrame)">
+		<Setter Property="CornerRadius" Value="0,0,4,4"/>
+    </Style>
+	<Style Selector="TemplatedControl.toolsMenuControlBackground /template/ Border.rootBorder > Panel > Border.controlFrame">
+		<Setter Property="CornerRadius" Value="3"/>
+    </Style>
+	<Style Selector="TemplatedControl.toolsMenuControlBackground /template/ Border.rootBorder > Panel > Border.controlFrame > Border">
+		<Setter Property="CornerRadius" Value="3"/>
+    </Style-->
+
+
+	<Style Selector=":is(TemplatedControl).toolsMenuArea RadioButton /template/ Panel#CheckArea :is(Shape)">
+		<Setter Property="Fill" Value="{DynamicResource CheckBox-ToolsMenuArea-Idle-CheckMark}" />
+	</Style>
+	
+	<Style Selector=":is(TemplatedControl).toolsMenuArea RadioButton:pointerover:not(:pressed) /template/ Panel#CheckArea :is(Shape)">
+		<Setter Property="Fill" Value="{DynamicResource ToolsMenuAreaControl-Hover-Foreground}" />
+	</Style>
+</Styles>

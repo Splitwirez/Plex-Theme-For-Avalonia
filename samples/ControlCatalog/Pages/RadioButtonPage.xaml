@@ -1,41 +1,58 @@
 <UserControl xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="ControlCatalog.Pages.RadioButtonPage">
-  <StackPanel Orientation="Vertical" Spacing="4">
-    <!--TextBlock Classes="h1">RadioButton</TextBlock>
-    <TextBlock Classes="h2">Allows the selection of a single option of many</TextBlock-->
-
-    <StackPanel Orientation="Horizontal"
-                Margin="0,16,0,0"
-                HorizontalAlignment="Center"
-                Spacing="16">
-      <StackPanel Orientation="Vertical"
-                  Spacing="16">
-        <RadioButton IsChecked="True">Option 1</RadioButton>
-        <RadioButton>Option 2</RadioButton>
-        <RadioButton IsChecked="{x:Null}">Option 3</RadioButton>
-        <RadioButton IsEnabled="False">Disabled</RadioButton>
-      </StackPanel>
-      <StackPanel Orientation="Vertical"
-                  Spacing="16">
-        <RadioButton IsChecked="True" IsThreeState="True">Three States: Option 1</RadioButton>
-        <RadioButton IsChecked="False" IsThreeState="True">Three States: Option 2</RadioButton>
-        <RadioButton IsChecked="{x:Null}" IsThreeState="True">Three States: Option 3</RadioButton>
-        <RadioButton IsChecked="{x:Null}" IsThreeState="True" IsEnabled="False">Disabled</RadioButton>
-      </StackPanel>
-      <StackPanel Orientation="Vertical"
-                  Spacing="16">
-        <RadioButton GroupName="A" IsChecked="True">Group A: Option 1</RadioButton>
-        <RadioButton GroupName="A" IsEnabled="False">Group A: Disabled</RadioButton>
-        <RadioButton GroupName="B">Group B: Option 1</RadioButton>
-        <RadioButton GroupName="B" IsChecked="{x:Null}">Group B: Option 3</RadioButton>
-      </StackPanel>
-      <StackPanel Orientation="Vertical"
-                  Spacing="16">
-        <RadioButton GroupName="A" IsChecked="True">Group A: Option 2</RadioButton>
-        <RadioButton GroupName="B">Group B: Option 2</RadioButton>
-        <RadioButton GroupName="B" IsChecked="{x:Null}">Group B: Option 4</RadioButton>
-      </StackPanel>
-    </StackPanel>
-  </StackPanel>
+			xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			x:Class="ControlCatalog.Pages.RadioButtonPage">
+	<StackPanel Spacing="24">
+		<HeaderedContentControl Classes="groupBox"
+								Header="Standard variant">
+			<StackPanel Orientation="Horizontal"
+						Spacing="8">
+				<StackPanel Orientation="Vertical"
+						Spacing="8">
+					<RadioButton GroupName="A">Unchecked</RadioButton>
+					<RadioButton GroupName="B"
+								IsChecked="True">Checked</RadioButton>
+					<RadioButton GroupName="C"
+								IsChecked="{x:Null}">Indeterminate</RadioButton>
+					<RadioButton GroupName="D"
+								IsChecked="True"
+								IsEnabled="False">Checked + disabled</RadioButton>
+				</StackPanel>
+				<StackPanel Orientation="Vertical"
+						Spacing="8">
+					<RadioButton GroupName="S"
+								IsChecked="False">(Grouped) Unchecked</RadioButton>
+					<RadioButton GroupName="S"
+								IsChecked="True">(Grouped) Checked</RadioButton>
+					<RadioButton GroupName="S"
+								IsEnabled="False">(Grouped) Disabled</RadioButton>
+				</StackPanel>
+			</StackPanel>
+		</HeaderedContentControl>
+		<HeaderedContentControl Classes="groupBox toolsMenuArea"
+								Header="Tools/Menu area variant">
+			<StackPanel Orientation="Horizontal"
+						Spacing="8">
+				<StackPanel Orientation="Vertical"
+						Spacing="8">
+					<RadioButton GroupName="E">Unchecked</RadioButton>
+					<RadioButton GroupName="F"
+								IsChecked="True">Checked</RadioButton>
+					<RadioButton GroupName="G"
+								IsChecked="{x:Null}">Indeterminate</RadioButton>
+					<RadioButton GroupName="H"
+								IsChecked="True"
+								IsEnabled="False">Checked + Disabled</RadioButton>
+				</StackPanel>
+				<StackPanel Orientation="Vertical"
+						Spacing="8">
+					<RadioButton GroupName="T"
+								IsChecked="False">(Grouped) Unchecked</RadioButton>
+					<RadioButton GroupName="T"
+								IsChecked="True">(Grouped) Checked</RadioButton>
+					<RadioButton GroupName="T"
+								IsEnabled="False">(Grouped) Disabled</RadioButton>
+				</StackPanel>
+			</StackPanel>
+		</HeaderedContentControl>
+	</StackPanel>
 </UserControl>

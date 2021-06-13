@@ -119,7 +119,7 @@
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Panel>
-					<TemplatedControl Classes="toolsMenuControlBackground hover noAnim"/>
+					<TemplatedControl Classes="toolsMenuControlBackground hover"/>
 					<TemplatedControl Classes="toolsMenuControlBackground pressed" IsVisible="{TemplateBinding IsPressed}"/>
 					<ContentPresenter x:Name="PART_ContentPresenter"
 										Background="Transparent"
@@ -133,5 +133,8 @@
 				</Panel>
 			</ControlTemplate>
 		</Setter>
+	</Style>
+	<Style Selector=":is(TemplatedControl).toolsMenuArea Button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="TextBlock.Foreground" Value="{DynamicResource ToolsMenuAreaControl-Hover-Foreground}" />
 	</Style>
 </Styles>

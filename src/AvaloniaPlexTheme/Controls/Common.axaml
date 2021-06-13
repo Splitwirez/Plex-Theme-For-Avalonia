@@ -74,20 +74,17 @@
 			<ControlTemplate>
 				<Border Classes="rootBorder"
 						Background="{DynamicResource ToolsMenuAreaControl-BorderBrush0}"
-						CornerRadius="4"
 						Margin="0,1,0,0">
 						<!--BoxShadow="inset 0 -2 0 2 #40FFFFFF"-->
 						<!--0 0 0 1 #FF487CC4-->
 					<Panel>
 						<Border BorderBrush="{DynamicResource ToolsMenuAreaControl-BorderBrush1}"
-								CornerRadius="0,0,4,4"
 								BorderThickness="1,0,1,1"
 								VerticalAlignment="Bottom"
 								Height="6"/>
 						<Border Classes="controlFrame"
 								BorderBrush="{DynamicResource ToolsMenuAreaControl-BorderBrush2}"
 								BorderThickness="1"
-								CornerRadius="3"
 								Margin="1,-1,1,1">
 							<Border/>
 						</Border>
@@ -96,13 +93,27 @@
 			</ControlTemplate>
 		</Setter>
     </Style>
+	<Style Selector="TemplatedControl.toolsMenuControlBackground /template/ Border.rootBorder">
+		<Setter Property="CornerRadius" Value="4"/>
+    </Style>
+	<Style Selector="TemplatedControl.toolsMenuControlBackground /template/ Border.rootBorder > Panel > Border:not(.controlFrame)">
+		<Setter Property="CornerRadius" Value="0,0,4,4"/>
+    </Style>
+	<Style Selector="TemplatedControl.toolsMenuControlBackground /template/ Border.rootBorder > Panel > Border.controlFrame">
+		<Setter Property="CornerRadius" Value="3"/>
+    </Style>
+	<Style Selector="TemplatedControl.toolsMenuControlBackground /template/ Border.rootBorder > Panel > Border.controlFrame > Border">
+		<Setter Property="CornerRadius" Value="2"/>
+    </Style>
+
 	<Style Selector=":is(TemplatedControl) /template/ TemplatedControl.toolsMenuControlBackground.hover">
 		<Setter Property="Opacity" Value="0"/>
     </Style>
-	<Style Selector=":is(TemplatedControl):pointerover /template/ TemplatedControl.toolsMenuControlBackground.hover.noAnim">
+	<Style Selector=":is(TemplatedControl):pointerover /template/ TemplatedControl.toolsMenuControlBackground.hover">
+		<!--.noAnim-->
 		<Setter Property="Opacity" Value="1"/>
     </Style>
-	<Style Selector=":is(TemplatedControl):pointerover /template/ TemplatedControl.toolsMenuControlBackground.hover:not(.noAnim)">
+	<!--Style Selector=":is(TemplatedControl):pointerover /template/ TemplatedControl.toolsMenuControlBackground.hover:not(.noAnim)">
 		<Style.Animations>
 			<Animation Duration="0:0:0.125" FillMode="Both">
 				<KeyFrame Cue="100%">
@@ -119,7 +130,7 @@
 				</KeyFrame>
 			</Animation>
 		</Style.Animations>
-    </Style>
+    </Style-->
 
 
 	<Style Selector="TemplatedControl.toolsMenuControlBackground.hover /template/ Border.rootBorder Border.controlFrame">

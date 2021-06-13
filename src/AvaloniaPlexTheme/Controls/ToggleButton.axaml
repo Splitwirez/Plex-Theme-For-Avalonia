@@ -1,7 +1,7 @@
 <Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:plex="splitwirez://AvaloniaPlexTheme">
-	<Style Selector="RepeatButton">
+	<Style Selector="ToggleButton">
 		<Setter Property="HorizontalContentAlignment" Value="Center" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />
 		<Setter Property="Template">
@@ -41,7 +41,6 @@
 					</Border>
 					<Border x:Name="PressedBackground"
 							Classes="buttonBackground"
-							IsVisible="{TemplateBinding IsPressed}"
 							Background="{DynamicResource Button-Pressed-Background}"
 							BorderBrush="{DynamicResource Button-Pressed-BorderBrush}"
 							BorderThickness="{TemplateBinding BorderThickness}">
@@ -82,7 +81,7 @@
 			</ControlTemplate>
 		</Setter>
 	</Style>
-	<Style Selector="RepeatButton:not(:is(TemplatedControl).toolsMenuArea RepeatButton)">
+	<Style Selector="ToggleButton:not(:is(TemplatedControl).toolsMenuArea ToggleButton)">
 		<Setter Property="Background" Value="Transparent" />
 		<Setter Property="Foreground" Value="{DynamicResource Button-Foreground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource Button-Idle-BorderBrush0}" />
@@ -92,13 +91,13 @@
 	</Style>
 	
 	
-	<Style Selector="RepeatButton /template/ Border.buttonBackground">
+	<Style Selector="ToggleButton /template/ Border.buttonBackground">
 		<Setter Property="CornerRadius" Value="3"/>
 	</Style>
-	<Style Selector="RepeatButton /template/ Border.buttonBackground > Panel > Border">
+	<Style Selector="ToggleButton /template/ Border.buttonBackground > Panel > Border">
 		<Setter Property="CornerRadius" Value="2"/>
 	</Style>
-	<Style Selector="RepeatButton /template/ Border.buttonBackground > Panel > Border > Border">
+	<Style Selector="ToggleButton /template/ Border.buttonBackground > Panel > Border > Border">
 		<Setter Property="CornerRadius" Value="1"/>
 		<Setter Property="OpacityMask">
 			<LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
@@ -109,18 +108,25 @@
 			</LinearGradientBrush>
 		</Setter>
 	</Style>
-	<Style Selector="RepeatButton:pressed,
-					RepeatButton:pressed /template/ ContentPresenter#PART_ContentPresenter">
+	<Style Selector="ToggleButton:pressed,
+					ToggleButton:checked,
+					ToggleButton:checked /template/ ContentPresenter#PART_ContentPresenter,
+					ToggleButton:checked /template/ ContentPresenter#PART_ContentPresenter">
 		<Setter Property="TextBlock.Foreground" Value="{DynamicResource Button-Pressed-Foreground}" />
 	</Style>
+	<Style Selector="ToggleButton:not(:pressed, :checked) /template/ Border#PressedBackground">
+		<Setter Property="IsVisible" Value="False"/>
+	</Style>
 
-	<Style Selector=":is(TemplatedControl).toolsMenuArea RepeatButton">
+
+
+	<Style Selector=":is(TemplatedControl).toolsMenuArea ToggleButton">
 		<Setter Property="Padding" Value="12,8" />
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Panel>
 					<TemplatedControl Classes="toolsMenuControlBackground hover noAnim"/>
-					<TemplatedControl Classes="toolsMenuControlBackground pressed" IsVisible="{TemplateBinding IsPressed}"/>
+					<TemplatedControl x:Name="PressedBackground" Classes="toolsMenuControlBackground pressed"/>
 					<ContentPresenter x:Name="PART_ContentPresenter"
 										Background="Transparent"
 										BorderBrush="Transparent"
@@ -133,5 +139,12 @@
 				</Panel>
 			</ControlTemplate>
 		</Setter>
+	</Style>
+
+	<Style Selector=":is(TemplatedControl).toolsMenuArea ToggleButton:not(:pressed, :checked) /template/ TemplatedControl#PressedBackground">
+		<Setter Property="IsVisible" Value="False"/>
+	</Style>
+	<Style Selector=":is(TemplatedControl).toolsMenuArea ToggleButton:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="TextBlock.Foreground" Value="{DynamicResource ToolsMenuAreaControl-Hover-Foreground}" />
 	</Style>
 </Styles>

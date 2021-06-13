@@ -1,0 +1,146 @@
+<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:plex="splitwirez://AvaloniaPlexTheme">
+	<Style Selector="CheckBox">
+		<Setter Property="Padding" Value="4,0,0,0" />
+		<Setter Property="HorizontalContentAlignment" Value="Left" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="Background" Value="{DynamicResource CheckBox-Idle-Background}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource CheckBox-Idle-BorderBrush}" />
+		<Setter Property="BorderThickness" Value="1" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<DockPanel>
+					<Border x:Name="PART_Border"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							DockPanel.Dock="Left"
+							CornerRadius="3"
+							Width="13"
+							Height="13">
+							<!--CornerRadius="2"-->
+						<Panel>
+							<!--M 0 2 L 3 5 L 7 0 L 7 3 L 3 7 L 0 5 Z-->
+							<Path Data="M 0 2 L 2.5 4.5 L 7 0 L 7 2.5 L 2.5 7 L 0 4.5 Z"
+									IsVisible="{TemplateBinding IsChecked}"
+									HorizontalAlignment="Center"
+									VerticalAlignment="Center"/>
+							<Rectangle Width="7"
+									Height="7"
+									HorizontalAlignment="Center"
+									VerticalAlignment="Center"/>
+						</Panel>
+					</Border>
+					<ContentPresenter x:Name="ContentPresenter"
+									ContentTemplate="{TemplateBinding ContentTemplate}"
+									Content="{TemplateBinding Content}"
+									Margin="{TemplateBinding Padding}"
+									HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+									VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+									Grid.Column="1" />
+									<!--TextBlock.TextWrapping="Wrap"-->
+				</DockPanel>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+
+
+	<Style Selector="CheckBox /template/ Border#PART_Border">
+		<Setter Property="Background" Value="{TemplateBinding Background}" />
+		<Setter Property="BorderBrush" Value="{TemplateBinding BorderBrush}" />
+	</Style>
+
+	<!--Style Selector="CheckBox:not(:is(TemplatedControl).toolsMenuArea CheckBox)">
+	</Style-->
+
+
+	<Style Selector="CheckBox /template/ Border#PART_Border :is(Shape)">
+		<Setter Property="Fill" Value="{DynamicResource CheckBox-Idle-CheckMark}" />
+	</Style>
+	<Style Selector="CheckBox:not(:indeterminate) /template/ Border#PART_Border Rectangle,
+					CheckBox:not(:indeterminate) /template/ Panel#CheckArea Rectangle">
+		<Setter Property="IsVisible" Value="False" />
+	</Style>
+
+	<Style Selector="CheckBox:pointerover /template/ Border#PART_Border">
+		<Setter Property="Background" Value="{DynamicResource CheckBox-Hover-Background}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource CheckBox-Hover-BorderBrush}" />
+	</Style>
+	<Style Selector="CheckBox:pointerover /template/ Border#PART_Border :is(Shape)">
+		<Setter Property="Fill" Value="{DynamicResource CheckBox-Hover-CheckMark}" />
+	</Style>
+
+	<Style Selector="CheckBox:pressed /template/ Border#PART_Border">
+		<Setter Property="Background" Value="{DynamicResource CheckBox-Pressed-Background}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource CheckBox-Pressed-BorderBrush}" />
+	</Style>
+	<Style Selector="CheckBox:pressed /template/ Border#PART_Border :is(Shape)">
+		<Setter Property="Fill" Value="{DynamicResource CheckBox-Pressed-CheckMark}" />
+	</Style>
+
+	<Style Selector="CheckBox:disabled /template/ Border#PART_Border">
+		<Setter Property="Background" Value="{DynamicResource CheckBox-Disabled-Background}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource CheckBox-Disabled-BorderBrush}" />
+	</Style>
+	<Style Selector="CheckBox:disabled /template/ Border#PART_Border :is(Shape)">
+		<Setter Property="Fill" Value="{DynamicResource CheckBox-Disabled-CheckMark}" />
+	</Style>
+
+
+	<Style Selector=":is(TemplatedControl).toolsMenuArea CheckBox">
+		<Setter Property="Background" Value="{DynamicResource CheckBox-ToolsMenuArea-Idle-Background}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource CheckBox-ToolsMenuArea-Idle-BorderBrush}" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<DockPanel>
+					<Panel x:Name="CheckArea"
+						DockPanel.Dock="Left"
+						Width="13"
+						Height="13"
+						Margin="1,0,1,1">
+						<Border x:Name="PART_Border"
+								CornerRadius="3"
+								BorderThickness="{TemplateBinding BorderThickness}"/>
+						<TemplatedControl Classes="toolsMenuControlBackground hover"
+										Margin="-1,0,-1,-1"/>
+						<TemplatedControl Classes="toolsMenuControlBackground pressed"
+										Margin="-1,0,-1,-1"
+										IsVisible="{TemplateBinding IsPressed}"/>
+						
+						<Path Data="M 0 2 L 2.5 4.5 L 7 0 L 7 2.5 L 2.5 7 L 0 4.5 Z"
+								IsVisible="{TemplateBinding IsChecked}"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"/>
+						<Rectangle Width="7"
+								Height="7"
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center"/>
+					</Panel>
+					<ContentPresenter x:Name="ContentPresenter"
+									ContentTemplate="{TemplateBinding ContentTemplate}"
+									Content="{TemplateBinding Content}"
+									Margin="{TemplateBinding Padding}"
+									HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+									VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+									Grid.Column="1" />
+									<!--TextBlock.TextWrapping="Wrap"-->
+				</DockPanel>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+
+
+	<Style Selector=":is(TemplatedControl).toolsMenuArea CheckBox /template/ Panel#CheckArea :is(Shape)">
+		<Setter Property="Fill" Value="{DynamicResource CheckBox-ToolsMenuArea-Idle-CheckMark}" />
+	</Style>
+	
+	<Style Selector=":is(TemplatedControl).toolsMenuArea CheckBox:pointerover:not(:pressed) /template/ Panel#CheckArea :is(Shape)">
+		<Setter Property="Fill" Value="{DynamicResource ToolsMenuAreaControl-Hover-Foreground}" />
+	</Style>
+
+	<!--Style Selector=":is(TemplatedControl).toolsMenuArea CheckBox:pressed /template/ Panel#CheckArea :is(Shape)">
+		<Setter Property="Fill" Value="{DynamicResource CheckBox-Pressed-CheckMark}" />
+	</Style-->
+	<!--Style Selector="CheckBox:disabled /template/ Border#PART_Border :is(Shape)">
+		<Setter Property="Fill" Value="{DynamicResource CheckBox-Disabled-CheckMark}" />
+	</Style-->
+</Styles>

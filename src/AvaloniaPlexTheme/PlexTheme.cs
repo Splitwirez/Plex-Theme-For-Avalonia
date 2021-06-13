@@ -20,9 +20,9 @@ namespace AvaloniaPlexTheme
     /// </summary>
     public partial class PlexTheme : IStyle, IResourceProvider
     {
-        private static Uri PLEX_CORE_URI = new Uri("avares://AvaloniaPlexTheme/Internal/PlexBase.axaml", UriKind.Absolute);
+        private static Uri PLEX_CORE_URI = new Uri("avares://AvaloniaPlexTheme/PlexBase.axaml", UriKind.Absolute);
 
-        private static Uri PLEX_TEMPCOLOURS_URI = new Uri("avares://AvaloniaPlexTheme/Colors/LightBlueReso.axaml", UriKind.Absolute);
+        //private static Uri PLEX_TEMPCOLOURS_URI = new Uri("avares://AvaloniaPlexTheme/Colors/LightBlueReso.axaml", UriKind.Absolute);
 
         private readonly Uri _baseUri;
         //private IStyle[]? _loaded;
@@ -122,31 +122,17 @@ namespace AvaloniaPlexTheme
             var testResources = _themeRules.ToValuesDictionary(colorScheme);
 
             
-            //Console.WriteLine("TEST RESOURCES:\n");
             if (_style is Styles styleRes)
             {
                 var tKeys = testResources.Keys;
-                //var rKeys = reso.Keys.Where(x => !tKeys.Contains(x));
-                
-                /*foreach (object key in rKeys)
-                {
-                    //Console.WriteLine("KEY: " + key);
-                    styleRes.Resources[key] = reso[key];
-                }*/
 
                 foreach (string resKey in tKeys)
                 {
-                    /*var val = testResources[resKey];
-                    if (val is Avalonia.Media.IBrush brush)
-                        Console.WriteLine($"{resKey} BRUSH: {brush}, {brush.GetType()}");
-                    else
-                        Console.WriteLine($"{resKey}: {val}, {val.GetType()}");*/
                     
 
                     styleRes.Resources[resKey] = testResources[resKey];
                 }
             }
-            //Console.WriteLine("\n");
         }
 
 
@@ -169,98 +155,7 @@ namespace AvaloniaPlexTheme
             return Math.Clamp(potentiallyInvalidHue, 0, 255);
         }
 
-        /*IResourceDictionary GetLegacyColorResources()
-        {
-            return (IResourceDictionary)AvaloniaXamlLoader.Load(PLEX_TEMPCOLOURS_URI, _baseUri);
-        }*/
-        
-        /*void zRefreshColours()
-        {
-            var reso = GetLegacyColorResources();
-            if (_style is Styles styleRes)
-            {
-                var keys = reso.Keys;
-                
-                foreach (object key in keys)
-                {
-                    //Console.WriteLine("KEY: " + key);
-                    styleRes.Resources[key] = reso[key];
-                }
-            }
 
-
-            /*var rules = new RuleGroup("RuleGroupTest")
-            {
-                new AvaloniaThemeColorization.Rules.SolidColorBrushRule("SolidColorBrushRuleTest", "Background", 128, 255, 128),
-                new LinearGradientBrushRule("LinearGradientBrushRuleTest", new RelativePoint(0, 0, RelativeUnit.Relative), new RelativePoint(5, 0, RelativeUnit.Relative))
-                {
-                    new GradientStopRule("GradientStopRuleTest1", "Background", 0, 128, 128, 0),
-                    new GradientStopRule("GradientStopRuleTest2", "Background", 0, 128, 128, 255)
-                }
-            };
-
-            var testResources = rules.ToResources(new ThemeColorScheme()
-            {
-                {
-                    "Background",
-                    new ThemeColor(0)
-                }
-            }, new IColorRule[0]);*
-
-            string color1 = "TestColor1";
-            string color2 = "TestColor2";
-
-
-            ThemeColorScheme colorScheme = new ThemeColorScheme()
-            {
-                {
-                    color1,
-                    new ThemeColor(0x00, 0x7F, 0x7F)
-                },
-                {
-                    color2,
-                    new ThemeColor(0x7F, 0xFF, 0x40)
-                },
-            };
-            
-            var testResources = new ThemeRuleGroup("ThemeRuleGroupTest")
-            {
-                new ThemeRuleGroup("ThemeRuleGroupTest1")
-                {
-                    new ThemeRuleGroup("ThemeRuleGroupTest1A")
-                    {
-                        new SolidColorBrushThemeRule("ThemeSolidColorBrushRuleTest1A1", color1, 0xFF, 0x7F),
-                        new SolidColorBrushThemeRule("ThemeSolidColorBrushRuleTest1A2", color2, 0xFF, 0x7F)
-                    },
-                    new ThemeRuleGroup("ThemeRuleGroupTest1B")
-                    {
-
-                    },
-                    new SolidColorBrushThemeRule("ThemeSolidColorBrushRuleTest1C", color2, 0xFF, 0x7F)
-                },
-                new ThemeRuleGroup("ThemeRuleGroupTest2")
-                {
-                    new SolidColorBrushThemeRule("ThemeSolidColorBrushRuleTest2A", color1, 0xFF, 0x7F),
-                    new ThemeRuleGroup("ThemeRuleGroupTest2B")
-                    {
-
-                    }
-                },
-                new SolidColorBrushThemeRule("ThemeSolidColorBrushRuleTest3", color2, 0xFF, 0x7F)
-            }.ToValuesDictionary(colorScheme);
-
-
-            Console.WriteLine("TEST RESOURCES:\n");
-            foreach (string resKey in testResources.Keys)
-            {
-                var val = testResources[resKey];
-                if (val is Avalonia.Media.IBrush brush)
-                    Console.WriteLine($"{resKey} BRUSH: {brush}, {brush.GetType()}");
-                else
-                    Console.WriteLine($"{resKey}: {val}, {val.GetType()}");
-            }
-            Console.WriteLine("\n");
-        }*/
 
         bool IResourceNode.HasResources => (Loaded as IResourceProvider)?.HasResources ?? false;
 

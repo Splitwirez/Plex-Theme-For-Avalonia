@@ -12,137 +12,162 @@
 	</Panel.Styles>  
 	<TabControl Classes="sidebar" Name="Sidebar" Tag="{Binding $parent[UserControl].Tag}" SelectedIndex="1">
 		<TabItem Header="AutoCompleteBox"
+				Classes="nyiTab"
 				Tag="A control into which the user can input text.">
 			<pages:AutoCompleteBoxPage/>
 		</TabItem>
 		<TabItem Header="Button"
-				Tag="A button control.">
+				Tag="Just your usual button control. Does a thing when clicked...not sure why you'd want them otherwise. Comes in single-click, continuous-click, and toggle-on-click flavours.&#x0a;&#x0a;(The RepeatButtons won't stop clicking...please make them stop...I can't take it anymore...)">
 			<pages:ButtonPage/>
 		</TabItem>
 		<TabItem Header="ButtonSpinner"
+				Classes="nyiTab"
 				Tag="The ButtonSpinner control allows you to add button spinners to any element and then respond to the Spin event to manipulate that element.">
 			<pages:ButtonSpinnerPage/>
 		</TabItem>
 		<TabItem Header="Calendar"
+				Classes="nyiTab"
 				Tag="A calendar control for selecting dates.">
 			<pages:CalendarPage/>
 		</TabItem>
 		<TabItem Header="Carousel"
+				Classes="nyiTab"
 				Tag="An items control that displays its items as pages that fill the control.">
 			<pages:CarouselPage/>
 		</TabItem>
 		<TabItem Header="CheckBox"
-				Tag="A check box control.">
+				Tag="A tickable checkbox control. Supports two-state and three-state modes.&#x0a;&#x0a;(Also uses 100% less graphite than its non-digital counterpart.)">
 			<pages:CheckBoxPage/>
 		</TabItem>
 		<TabItem Header="ComboBox"
+				Classes="nyiTab"
 				Tag="A drop-down list.">
 			<pages:ComboBoxPage/>
 		</TabItem>
 		<TabItem Header="ContextMenu"
+				Classes="nyiTab"
 				Tag="A right click menu that can be applied to any control.">
 			<pages:ContextMenuPage/>
 		</TabItem>
 		<TabItem Header="DataGrid"
+				Classes="nyiTab"
 				Tag="A control for displaying and interacting with a data source."
 				ScrollViewer.VerticalScrollBarVisibility="Disabled"
 				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 			<pages:DataGridPage/>
 		</TabItem>
 		<TabItem Header="Date/Time Picker"
+				Classes="nyiTab"
 				Tag="A control to let users pick a date and/or time in your app.">
 			<pages:DateTimePickerPage/>
 		</TabItem>
 		<TabItem Header="Dialogs"
+				Classes="nyiTab"
 				Tag="Assorted things that happen in their own window.">
 			<pages:DialogsPage/>
 		</TabItem>
 		<TabItem Header="CalendarDatePicker"
+				Classes="nyiTab"
 				Tag="A control for selecting dates with a calendar drop-down.">
 			<pages:CalendarDatePickerPage/>
 		</TabItem>
 		<TabItem Header="Expander"
+				Classes="nyiTab"
 				Tag="Expands to show nested content.">
 			<pages:ExpanderPage/>
 		</TabItem>
 		<TabItem Header="ItemsRepeater"
+				Classes="nyiTab"
 				Tag="A data-driven collection control that incorporates a flexible layout system, custom views, and virtualization."
 				ScrollViewer.VerticalScrollBarVisibility="Disabled"
 				ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 			<pages:ItemsRepeaterPage/>
 		</TabItem>
 		<TabItem Header="Label"
+				Classes="nyiTab"
 				Tag="You're looking at one right now.">
 			<pages:LabelsPage/>
 		</TabItem>
 		<TabItem Header="ListBox"
+				Classes="nyiTab"
 				Tag="Hosts a collection of ListBoxItem."
 				ScrollViewer.VerticalScrollBarVisibility="Disabled">
 			<pages:ListBoxPage/>
 		</TabItem>
 		<TabItem Header="Menu"
+				Classes="nyiTab"
 				Tag="A window menu.">
 			<pages:MenuPage/>
 		</TabItem>
 		<TabItem Header="Notifications"
+				Classes="nyiTab"
 				Tag="TaSk CoMpLeTeD sUcCeSfUlLy.">
 			<pages:NotificationsPage/>
 		</TabItem>
 		<TabItem Header="NumericUpDown"
+				Classes="nyiTab"
 				Tag="Numeric up-down control provides a TextBox with button spinners that allow incrementing and decrementing numeric values by using the spinner buttons, keyboard up/down arrows, or mouse wheel.">
 			<pages:NumericUpDownPage/>
 		</TabItem>
 		<TabItem Header="ProgressBar"
+				Classes="nyiTab"
 				Tag="A progress bar control. Please wait while the setup wizard installs who-knows-what.">
 			<pages:ProgressBarPage/>
 		</TabItem>
 		<TabItem Header="RadioButton"
-				Tag="Allows the selection of a single option of many.">
+				Tag="A circular button control, used in groups to offer a series of mutually-exclusive options.&#x0a;&#x0a;(Y'know what they say...when you come to a repo, fork it...no wait, that's not right...uh, when you come to a fork in the road, select it. Wait, no, that's still not right...eh, whatever. Close enough.)">
 			<pages:RadioButtonPage/>
 		</TabItem>
 		<TabItem Header="ScrollViewer"
+				Classes="nyiTab"
 				Tag="Allows for horizontal and vertical content scrolling.">
 			<pages:ScrollViewerPage/>
 		</TabItem>
 		<TabItem Header="Slider"
+				Classes="nyiTab"
 				Tag="A control that lets the user select from a range of values by moving a Thumb control along a Track.">
 			<pages:SliderPage/>
 		</TabItem>
 		<TabItem Header="SplitView"
+				Classes="nyiTab"
 				Tag="SplitView is a UI control, Splitwirez is the idiot who wrote this library. Please do not mix them up.">
 			<pages:SplitViewPage/>
 		</TabItem>
 		<TabItem Header="TabControl"
+				Classes="nyiTab"
 				Tag="A tab control that displays a tab strip along with the content of the selected tab.">
 			<pages:TabControlPage/>
 		</TabItem>
 		<TabItem Header="TabStrip"
+				Classes="nyiTab"
 				Tag="A control which displays a selectable strip of tabs.">
 			<pages:TabStripPage/>
 		</TabItem>
 		<TabItem Header="TextBox"
+				Classes="nyiTab"
 				Tag="A control into which the user can input text.">
 			<pages:TextBoxPage/>
 		</TabItem>
 		<TabItem Header="TextBlock"
+				Classes="nyiTab"
 				Tag="A control that can display text.">
 			<pages:TextBlockPage/>
 		</TabItem>
 		<TabItem Header="ToggleSwitch"
+				Classes="nyiTab"
 				Tag="Lightswitch-flavoured alternative to a CheckBox. Best suited for 'on'/'off'-type questions.">
 			<pages:ToggleSwitchPage/>
 		</TabItem>
 		<TabItem Header="ToolTip"
+				Classes="nyiTab"
 				Tag="A control which pops up a hint when a control is hovered.">
 			<pages:ToolTipPage/>
 		</TabItem>
 		<TabItem Header="TreeView"
+				Classes="nyiTab"
 				Tag="Displays a hierachical tree of data.">
 			<pages:TreeViewPage/>
 		</TabItem>
-		<!--TabItem Header="Window Customizations"
-				Tag="Yeehaw">
-		</TabItem-->
 	</TabControl>
   </Panel>
 </UserControl>

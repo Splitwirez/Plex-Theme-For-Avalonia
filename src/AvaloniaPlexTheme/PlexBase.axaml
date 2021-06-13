@@ -31,5 +31,5 @@
 
 
 	<!--BEGIN control styles-->
-	<StyleInclude Source="avares://AvaloniaPlexTheme/Internal/AllControls.axaml"/>
+	<StyleInclude Source="avares://AvaloniaPlexTheme/PlexControls.axaml"/>
 </Styles>
