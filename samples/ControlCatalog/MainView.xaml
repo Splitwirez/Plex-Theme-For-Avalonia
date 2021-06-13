@@ -154,8 +154,7 @@
 			<pages:TextBlockPage/>
 		</TabItem>
 		<TabItem Header="ToggleSwitch"
-				Classes="nyiTab"
-				Tag="Lightswitch-flavoured alternative to a CheckBox. Best suited for 'on'/'off'-type questions.">
+				Tag="Lightswitch-flavoured alternative to a CheckBox. Best suited for 'on'/'off'-type questions.&#x0a;&#x0a;(Also good for turning off the lights before going to bed.)">
 			<pages:ToggleSwitchPage/>
 		</TabItem>
 		<TabItem Header="ToolTip"

@@ -90,7 +90,9 @@
 	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/NativeMenuBar.axaml"/>
 	<!--StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/NativeMenuBar.xaml"/-->
 	
-	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/ToggleSwitch.xaml"/><!--TBD-->
+	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/ToggleSwitch.axaml"/>
+	<!--StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/ToggleSwitch.xaml"/-->
+	
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/SplitView.xaml"/><!--TBD-->
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/DatePicker.xaml"/><!--TBD-->
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/TimePicker.xaml"/><!--TBD-->
