@@ -12,7 +12,10 @@
 	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/Button.axaml"/>
 	<!--StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/Button.xaml"/-->
 	
-	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/CaptionButtons.xaml"/><!--TBD-->
+	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/CaptionButtons.axaml"/>
+	<!--StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/CaptionButtons.xaml"/-->
+	
+	
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/Carousel.xaml"/><!--TBD-->
 	
 	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/CheckBox.axaml"/>
@@ -66,6 +69,11 @@
 	<!--StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/ToggleButton.xaml"/-->
 	
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/Expander.xaml"/><!--TBD-->
+	
+	
+	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/WindowTitleBar.axaml"/>
+	
+
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/TitleBar.xaml"/><!--TBD-->
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/TreeView.xaml"/><!--TBD-->
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/TreeViewItem.xaml"/><!--TBD-->

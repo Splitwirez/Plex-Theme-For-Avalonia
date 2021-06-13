@@ -5,7 +5,14 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="ControlCatalog.Pages.WindowCustomizationsPage">
   <StackPanel Spacing="10" Margin="25">
-    <CheckBox x:Name="ExtendClientAreaToDecorationsCheckBox" Content="Allow window content to bleed into Titlebar" IsChecked="{Binding ExtendClientAreaEnabled}" />
+    <TextBlock Text="System decorations mode" Margin="0,0,0,-10"/>
+    <ComboBox SelectedIndex="{Binding $parent[Window].SystemDecorations, FallbackValue=0}">
+      <ComboBoxItem>None</ComboBoxItem>
+      <ComboBoxItem>BorderOnly</ComboBoxItem>
+      <ComboBoxItem>Full</ComboBoxItem>
+    </ComboBox>
+    <CheckBox Content="Allow window content to bleed out of window body" IsChecked="{Binding !$parent[Window].ClipToBounds}" />
+    <CheckBox x:Name="ExtendClientAreaToDecorationsCheckBox" Content="Shift window content into Titlebar" IsChecked="{Binding ExtendClientAreaEnabled}" />
     <!--CheckBox Content="Title Bar" IsChecked="{Binding SystemTitleBarEnabled}" />    
     <CheckBox Content="Prefer System Chrome" IsChecked="{Binding PreferSystemChromeEnabled}" /-->
     <StackPanel Spacing="0" Margin="0,20,0,0" IsVisible="{Binding #ExtendClientAreaToDecorationsCheckBox.IsChecked}">

@@ -17,13 +17,31 @@
 		plex:WindowTitleBar.Title="Avalonia [b]Plex Theme[/b] Control Gallery">
 	<Window.Styles>
 		<Style Selector="Window[ExtendClientAreaToDecorationsHint=True]:not(Window[ExtendClientAreaTitleBarHeightHint=-1]) ContentControl#MenuArea">
-			<Setter Property="Height" Value="{Binding $parent[Window].ExtendClientAreaTitleBarHeightHint}"/>
+			<Setter Property="MinHeight" Value="{Binding $parent[Window].ExtendClientAreaTitleBarHeightHint}"/>
 		</Style>
-		<Style Selector="Window[ExtendClientAreaToDecorationsHint=True][ExtendClientAreaTitleBarHeightHint=-1] ContentControl#MenuArea">
+		<!--Style Selector="Window[ExtendClientAreaToDecorationsHint=True][ExtendClientAreaTitleBarHeightHint=-1] ContentControl#MenuArea">
 			<Setter Property="Height" Value="32"/>
-		</Style>
+		</Style-->
 		<Style Selector="Window[ExtendClientAreaToDecorationsHint=True] ContentControl#MenuArea /template/ TemplatedControl.menuBackground">
 			<Setter Property="IsVisible" Value="False"/>
+		</Style>
+		<Style Selector="Border.titleBarContent">
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="BorderBrush" Value="Red"/>
+			<Setter Property="Height" Value="22"/>
+			<Setter Property="VerticalAlignment" Value="Top"/>
+			<Setter Property="HorizontalAlignment" Value="Left"/>
+			<Setter Property="Background" Value="#B2FFFFFF"/>
+			<Setter Property="Margin" Value="1"/>
+		</Style>
+		<Style Selector="Window[SystemDecorations=None][ClipToBounds=True][ExtendClientAreaToDecorationsHint=False] Border.titleBarContent">
+			<Setter Property="IsVisible" Value="False"/>
+		</Style>
+		<Style Selector="Window[ClipToBounds=False][ExtendClientAreaToDecorationsHint=False] Border.titleBarContent">
+		<!--[ExtendClientAreaToDecorationsHint=False]-->
+		<!--[SystemDecorations=None]-->
+		<!--[ClipToBounds=False]-->
+			<Setter Property="Margin" Value="1,-31,1,1"/>
 		</Style>
 	</Window.Styles>
 	<NativeMenu.Menu>
@@ -75,140 +93,144 @@
 		<Panel Margin="{Binding #MainWindow.OffScreenMargin}">
 			<DockPanel LastChildFill="True" Margin="{Binding #MainWindow.WindowDecorationMargin}">
 				<ContentControl x:Name="MenuArea" Classes="toolsMenuArea" DockPanel.Dock="Top">
-					<Grid RowDefinitions="Auto,Auto" ColumnDefinitions="Auto,*">
-						<Menu Name="MainMenu"
-						Grid.Column="0"
-						Grid.Row="0">
-							<MenuItem Header="File">
-								<MenuItem Header="Exit" Command="{Binding ExitCommand}" />
-							</MenuItem>
-							<MenuItem Header="Edit">
-								<MenuItem Header="lol...there's nothing here to edit" IsEnabled="False" />
-							</MenuItem>
-							<MenuItem Header="View">
-								<MenuItem Header="You're already viewing stuff." IsEnabled="False" />
-							</MenuItem>
-							<MenuItem Header="Help">
-								<MenuItem Header="About" Command="{Binding AboutCommand}" />
-							</MenuItem>
-						</Menu>
-						<ToggleButton x:Name="ShowControlsList"
-						Width="180"
-						Grid.Column="0"
-						Grid.Row="1"
-						Background="Transparent"
-						Padding="0,5,8,6"
-						Margin="0,0,5,0">
-							<DockPanel>
-								<Border Width="13"
-										Height="13"
-										CornerRadius="8"
-										Margin="10,0"
-										DockPanel.Dock="Left"
-										BoxShadow="0 2 4 1 #40000000">
-									<Border.Background>
-										<LinearGradientBrush StartPoint="90%,10%"
-															EndPoint="10%,90%">
-											<GradientStop Offset="0" Color="#FFF1F2F4"/>
-											<GradientStop Offset="1" Color="#FF9DAFD7"/>
-										</LinearGradientBrush>
-									</Border.Background>
-									<Path HorizontalAlignment="Center"
-										VerticalAlignment="Center"
-										Data="M 0 3.5 L 3.5 0 L 7 3.5 L 4.5 3.5 L 3.5 2.5 L 2.5 3.5 Z">
-										<Path.Fill>
-											<LinearGradientBrush StartPoint="0%,0%"
-																EndPoint="100%,0%">
-												<GradientStop Offset="0" Color="#FF455D99"/>
-												<GradientStop Offset="1" Color="#FF4F71B8"/>
-											</LinearGradientBrush>
-										</Path.Fill>
-									</Path>
-								</Border>
-								<TextBlock Text="show\hide controls"/>
-							</DockPanel>
-						</ToggleButton>
-						<Border Height="19"
-								Grid.Column="1"
-								Grid.Row="0"
-								Margin="0,0,11,0"
-								Background="LightGray">
-							<TextBlock Text="Nothing here...yet?"/>
-						</Border>
-						<StackPanel Grid.Column="1"
+					<DockPanel>
+						<Control DockPanel.Dock="Left"
+							Width="{Binding $parent[Window].(plex:WindowTitleBar.LeftCaptionButtonsWidth)}"/>
+						<Control DockPanel.Dock="Right"
+							Width="{Binding $parent[Window].(plex:WindowTitleBar.RightCaptionButtonsWidth)}"/>
+						<Grid RowDefinitions="Auto,Auto" ColumnDefinitions="Auto,*">
+							<Menu Name="MainMenu"
+							Grid.Column="0"
+							Grid.Row="0">
+								<MenuItem Header="File">
+									<MenuItem Header="Exit" Command="{Binding ExitCommand}" />
+								</MenuItem>
+								<MenuItem Header="Edit">
+									<MenuItem Header="lol...there's nothing here to edit" IsEnabled="False" />
+								</MenuItem>
+								<MenuItem Header="View">
+									<MenuItem Header="You're already viewing stuff." IsEnabled="False" />
+								</MenuItem>
+								<MenuItem Header="Help">
+									<MenuItem Header="About" Command="{Binding AboutCommand}" />
+								</MenuItem>
+							</Menu>
+							<ToggleButton x:Name="ShowControlsList"
+							Width="180"
+							Grid.Column="0"
 							Grid.Row="1"
-							Orientation="Horizontal">
-							<ToggleButton x:Name="WindowOptions"
-										Background="Transparent"
-										Padding="0,5,8,6">
+							Background="Transparent"
+							Padding="0,5,8,6"
+							Margin="0,0,5,0">
 								<DockPanel>
-									<Rectangle Width="16" Height="16" Fill="Red" Margin="10,0" DockPanel.Dock="Left"/>
-									<TextBlock Text="Window options"/>
+									<Border Width="13"
+											Height="13"
+											CornerRadius="8"
+											Margin="10,0"
+											DockPanel.Dock="Left"
+											BoxShadow="0 2 4 1 #40000000">
+										<Border.Background>
+											<LinearGradientBrush StartPoint="90%,10%"
+																EndPoint="10%,90%">
+												<GradientStop Offset="0" Color="#FFF1F2F4"/>
+												<GradientStop Offset="1" Color="#FF9DAFD7"/>
+											</LinearGradientBrush>
+										</Border.Background>
+										<Path HorizontalAlignment="Center"
+											VerticalAlignment="Center"
+											Data="M 0 3.5 L 3.5 0 L 7 3.5 L 4.5 3.5 L 3.5 2.5 L 2.5 3.5 Z">
+											<Path.Fill>
+												<LinearGradientBrush StartPoint="0%,0%"
+																	EndPoint="100%,0%">
+													<GradientStop Offset="0" Color="#FF455D99"/>
+													<GradientStop Offset="1" Color="#FF4F71B8"/>
+												</LinearGradientBrush>
+											</Path.Fill>
+										</Path>
+									</Border>
+									<TextBlock Text="show\hide controls"/>
 								</DockPanel>
 							</ToggleButton>
-							<Popup PlacementTarget="{Binding #WindowOptions}" IsOpen="{Binding #WindowOptions.IsChecked, Mode=TwoWay}" StaysOpen="False">
-								<Border Background="White" BorderBrush="#FFFF00FF" BorderThickness="5">
-									<StackPanel>
-										<TextBlock Text="TODO: Make this not look horrible"/>
-										<pages:WindowCustomizationsPage/>
-									</StackPanel>
-								</Border>
-							</Popup>
-							<ToggleButton x:Name="Colors"
-										Background="Transparent"
-										Padding="0,5,8,6">
-								<DockPanel>
-									<Rectangle Width="16" Height="16" Fill="Red" Margin="10,0" DockPanel.Dock="Left"/>
-									<TextBlock Text="Colors"/>
-								</DockPanel>
-							</ToggleButton>
-							<Popup PlacementTarget="{Binding #Colors}" IsOpen="{Binding #Colors.IsChecked, Mode=TwoWay}" StaysOpen="False">
-								<Border Background="White" BorderBrush="#FFFF00FF" BorderThickness="5">
-									<StackPanel>
-										<StackPanel.Styles>
-											<Style Selector="Slider">
-												<Setter Property="Minimum" Value="0"/>
-												<Setter Property="Maximum" Value="255"/>
-												<Setter Property="Width" Value="640"/>
-												<Setter Property="Orientation" Value="Horizontal"/>
-											</Style>
-										</StackPanel.Styles>
-										<TextBlock Text="TODO: Make this not look horrible"/>
-										<CheckBox x:Name="UniformColors" Margin="0,0,0,10" IsChecked="True">Adjust colors uniformly</CheckBox>
-										<StackPanel Orientation="Vertical" IsVisible="{Binding !#UniformColors.IsChecked}">
+							<Border Height="19"
+									Grid.Column="1"
+									Grid.Row="0"
+									Margin="0,0,11,0"
+									Background="LightGray">
+								<TextBlock Text="Nothing here...yet?"/>
+							</Border>
+							<StackPanel Grid.Column="1"
+								Grid.Row="1"
+								Orientation="Horizontal">
+								<ToggleButton x:Name="WindowOptions"
+											Background="Transparent"
+											Padding="0,5,8,6">
+									<DockPanel>
+										<Rectangle Width="16" Height="16" Fill="Red" Margin="10,0" DockPanel.Dock="Left"/>
+										<TextBlock Text="Window options"/>
+									</DockPanel>
+								</ToggleButton>
+								<Popup PlacementTarget="{Binding #WindowOptions}" IsOpen="{Binding #WindowOptions.IsChecked, Mode=TwoWay}" StaysOpen="False">
+									<Border Background="Gray" BorderBrush="#FFFF00FF" BorderThickness="5">
+										<StackPanel>
+											<TextBlock Text="TODO: Make this not look horrible"/>
+											<pages:WindowCustomizationsPage/>
+										</StackPanel>
+									</Border>
+								</Popup>
+								<ToggleButton x:Name="Colors"
+											Background="Transparent"
+											Padding="0,5,8,6">
+									<DockPanel>
+										<Rectangle Width="16" Height="16" Fill="Red" Margin="10,0" DockPanel.Dock="Left"/>
+										<TextBlock Text="Colors"/>
+									</DockPanel>
+								</ToggleButton>
+								<Popup PlacementTarget="{Binding #Colors}" IsOpen="{Binding #Colors.IsChecked, Mode=TwoWay}" StaysOpen="False">
+									<Border Background="Gray" BorderBrush="#FFFF00FF" BorderThickness="5">
+										<StackPanel>
 											<StackPanel.Styles>
-												<Style Selector="TextBlock">
-													<Setter Property="Margin" Value="0,10,0,0"/>
-												</Style>
 												<Style Selector="Slider">
-													<Setter Property="Margin" Value="0,0,0,10"/>
+													<Setter Property="Minimum" Value="0"/>
+													<Setter Property="Maximum" Value="255"/>
+													<Setter Property="Width" Value="640"/>
+													<Setter Property="Orientation" Value="Horizontal"/>
 												</Style>
 											</StackPanel.Styles>
-											<TextBlock Text="Window chrome hue"/>
-											<Slider x:Name="ChromeHue" Value="210"/>
-											<TextBlock Text="Tools/menu area hue"/>
-											<Slider x:Name="ToolsMenuAreaHue" Value="210"/>
-											<TextBlock Text="Window client area background hue"/>
-											<Slider x:Name="ClientAreaBackgroundHue" Value="210"/>
-											<TextBlock Text="Controls hue"/>
-											<Slider x:Name="ControlsHue" Value="210"/>
+											<TextBlock Text="TODO: Make this not look horrible"/>
+											<CheckBox x:Name="UniformColors" Margin="0,0,0,10" IsChecked="True">Adjust colors uniformly</CheckBox>
+											<StackPanel Orientation="Vertical" IsVisible="{Binding !#UniformColors.IsChecked}">
+												<StackPanel.Styles>
+													<Style Selector="TextBlock">
+														<Setter Property="Margin" Value="0,10,0,0"/>
+													</Style>
+													<Style Selector="Slider">
+														<Setter Property="Margin" Value="0,0,0,10"/>
+													</Style>
+												</StackPanel.Styles>
+												<TextBlock Text="Window chrome hue"/>
+												<Slider x:Name="ChromeHue" Value="210"/>
+												<TextBlock Text="Tools/menu area hue"/>
+												<Slider x:Name="ToolsMenuAreaHue" Value="210"/>
+												<TextBlock Text="Window client area background hue"/>
+												<Slider x:Name="ClientAreaBackgroundHue" Value="210"/>
+												<TextBlock Text="Controls hue"/>
+												<Slider x:Name="ControlsHue" Value="210"/>
+											</StackPanel>
+											<Slider x:Name="OverallThemeHue" Value="210" IsVisible="{Binding #UniformColors.IsChecked}"/>
 										</StackPanel>
-										<Slider x:Name="OverallThemeHue" Value="210" IsVisible="{Binding #UniformColors.IsChecked}"/>
-									</StackPanel>
-								</Border>
-							</Popup>
-						</StackPanel>
-					</Grid>
+									</Border>
+								</Popup>
+							</StackPanel>
+						</Grid>
+					</DockPanel>
 				</ContentControl>
 				<local:MainView Tag="{Binding !#ShowControlsList.IsChecked}" />
 			</DockPanel>
 		</Panel>
-		<Border IsVisible="{Binding ExtendClientAreaEnabled}" BorderThickness="1 1 1 0" CornerRadius="4 4 0 0" BorderBrush="#55000000" Height="22" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="250 8 0 0">
-			<Border.Background>
-				<SolidColorBrush Color="White" Opacity="0.7" />
-			</Border.Background>
+		<Border Classes="titleBarContent">
 			<TextBlock Margin="5 5 5 0" Text="Content In Title Bar" />
 		</Border>
+		<!--IsVisible="{Binding ExtendClientAreaEnabled}"-->
 		<!--ContentPresenter Content="{Binding $parent[Window].(plex:WindowTitleBar.Title)}"/-->
 	</Panel>
 </Window>
