@@ -1,0 +1,94 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+						xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+						xmlns:sys="clr-namespace:System;assembly=netstandard"
+						xmlns:conv="clr-namespace:ControlCatalog.Converters"
+						x:Class="ControlCatalog.Pages.RelativeBrushDecoratorPage"
+						xmlns:plex="splitwirez://AvaloniaPlexTheme">
+	<UserControl.Resources>
+		<conv:DoublesToBorderOutsideThingsConverter x:Key="DoublesToBorderOutsideThingsConverter"/>
+	</UserControl.Resources>
+	<UserControl.Styles>
+		<Style Selector="TextBlock">
+			<Setter Property="Margin" Value="0,0,0,-8"/>
+		</Style>
+		<Style Selector="plex|RelativeBrushDecorator[IsEnabled=True]">
+			<Setter Property="DrawRelativeTo" Value="{Binding #RootPanel}"/>
+		</Style>
+		<!--Style Selector="StackPanel#RootPanel > UniformGrid > plex|RelativeBrushDecorator,
+						StackPanel#RootPanel > UniformGrid > Border">
+		</Style-->
+	</UserControl.Styles>
+	<StackPanel x:Name="RootPanel" Orientation="Vertical" Spacing="8">
+		<DockPanel LastChildFill="False">
+			<plex:RelativeBrushDecorator x:Name="DemoBorder"
+				IsEnabled="{Binding #DrawRelativeToCheckBox.IsChecked}"
+				Width="{Binding #WidthSlider.Value}"
+				Height="100"
+				DockPanel.Dock="Left">
+				<plex:RelativeBrushDecorator.Background>
+					<LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%" SpreadMethod="Reflect">
+						<GradientStop Offset="0" Color="#0F4F7F"/>
+						<GradientStop Offset="0.5" Color="#6FAFDF"/>
+						<GradientStop Offset="1" Color="#0F4F7F"/>
+					</LinearGradientBrush>
+				</plex:RelativeBrushDecorator.Background>
+				<plex:RelativeBrushDecorator.CornerRadius>
+					<MultiBinding Converter="{StaticResource DoublesToBorderOutsideThingsConverter}">
+						<Binding Path="#Cr1.Value"/>
+						<Binding Path="#Cr2.Value"/>
+						<Binding Path="#Cr3.Value"/>
+						<Binding Path="#Cr4.Value"/>
+					</MultiBinding>
+				</plex:RelativeBrushDecorator.CornerRadius>
+				<!--
+				BorderThickness="1,10,5,20"
+				CornerRadius="50,0,100,0"-->
+				<!--Width="100"
+				Height="100"
+				BorderThickness="5,20,1,10"
+				CornerRadius="100,0,50,0"-->
+				<!--BorderThickness="100,10,50,20" 
+				CornerRadius="100,1,50,20"-->
+			</plex:RelativeBrushDecorator>
+			<plex:RelativeBrushDecorator IsEnabled="{Binding #DemoBorder.IsEnabled}"
+									Width="{Binding #DemoBorder.Bounds.Width}"
+									Background="{Binding #DemoBorder.Background}"
+									CornerRadius="{Binding #DemoBorder.CornerRadius}"
+									DockPanel.Dock="Right"/>
+			<!--Border
+					IsVisible="False"
+					Height="{Binding #DemoBorder.Bounds.Height}"
+					Background="{Binding #DemoBorder.Background}"
+					BorderThickness="{Binding #DemoBorder.BorderThickness}"
+					CornerRadius="{Binding #DemoBorder.CornerRadius}"/-->
+					<!--Width="{Binding #DemoBorder.Bounds.Width}"-->
+		</DockPanel>
+		<CheckBox x:Name="DrawRelativeToCheckBox" IsChecked="True">Draw relative to page root</CheckBox>
+		<TextBlock Text="Width"/>
+		<Slider x:Name="WidthSlider" Minimum="0" Maximum="290" Value="50"/>
+		<!--TextBlock Text="BorderThickness"/>
+		<Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*,*" HorizontalAlignment="Stretch">
+			<Slider x:Name="Bt1" Minimum="0" Maximum="290" Value="1"
+					Grid.Column="0"
+					Grid.Row="1"/>
+			<Slider x:Name="Bt2" Minimum="0" Maximum="290" Value="10"
+					Grid.Column="0"
+					Grid.ColumnSpan="3"
+					Grid.Row="0"/>
+			<Slider x:Name="Bt3" Minimum="0" Maximum="290" Value="5"
+					Grid.Column="2"
+					Grid.Row="1"/>
+			<Slider x:Name="Bt4" Minimum="0" Maximum="290" Value="20"
+					Grid.Column="0"
+					Grid.ColumnSpan="3"
+					Grid.Row="2"/>
+		</Grid-->
+		<TextBlock Text="CornerRadius"/>
+		<UniformGrid Rows="2" HorizontalAlignment="Stretch">
+			<Slider x:Name="Cr1" Minimum="0" Maximum="290" Value="50"/>
+			<Slider x:Name="Cr2" Minimum="0" Maximum="290" Value="0"/>
+			<Slider x:Name="Cr4" Minimum="0" Maximum="290" Value="0"/>
+			<Slider x:Name="Cr3" Minimum="0" Maximum="290" Value="100"/>
+		</UniformGrid>
+	</StackPanel>
+</UserControl>

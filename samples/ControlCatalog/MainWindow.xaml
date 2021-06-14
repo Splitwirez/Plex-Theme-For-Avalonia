@@ -5,7 +5,7 @@
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:vm="clr-namespace:ControlCatalog.ViewModels"
 		xmlns:v="clr-namespace:ControlCatalog.Views"
-			xmlns:plex="splitwirez://AvaloniaPlexTheme"
+		xmlns:plex="splitwirez://AvaloniaPlexTheme"
 		Icon="/Assets/test_icon.ico"
 		ExtendClientAreaToDecorationsHint="{Binding ExtendClientAreaEnabled}"
 		ExtendClientAreaChromeHints="{Binding ChromeHints}"

@@ -18,26 +18,8 @@ using System.Runtime.CompilerServices;
 
 namespace AvaloniaPlexTheme
 {
-    public interface IEmphasizeableTextSegment
+    public class EmphasizeableTextSegment : INotifyPropertyChanged
     {
-        public bool IsEmphasized
-        {
-            get;
-        }
-
-        [Content]
-        public string Text
-        {
-            get;
-        }
-    }
-
-    public class EmphasizeableTextSegment : INotifyPropertyChanged//, IEmphasizeableTextSegment
-    {
-        /*public static readonly StyledProperty<bool> IsEmphasizedProperty =
-            AvaloniaProperty.Register<EmphasizeableTextSegment, bool>(nameof(IsEmphasized), defaultValue: false);*/
-        
-        
         bool _isEmphasized = false;
         public bool IsEmphasized
         {
@@ -47,8 +29,6 @@ namespace AvaloniaPlexTheme
                 _isEmphasized = value;
                 NotifyPropertyChanged();
             }
-            /*get => GetValue(IsEmphasizedProperty);
-            set => SetValue(IsEmphasizedProperty, value);*/
         }
 
 
@@ -61,8 +41,6 @@ namespace AvaloniaPlexTheme
                 _text = value;
                 NotifyPropertyChanged();
             }
-            /*get => GetValue(TextProperty);
-            set => SetValue(TextProperty, value);*/
         }
 
         public EmphasizeableTextSegment(string text, bool isEmphasized = false)
