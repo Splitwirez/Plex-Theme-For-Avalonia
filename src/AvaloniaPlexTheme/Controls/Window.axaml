@@ -49,7 +49,8 @@
 							<CaptionButtons x:Name="CaptionButtons"
 											VerticalAlignment="Top"
 											Height="{Binding #TitleBarContainer.Bounds.Height}"
-											HorizontalAlignment="{Binding #TitleBar.DesiredCaptionButtonsAlignment}"/>
+											HorizontalAlignment="{Binding #TitleBar.DesiredCaptionButtonsAlignment}"
+											Tag="{Binding #WindowShadowBorder}"/>
 							<!--Border IsHitTestVisible="False"
 									Background="Transparent"
 									BorderBrush="{TemplateBinding BorderBrush}"

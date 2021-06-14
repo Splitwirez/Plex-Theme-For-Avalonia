@@ -39,8 +39,8 @@ namespace AvaloniaPlexTheme
                 {
                     new LinearGradientBrushThemeRule("BottomBorderBrush", new RelativePoint(0.5, 0, RelativeUnit.Relative), GradientSpreadMethod.Reflect)
                     {
-                        new GradientStopThemeRule(SCM_CHRM, 0, saturation: Over100ToOver255(56), value: Over100ToOver255(69)),
-                        new GradientStopThemeRule(SCM_CHRM, 1, saturation: Over100ToOver255(58), value: Over100ToOver255(70)),
+                        new GradientStopThemeRule(SCM_CHRM, 0, saturation: Over100ToOver255(56), value: Over100ToOver255(53)),
+                        new GradientStopThemeRule(SCM_CHRM, 1, saturation: Over100ToOver255(58), value: Over100ToOver255(68)),
                     }
                     //new SolidColorBrushThemeRule("BottomBorderBrush", SCM_CHRM, saturation: Over100ToOver255(58), value: Over100ToOver255(70))
                 },

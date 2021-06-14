@@ -27,19 +27,38 @@ namespace AvaloniaPlexTheme
 
         void Update(Visual relativeTo, Visual dest, CornerRadius cornerRadius)
         {
-            if (relativeTo == dest)
+            double scale = Avalonia.VisualTree.VisualExtensions.GetVisualRoot(dest).RenderScaling;
+            _transform = Vector.Zero;
+            _drawTo = new Rect(_zeroPoint, dest.PointToScreen(_zeroPoint).ToPoint(scale));
+            Console.WriteLine($"_drawTo: {_drawTo}");
+            
+            if (relativeTo != dest)
             {
-                _transform = Vector.Zero;
-                _drawTo = new Rect(_zeroPoint, dest.Bounds.Size);
-            }
-            else
-            {
-                var destTopLeft = dest.Bounds.TopLeft;
-                var relativeToTopLeft = relativeTo.Bounds.TopLeft;
+                var destTopLeft = dest.PointToScreen(_zeroPoint).ToPoint(scale); //.Bounds.TopLeft;
+                var relativeToTopLeft = relativeTo.PointToScreen(_zeroPoint).ToPoint(scale); //.Bounds.TopLeft;
                 
-                _transform = new Vector(relativeToTopLeft.X - destTopLeft.X, relativeToTopLeft.Y - destTopLeft.Y);
+                double transformX = relativeToTopLeft.X - destTopLeft.X;
+                double transformY = relativeToTopLeft.Y - destTopLeft.Y;
+
+                /*if (transformX > 0)
+                {
+                    double width = relativeTo.Bounds.Width;
+                    while (transformX > 0)
+                        transformX -= width;
+                }
+
+                if (transformY > 0)
+                {
+                    double height = relativeTo.Bounds.Height;
+                    while (transformY > 0)
+                        transformY -= height;
+                }*/
+
+
+                _transform = new Vector(transformX, transformY);
                 
                 _drawTo = new Rect(_zeroPoint, relativeTo.Bounds.Size);
+                Console.WriteLine($"_drawTo 2: {_drawTo}");
             }
 
 
@@ -49,9 +68,10 @@ namespace AvaloniaPlexTheme
             _cornerRadius = cornerRadius;
             _initialized = true;
 
-            var boundRect = new Rect(finalSize);
+            var boundRect = new Rect(_zeroPoint, finalSize);
 
 
+            Console.WriteLine($"boundRect: {boundRect},     {cornerRadius}");
             if (boundRect.Width != 0 && boundRect.Height != 0)
             {
                 var geometryKeypoints = new BorderGeometryKeypoints(boundRect, cornerRadius, false);
@@ -95,17 +115,34 @@ namespace AvaloniaPlexTheme
 
         void RenderCore(DrawingContext context, Visual dest, IBrush background, BoxShadows boxShadows)
         {
-            using (var trfCtx = context.PushTransformContainer())
+            using (var trf = context.PushSetTransform(Matrix.CreateTranslation(
+                new Vector(Math.Min(0, _transform.X), Math.Min(0, _transform.Y))
+                //_transform
+                )))
             {
                 if (_clipGeometry != null)
                 {
                     using (var idk = context.PushGeometryClip(_clipGeometry))
                     {
-                        using (var trf = context.PushSetTransform(Matrix.CreateTranslation(_transform)))
-                        {
-                            context.DrawRectangle(background, null, _drawTo);
-                        }
+                        context.DrawRectangle(background, null, _drawTo.Translate(
+                            //_transform
+                            new Vector(Math.Max(0, _transform.X), Math.Max(0, _transform.Y))
+                            ));
                     }
+                }
+            }
+            
+            if (false) //sanity debug stuff
+            {
+                context.DrawRectangle(null, new Pen(new SolidColorBrush(Colors.Green)), _drawTo.Translate(_transform));
+                
+                if (_clipGeometry != null)
+                {
+                    //var geom = _clipGeometry.Clone();
+                    //geom.Transform = Matrix.CreateTranslation(_transform); //Transform.Parse($"translate({_transform.X},{_transform.Y})");
+
+                    //context.DrawGeometry(null, new Pen(new SolidColorBrush(Colors.Purple)), geom);
+                    context.DrawGeometry(null, new Pen(new SolidColorBrush(Colors.Purple)), _clipGeometry/*.Bounds.Translate(_transform)*/);
                 }
             }
         }

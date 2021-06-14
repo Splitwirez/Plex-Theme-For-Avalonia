@@ -34,7 +34,8 @@
 			<Setter Property="Background" Value="#B2FFFFFF"/>
 			<Setter Property="Margin" Value="1"/>
 		</Style>
-		<Style Selector="Window[SystemDecorations=None][ClipToBounds=True][ExtendClientAreaToDecorationsHint=False] Border.titleBarContent">
+		<Style Selector="Window[ClipToBounds=True] Border.titleBarContent,
+						Window[ExtendClientAreaToDecorationsHint=True] Border.titleBarContent">
 			<Setter Property="IsVisible" Value="False"/>
 		</Style>
 		<Style Selector="Window[ClipToBounds=False][ExtendClientAreaToDecorationsHint=False] Border.titleBarContent">

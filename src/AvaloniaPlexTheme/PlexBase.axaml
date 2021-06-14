@@ -18,6 +18,8 @@
 		<CornerRadius x:Key="Window-CornerRadius-BottomRight">0,0,10,0</CornerRadius>
 		<CornerRadius x:Key="Window-CornerRadius-Bottom">0,0,10,10</CornerRadius>
 		<CornerRadius x:Key="Window-CornerRadius-BottomLeft">0,0,0,10</CornerRadius>
+		<CornerRadius x:Key="Window-CornerRadius-TopLeftAndBottomRight">0,10,0,10</CornerRadius>
+		<CornerRadius x:Key="Window-CornerRadius-TopRightAndBottomLeft">0,10,0,10</CornerRadius>
 	</Styles.Resources>
 	
 	<!--TEMP Fluent placeholders-->
