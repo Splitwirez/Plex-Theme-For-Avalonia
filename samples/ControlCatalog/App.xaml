@@ -1,7 +1,8 @@
 <Application xmlns="https://github.com/avaloniaui"
-						 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-						 xmlns:plex="splitwirez://AvaloniaPlexTheme"
-						 x:Class="ControlCatalog.App">
+			xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			xmlns:plex="splitwirez://AvaloniaPlexTheme"
+			xmlns:local="clr-namespace:ControlCatalog"
+			x:Class="ControlCatalog.App">
 	<Application.Styles>
 		<!--FluentTheme/-->
 		
@@ -92,5 +93,60 @@
 		</Style>
 
 		<StyleInclude Source="/SideBar.xaml"/>
+
+		<Style Selector="local|ComparisonControl">
+			<Setter Property="Template">
+				<ControlTemplate>
+					<StackPanel Orientation="Vertical" Spacing="24">
+						<HeaderedContentControl Classes="groupBox"
+												Header="Standard variant"
+												Content="e"
+												ContentTemplate="{TemplateBinding ContentTemplate}"/>
+						<HeaderedContentControl Classes="groupBox toolsMenuArea"
+												Header="Tools/Menu area variant"
+												Content="e"
+												ContentTemplate="{TemplateBinding ContentTemplate}"/>
+					</StackPanel>
+				</ControlTemplate>
+			</Setter>
+		</Style>
+		<!--Style Selector="local|ComparisonControl">
+			<Setter Property="Template">
+				<ControlTemplate>
+        			<ItemsPresenter x:Name="PART_ItemsPresenter"
+									Items="{TemplateBinding Items}"
+									ItemsPanel="{TemplateBinding ItemsPanel}">
+						<ItemsPresenter.ItemTemplate>
+							<DataTemplate DataType="{x:Type local:CompareItem}">
+								<HeaderedContentControl Header="{Binding Title}"
+														Classes="{Binding OutCompareClasses}">
+									<TemplatedControl Template="{Binding $parent[local:ComparisonControl].OutCompareTemplate}"/>
+								</HeaderedContentControl>
+							</DataTemplate>
+						</ItemsPresenter.ItemTemplate>
+					</ItemsPresenter>
+					
+						<!-HeaderedContentControl Classes="groupBox"
+												Header="Standard variant"
+												ContentTemplate="{TemplateBinding ContentTemplate}"/>
+						<HeaderedContentControl Classes="groupBox toolsMenuArea"
+												Header="Tools/Menu area variant"
+												ContentTemplate="{TemplateBinding ContentTemplate}"/->
+					<!-/StackPanel->
+				</ControlTemplate>
+			</Setter>
+			<Setter Property="ItemsPanel">
+				<ItemsPanelTemplate>
+					<StackPanel Orientation="Vertical" Spacing="24"/>
+				</ItemsPanelTemplate>
+			</Setter>
+			<Setter Property="Items">
+				<local:CompareItems>
+					<local:CompareItem Title="Standard variant" />
+					<local:CompareItem Title="Standard variant"
+										CompareClasses="toolsMenuArea"/>
+				</local:CompareItems>
+			</Setter>
+		</Style-->
 	</Application.Styles>
 </Application>

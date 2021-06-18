@@ -117,6 +117,11 @@ namespace AvaloniaPlexTheme
                 },
             };
             
+            //foreach (IThemeRule rule in _themeRules)
+            for (int rIndex = 0; rIndex < _themeRules.Count; rIndex++)
+            {
+                Console.WriteLine($"Rule {rIndex} is " + (_themeRules[rIndex] != null ? "NON-NULL" : "NULL") );
+            }
 
 
             var testResources = _themeRules.ToValuesDictionary(colorScheme);

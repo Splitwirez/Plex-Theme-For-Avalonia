@@ -1,24 +1,10 @@
 <UserControl xmlns="https://github.com/avaloniaui"
 			xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 			x:Class="ControlCatalog.Pages.ButtonPage">
-	<StackPanel Spacing="24">
-		<HeaderedContentControl Classes="groupBox"
-								Header="Standard variant">
-			<StackPanel Orientation="Horizontal"
-						Spacing="4">
-				<Button>Button</Button>
-				<RepeatButton x:Name="RepeatButton" Content="Repeat Button (0 clicks)" />
-				<ToggleButton>ToggleButton</ToggleButton>
-			</StackPanel>
-		</HeaderedContentControl>
-		<HeaderedContentControl Classes="groupBox toolsMenuArea"
-								Header="Tools/Menu area variant">
-			<StackPanel Orientation="Horizontal"
-						Spacing="4">
-				<Button>Button</Button>
-				<RepeatButton x:Name="ToolsMenuAreaRepeatButton" Content="Repeat Button (0 clicks)" />
-				<ToggleButton>ToggleButton</ToggleButton>
-			</StackPanel>
-		</HeaderedContentControl>
+	<StackPanel Orientation="Horizontal"
+				Spacing="4">
+		<Button>Button</Button>
+		<RepeatButton x:Name="RepeatButton" Content="Repeat Button (0 clicks)" />
+		<ToggleButton>ToggleButton</ToggleButton>
 	</StackPanel>
 </UserControl>

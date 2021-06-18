@@ -41,7 +41,7 @@
 						Margin="10,0,0,0"
 						IsVisible="{Binding $parent[Window].ExtendClientAreaToDecorationsHint}">
 						<plex:RelativeBrushDecorator DrawRelativeTo="{Binding #CornerArea.DrawRelativeTo}"
-													Background="{DynamicResource Window-TitleBar-BottomBorderBrush}"
+													Background="{DynamicResource WindowTitleBar-BottomBorderBrush}"
 													CornerRadius="{DynamicResource Window-CornerRadius-TopRightAndBottomLeft}"/>
 						<plex:RelativeBrushDecorator x:Name="CornerArea"
 													DrawRelativeTo="{TemplateBinding Tag}"
@@ -100,17 +100,17 @@
 		</Setter>
 	</Style>
 	<Style Selector="Window[IsActive=True] /template/ CaptionButtons /template/ plex|RelativeBrushDecorator#CornerArea">
-		<Setter Property="Background" Value="{DynamicResource Window-ActiveTitleBar-Background}"/>
+		<Setter Property="Background" Value="{DynamicResource WindowTitleBar-Active-Background}"/>
     </Style>
 	<Style Selector="Window[IsActive=False] /template/ CaptionButtons /template/ plex|RelativeBrushDecorator#CornerArea">
-		<Setter Property="Background" Value="{DynamicResource Window-InactiveTitleBar-Background}"/>
+		<Setter Property="Background" Value="{DynamicResource WindowTitleBar-Inactive-Background}"/>
     </Style>
 
 	<Style Selector="CaptionButtons /template/ Panel.captionButton > ContentControl">
         <Setter Property="VerticalAlignment" Value="Stretch"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="Foreground" Value="{DynamicResource Window-CaptionButton-ActiveIdle}"/>
+        <Setter Property="Foreground" Value="{DynamicResource CaptionButtons-Active-Idle}"/>
 		<Setter Property="Padding" Value="6,0"/>
         <Setter Property="Template">
             <ControlTemplate>
@@ -136,13 +136,13 @@
     </Style>
 
 	<Style Selector="Window[IsActive=False] /template/ CaptionButtons /template/ Panel.captionButton > ContentControl">
-        <Setter Property="Foreground" Value="{DynamicResource Window-CaptionButton-InactiveIdle}"/>
+        <Setter Property="Foreground" Value="{DynamicResource CaptionButtons-Inactive-Idle}"/>
     </Style>
 	<Style Selector="CaptionButtons /template/ Panel.captionButton:pointerover > ContentControl">
-        <Setter Property="Foreground" Value="{DynamicResource Window-CaptionButton-Hover}"/>
+        <Setter Property="Foreground" Value="{DynamicResource CaptionButtons-Hover}"/>
     </Style>
 	<Style Selector="CaptionButtons /template/ Panel.captionButton:pressed > ContentControl">
-        <Setter Property="Foreground" Value="{DynamicResource Window-CaptionButton-Pressed}"/>
+        <Setter Property="Foreground" Value="{DynamicResource CaptionButtons-Pressed}"/>
     </Style>
 	<Style Selector="CaptionButtons /template/ Panel.captionButton:disabled > ContentControl /template/ ContentPresenter#PART_ContentPresenter">
         <Setter Property="Opacity" Value="0.25"/>
@@ -151,7 +151,7 @@
 	<Style Selector="CaptionButtons /template/ Panel.captionButton > ContentControl > Panel > Path,
 					CaptionButtons /template/ Panel.captionButton#PART_RestoreButton > ContentControl > TemplatedControl /template/ Path.glyph">
         <Setter Property="Fill" Value="{Binding $parent[ContentControl].Foreground}"/>
-        <Setter Property="Stroke" Value="{DynamicResource Window-CaptionButton-Stroke}"/>
+        <Setter Property="Stroke" Value="{DynamicResource CaptionButtons-Stroke}"/>
         <Setter Property="StrokeThickness" Value="1"/>
     </Style>
 	<Style Selector="CaptionButtons /template/ Panel.captionButton#PART_CloseButton > ContentControl > Panel > Path">
@@ -159,7 +159,7 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
 	<Style Selector="CaptionButtons /template/ Panel.captionButton > ContentControl > Panel > Border">
-		<Setter Property="BorderBrush" Value="{DynamicResource Window-CaptionButton-Stroke}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource CaptionButtons-Stroke}"/>
 		<Setter Property="BorderThickness" Value="1"/>
     </Style>
 	<Style Selector="CaptionButtons /template/ Panel.captionButton > ContentControl > Panel > Border > Rectangle">
@@ -197,11 +197,11 @@
     </Style>
 	<Style Selector="CaptionButtons /template/ Panel.captionButton#PART_RestoreButton > ContentControl > TemplatedControl /template/ Border.glyphOuter,
 					CaptionButtons /template/ Panel.captionButton#PART_RestoreButton > ContentControl > TemplatedControl /template/ Border.glyphOuter > Border > Border">
-		<Setter Property="BorderBrush" Value="{DynamicResource Window-CaptionButton-Stroke}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource CaptionButtons-Stroke}"/>
 		<Setter Property="BorderThickness" Value="1"/>
     </Style>
 	<Style Selector="CaptionButtons /template/ Panel.captionButton#PART_RestoreButton > ContentControl > TemplatedControl /template/ Border.glyphOuter > Border > Rectangle">
-		<Setter Property="Stroke" Value="{DynamicResource Window-CaptionButton-Stroke}"/>
+		<Setter Property="Stroke" Value="{DynamicResource CaptionButtons-Stroke}"/>
 		<Setter Property="StrokeThickness" Value="1"/>
     </Style>
 </Styles>

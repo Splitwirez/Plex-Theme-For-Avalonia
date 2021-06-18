@@ -18,12 +18,12 @@ namespace ControlCatalog.Pages
                 regRepeatButton.Content = $"RepeatButton ({regClickCount} clicks)";
             };
             
-            var tmnaRepeatButton = this.FindControl<RepeatButton>("ToolsMenuAreaRepeatButton");
+            /*var tmnaRepeatButton = this.FindControl<RepeatButton>("ToolsMenuAreaRepeatButton");
             tmnaRepeatButton.Click += (s, e) =>
             {
                 tmnaClickCount++;
                 tmnaRepeatButton.Content = $"RepeatButton ({tmnaClickCount} clicks)";
-            };
+            };*/
         }
 
         private void InitializeComponent()

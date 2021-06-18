@@ -1,75 +1,63 @@
 <UserControl xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:sys="clr-namespace:System;assembly=netstandard"
-             x:Class="ControlCatalog.Pages.SliderPage">
-  <StackPanel Orientation="Vertical" Spacing="4">
-    <!--TextBlock Classes="h1">Slider</TextBlock>
-    <TextBlock Classes="h2">A control that lets the user select from a range of values by moving a Thumb control along a Track.</TextBlock-->
-
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 16 0 0" Spacing="16">
-      <StackPanel Orientation="Vertical"
-                  HorizontalAlignment="Center">
-        <Slider Value="0"
-                Minimum="0"
-                Maximum="100"
-                TickFrequency="10"
-                Width="300" />
-        <Slider Name="CustomTickedSlider"
-                Value="0"
-                Minimum="0"
-                Maximum="100"
-                TickPlacement="BottomRight"
-                IsSnapToTickEnabled="True"
-                Ticks="0,20,25,40,75,100"
-                Width="300" />
-        <Slider Name="SliderWithTooltip"
-                Value="0"
-                Minimum="0"
-                Maximum="100"
-                Width="300">
-          <Slider.Styles>
-            <Style Selector="Slider /template/ Thumb">
-              <Setter Property="ToolTip.Tip" Value="{Binding $parent[Slider].Value, Mode=OneWay, StringFormat='Value \{0:f\}'}" />
-              <Setter Property="ToolTip.Placement" Value="Top" />
-              <Setter Property="ToolTip.VerticalOffset" Value="-10" />
-              <Setter Property="ToolTip.HorizontalOffset" Value="-30" />
-            </Style>
-          </Slider.Styles>
-        </Slider>
-        <Slider Value="0"
-                Minimum="0"
-                Maximum="100"
-                TickFrequency="10"
-                Width="300">
-          <DataValidationErrors.Error>
-            <sys:Exception /> 
-          </DataValidationErrors.Error>
-        </Slider>
-        <Slider Value="0"
-                Minimum="0"
-                Maximum="100"
-                TickFrequency="10"
-                Width="300" />
-                <!--IsDirectionReversed="True"-->
-      </StackPanel>
-      <Slider Value="0"
-              Minimum="0"
-              Maximum="100"
-              Orientation="Vertical"
-              IsSnapToTickEnabled="True"
-              TickPlacement="Outside"
-              TickFrequency="10"
-              Height="300"/>
-      <Slider Value="0"
-              Minimum="0"
-              Maximum="100"
-              Orientation="Vertical"
-              IsSnapToTickEnabled="True"
-              TickPlacement="Outside"
-              TickFrequency="10"
-              Height="300"/>
-              <!--IsDirectionReversed="True"-->
-    </StackPanel>
-
-  </StackPanel>
+			xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			xmlns:sys="clr-namespace:System;assembly=netstandard"
+			x:Class="ControlCatalog.Pages.SliderPage">
+	<DockPanel>
+		<Slider Value="0"
+				Minimum="0"
+				Maximum="100"
+				Orientation="Vertical"
+				IsSnapToTickEnabled="True"
+				TickPlacement="Outside"
+				TickFrequency="10"
+				Height="300"
+				DockPanel.Dock="Right"/>
+		<!--Slider Value="0"
+				Minimum="0"
+				Maximum="100"
+				Orientation="Vertical"
+				IsSnapToTickEnabled="True"
+				TickPlacement="Outside"
+				TickFrequency="10"
+				Height="300"
+				IsDirectionReversed="True">
+				DockPanel.Dock="Right"/-->
+		<StackPanel Orientation="Vertical">
+			<TextBlock Text="Regular old 0 - 100 slider"/>
+			<Slider Value="0"
+					Minimum="0"
+					Maximum="100"
+					TickFrequency="10"/>
+			<TextBlock Text="Slider with custom tick-marks"/>
+			<Slider Value="0"
+					Minimum="0"
+					Maximum="100"
+					TickPlacement="BottomRight"
+					IsSnapToTickEnabled="True"
+					Ticks="0,20,25,40,75,100"/>
+			<TextBlock Text="Slider with custom Thumb ToolTip"/>
+			<Slider Value="0"
+					Minimum="0"
+					Maximum="100">
+				<Slider.Styles>
+					<Style Selector="Slider /template/ Thumb">
+						<Setter Property="ToolTip.Tip" Value="{Binding $parent[Slider].Value, Mode=OneWay, StringFormat='Value \{0:f\}'}" />
+						<Setter Property="ToolTip.Placement" Value="Top" />
+						<Setter Property="ToolTip.VerticalOffset" Value="-10" />
+						<Setter Property="ToolTip.HorizontalOffset" Value="-30" />
+					</Style>
+				</Slider.Styles>
+			</Slider>
+			<TextBlock Text="Slider that complains about invalid data"/>
+			<Slider Value="0"
+					Minimum="0"
+					Maximum="100"
+					TickFrequency="10"
+					Width="300">
+				<DataValidationErrors.Error>
+					<sys:Exception /> 
+				</DataValidationErrors.Error>
+			</Slider>
+		</StackPanel>
+	</DockPanel>
 </UserControl>

@@ -54,7 +54,10 @@
 	<!--StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/RepeatButton.xaml"/-->
 	
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/Separator.xaml"/><!--TBD-->
-	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/Slider.xaml"/><!--TBD-->
+	
+	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/Slider.axaml"/>
+	<!--StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/Slider.xaml"/-->
+	
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/ScrollBar.xaml"/><!--TBD-->
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/ScrollViewer.xaml"/><!--TBD-->
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/TabStrip.xaml"/><!--TBD-->
