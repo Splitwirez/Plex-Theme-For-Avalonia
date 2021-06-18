@@ -108,21 +108,37 @@ namespace ControlCatalog
 
         public void RefreshColours(double hue)
         {
-            RefreshColours(hue, hue, hue, hue);
+            RefreshColours(hue, hue, hue + 7, hue - 5);
         }
 
-
-        public void RefreshColours(double chromeHue = 210, double toolsMenuAreaHue = 210, double clientAreaBackgroundHue = 210, double controlsHue = 210)
+        public void RefreshColours(double hue, PlexColorMode colorMode)
+        {
+            RefreshColours(hue, hue, hue, hue, colorMode);
+        }
+        /*public void RefreshColours(double chromeHue = 210, double toolsMenuAreaHue = 210, double clientAreaBackgroundHue = 210, double controlsHue = 210)
+        {
+            RefreshColours(chromeHue, toolsMenuAreaHue, clientAreaBackgroundHue, controlsHue, PlexColorScheme.DEFAULT_COLOR_MODE);
+        }*/
+        public void RefreshColours(double chromeHue, double toolsMenuAreaHue, double clientAreaBackgroundHue, double controlsHue, PlexColorMode colorMode = PlexColorScheme.DEFAULT_COLOR_MODE)
         {
             PlexTheme theme = (PlexTheme)(this.Styles.FirstOrDefault(x => x is PlexTheme));
+
+            theme.ColorScheme =
+                new PlexColorScheme(
+                    (byte)chromeHue,
+                    (byte)toolsMenuAreaHue,
+                    (byte)clientAreaBackgroundHue,
+                    (byte)controlsHue,
+                    colorMode
+                );
             
-            theme.RefreshColours((int)chromeHue, (int)toolsMenuAreaHue, (int)clientAreaBackgroundHue, (int)controlsHue);
+            /*theme.RefreshColours((int)chromeHue, (int)toolsMenuAreaHue, (int)clientAreaBackgroundHue, (int)controlsHue);
             
             int themeIndex = Styles.IndexOf(theme);
             
             Styles.RemoveAt(themeIndex);
             
-            Styles.Insert(themeIndex, theme);
+            Styles.Insert(themeIndex, theme);*/
         }
     }
 }

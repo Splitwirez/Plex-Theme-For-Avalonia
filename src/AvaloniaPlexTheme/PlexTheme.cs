@@ -53,6 +53,29 @@ namespace AvaloniaPlexTheme
 
         public IResourceHost? Owner => (Loaded as IResourceProvider)?.Owner;
 
+
+
+        PlexColorScheme _colorScheme = new PlexColorScheme(210);
+        /*{
+            Chrome = new ThemeColor(210, 53, 96),
+            ToolsMenuArea = new ThemeColor(210, 56, 85),
+            Background = new ThemeColor(217, 12, 90),
+            Controls = new ThemeColor(205, 62, 99),
+            ColorMode = PlexColorMode.Bright
+        };*/
+
+        public PlexColorScheme ColorScheme
+        {
+            get => _colorScheme;
+            set
+            {
+                _colorScheme = value;
+                RefreshColours();
+            }
+        }
+
+
+
         /// <summary>
         /// Gets the loaded style.
         /// </summary>
@@ -85,19 +108,19 @@ namespace AvaloniaPlexTheme
 
         
 
-        public void RefreshColours(int hue)
+        /*void RefreshColours(int hue)
         {
             RefreshColours(hue, hue, hue, hue);
         }
 
 
-        public void RefreshColours(int chromeHue = 210, int toolsMenuAreaHue = 210, int clientAreaBackgroundHue = 210, int controlsHue = 210)
+        void RefreshColours(int chromeHue = 210, int toolsMenuAreaHue = 210, int clientAreaBackgroundHue = 210, int controlsHue = 210)
         {
             //var reso = GetLegacyColorResources();
             
             
             
-            ThemeColorScheme colorScheme = new ThemeColorScheme()
+            RefreshColours(new ThemeColorScheme()
             {
                 {
                     SCM_CHRM,
@@ -115,9 +138,17 @@ namespace AvaloniaPlexTheme
                     SCM_CTRL,
                     new ThemeColor((byte)GetValidHue(controlsHue - 5), 62, 99) //(byte)((205 - 200) + whatever)
                 },
-            };
+            });
             
             //foreach (IThemeRule rule in _themeRules)
+        }*/
+
+        
+        void RefreshColours() =>
+            RefreshColours(ColorScheme);
+        
+        void RefreshColours(IThemeColorScheme colorScheme)
+        {
             for (int rIndex = 0; rIndex < _themeRules.Count; rIndex++)
             {
                 Console.WriteLine($"Rule {rIndex} is " + (_themeRules[rIndex] != null ? "NON-NULL" : "NULL") );
@@ -139,6 +170,7 @@ namespace AvaloniaPlexTheme
                 }
             }
         }
+
 
 
         static int GetValidHue(int potentiallyInvalidHue)

@@ -189,35 +189,8 @@
 								<Popup PlacementTarget="{Binding #Colors}" IsOpen="{Binding #Colors.IsChecked, Mode=TwoWay}" StaysOpen="False">
 									<Border Background="Gray" BorderBrush="#FFFF00FF" BorderThickness="5">
 										<StackPanel>
-											<StackPanel.Styles>
-												<Style Selector="Slider">
-													<Setter Property="Minimum" Value="0"/>
-													<Setter Property="Maximum" Value="255"/>
-													<Setter Property="Width" Value="640"/>
-													<Setter Property="Orientation" Value="Horizontal"/>
-												</Style>
-											</StackPanel.Styles>
 											<TextBlock Text="TODO: Make this not look horrible"/>
-											<CheckBox x:Name="UniformColors" Margin="0,0,0,10" IsChecked="True">Adjust colors uniformly</CheckBox>
-											<StackPanel Orientation="Vertical" IsVisible="{Binding !#UniformColors.IsChecked}">
-												<StackPanel.Styles>
-													<Style Selector="TextBlock">
-														<Setter Property="Margin" Value="0,10,0,0"/>
-													</Style>
-													<Style Selector="Slider">
-														<Setter Property="Margin" Value="0,0,0,10"/>
-													</Style>
-												</StackPanel.Styles>
-												<TextBlock Text="Window chrome hue"/>
-												<Slider x:Name="ChromeHue" Value="210"/>
-												<TextBlock Text="Tools/menu area hue"/>
-												<Slider x:Name="ToolsMenuAreaHue" Value="210"/>
-												<TextBlock Text="Window client area background hue"/>
-												<Slider x:Name="ClientAreaBackgroundHue" Value="210"/>
-												<TextBlock Text="Controls hue"/>
-												<Slider x:Name="ControlsHue" Value="210"/>
-											</StackPanel>
-											<Slider x:Name="OverallThemeHue" Value="210" IsVisible="{Binding #UniformColors.IsChecked}"/>
+											<pages:PlexColorsPage/>
 										</StackPanel>
 									</Border>
 								</Popup>

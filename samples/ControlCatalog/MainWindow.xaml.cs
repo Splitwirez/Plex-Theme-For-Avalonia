@@ -1,5 +1,3 @@
-using System;
-using System.Runtime.InteropServices;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Notifications;
@@ -7,6 +5,8 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using ControlCatalog.ViewModels;
+using System;
+using System.Runtime.InteropServices;
 
 namespace ControlCatalog
 {
@@ -15,13 +15,6 @@ namespace ControlCatalog
         private WindowNotificationManager _notificationArea;
         private NativeMenu _recentMenu;
 
-
-        Slider _overallThemeHue;
-
-        Slider _chromeHue;
-        Slider _toolsMenuAreaHue;
-        Slider _clientAreaBackgroundHue;
-        Slider _controlsHue;
 
         public MainWindow()
         {
@@ -40,40 +33,7 @@ namespace ControlCatalog
             _recentMenu = ((NativeMenu.GetMenu(this).Items[0] as NativeMenuItem).Menu.Items[2] as NativeMenuItem).Menu;
 
             var mainMenu = this.FindControl<Menu>("MainMenu");
-            mainMenu.AttachedToVisualTree += MenuAttached;
-
-
-            _chromeHue = this.Find<Slider>("ChromeHue");
-            _toolsMenuAreaHue = this.Find<Slider>("ToolsMenuAreaHue");
-            _clientAreaBackgroundHue = this.Find<Slider>("ClientAreaBackgroundHue");
-            _controlsHue = this.Find<Slider>("ControlsHue");
-
-            Action refreshColoursSeparate = (() => 
-            {
-                Console.WriteLine("beep beep");
-                (App.Current as App).RefreshColours(_chromeHue.Value, _toolsMenuAreaHue.Value, _clientAreaBackgroundHue.Value, _controlsHue.Value);
-            });
-            
-            
-            //_chromeHue.PointerReleased += (s, e) => refreshColoursSeparate();
-            _chromeHue.AddHandler<PointerReleasedEventArgs>(Slider.PointerReleasedEvent, PartialColoursSliders_PointerReleased, RoutingStrategies.Bubble, true);
-            _toolsMenuAreaHue.AddHandler<PointerReleasedEventArgs>(Slider.PointerReleasedEvent, PartialColoursSliders_PointerReleased, RoutingStrategies.Bubble, true);
-            _clientAreaBackgroundHue.AddHandler<PointerReleasedEventArgs>(Slider.PointerReleasedEvent, PartialColoursSliders_PointerReleased, RoutingStrategies.Bubble, true);
-            _controlsHue.AddHandler<PointerReleasedEventArgs>(Slider.PointerReleasedEvent, PartialColoursSliders_PointerReleased, RoutingStrategies.Bubble, true);
-
-            /*_toolsMenuAreaHue.PointerReleased += (s, e) => refreshColoursSeparate();
-            _clientAreaBackgroundHue.PointerReleased += (s, e) => refreshColoursSeparate();
-            _controlsHue.PointerReleased += (s, e) => refreshColoursSeparate();*/
-
-
-            _overallThemeHue = this.Find<Slider>("OverallThemeHue");
-
-            _overallThemeHue.AddHandler<PointerReleasedEventArgs>(Slider.PointerReleasedEvent, (s, e) => (App.Current as App).RefreshColours(_overallThemeHue.Value), RoutingStrategies.Bubble, true);
-        }
-
-        void PartialColoursSliders_PointerReleased(object sender, PointerReleasedEventArgs e)
-        {
-            (App.Current as App).RefreshColours(_chromeHue.Value, _toolsMenuAreaHue.Value, _clientAreaBackgroundHue.Value, _controlsHue.Value);
+            mainMenu.AttachedToVisualTree += MenuAttached;   
         }
 
         public static string MenuQuitHeader => RuntimeInformation.IsOSPlatform(OSPlatform.OSX) ? "Quit Avalonia" : "E_xit";

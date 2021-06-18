@@ -20,10 +20,17 @@ namespace AvaloniaPlexTheme
     /// </summary>
     public partial class PlexTheme : IStyle, IResourceProvider
     {
-        const string SCM_CHRM = "Chrome";
+        /*const string SCM_CHRM = "Chrome";
         const string SCM_TMNA = "ToolsMenu";
         const string SCM_CLBG = "Background";
-        const string SCM_CTRL = "Controls";
+        const string SCM_CTRL = "Controls";*/
+        static readonly string SCM_CHRM = PlexColorScheme.ChromeProperty.Name;
+        static readonly string SCM_TMNA = PlexColorScheme.ToolsMenuAreaProperty.Name;
+        static readonly string SCM_CLBG = PlexColorScheme.BackgroundProperty.Name;
+        static readonly string SCM_CTRL = PlexColorScheme.ControlsProperty.Name;
+        static readonly string SCM_P_CLMD = PlexColorScheme.ColorModeProperty.Name;
+
+
 
         static readonly ThemeRules _themeRules;
         

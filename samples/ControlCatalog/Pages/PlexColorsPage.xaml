@@ -1,0 +1,45 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+						 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+						 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+						 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+						 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+						 x:Class="ControlCatalog.Pages.PlexColorsPage">
+	<StackPanel Spacing="10">
+		<StackPanel.Styles>
+			<Style Selector="Slider">
+				<Setter Property="Minimum" Value="0"/>
+				<Setter Property="Maximum" Value="255"/>
+				<!--Setter Property="Width" Value="640"/-->
+				<Setter Property="Orientation" Value="Horizontal"/>
+			</Style>
+			<Style Selector="TextBlock">
+				<Setter Property="Margin" Value="0,0,0,-10"/>
+			</Style>
+		</StackPanel.Styles>
+		<CheckBox x:Name="UniformColors" IsChecked="True">Adjust colors uniformly</CheckBox>
+		<StackPanel Orientation="Vertical" Spacing="10" IsVisible="{Binding !#UniformColors.IsChecked}">
+			<!--StackPanel.Styles>
+				<Style Selector="Slider">
+					<Setter Property="Margin" Value="0,0,0,10"/>
+				</Style>
+			</StackPanel.Styles-->
+			<TextBlock Text="Window chrome hue"/>
+			<Slider x:Name="ChromeHue" Value="210"/>
+			<TextBlock Text="Tools/menu area hue"/>
+			<Slider x:Name="ToolsMenuAreaHue" Value="210"/>
+			<TextBlock Text="Window client area background hue"/>
+			<Slider x:Name="ClientAreaBackgroundHue" Value="217"/>
+			<TextBlock Text="Controls hue"/>
+			<Slider x:Name="ControlsHue" Value="205"/>
+		</StackPanel>
+		<Slider x:Name="OverallThemeHue" Value="210" IsVisible="{Binding #UniformColors.IsChecked}"/>
+		<!--CheckBox x:Name="DarkMode" IsChecked=/-->
+		<TextBlock Text="Coloration mode" IsVisible="False"/>
+		<ComboBox x:Name="ColorMode" SelectedIndex="0" IsVisible="False">
+			<!--ComboBoxItem>Light</ComboBoxItem-->
+			<ComboBoxItem>Bright</ComboBoxItem>
+			<ComboBoxItem>Dark</ComboBoxItem>
+		</ComboBox>
+		<Button x:Name="Apply" HorizontalAlignment="Right" VerticalAlignment="Bottom" >Apply</Button>
+	</StackPanel>
+</UserControl>
