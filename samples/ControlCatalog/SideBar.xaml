@@ -14,7 +14,7 @@
 	</Styles.Resources>
 	<Style Selector="TabControl.sidebar">
 		<Setter Property="TabStripPlacement" Value="Left"/>
-		<Setter Property="Padding" Value="8"/>
+		<Setter Property="Padding" Value="16"/>
 		<Setter Property="Template">
 			<ControlTemplate>
 				<!--Border 
@@ -67,7 +67,7 @@
 								</Border.OpacityMask>
 								<Rectangle Fill="{DynamicResource Window-Background}" Margin="0,0,0,-400"/>
 							</Border-->
-							<Rectangle MinHeight="41">
+							<Rectangle MinHeight="41" VerticalAlignment="Top" Margin="0,0,0,-41">
 								<!--OpacityMask="{Binding #Backdrop.OpacityMask}"-->
 								<Rectangle.OpacityMask>
 									<LinearGradientBrush StartPoint="0%,0%"
@@ -199,7 +199,8 @@
 								</Rectangle.Fill>
 							</Rectangle>
 							<StackPanel Orientation="Vertical"
-										Margin="28,21,28,42"
+										Spacing="6"
+										Margin="28,21,28,-10"
 										HorizontalAlignment="Stretch"
 										VerticalAlignment="Center">
 								<TextBlock Classes="beegHeader"
@@ -516,6 +517,7 @@
 		</Setter-->
 		<Setter Property="(ScrollViewer.HorizontalScrollBarVisibility)" Value="Auto"/>
 		<Setter Property="(ScrollViewer.VerticalScrollBarVisibility)" Value="Auto"/>
+		<Setter Property="VerticalContentAlignment" Value="Top"/>
 	</Style>
 	<Style Selector="TabControl.sidebar > TabItem /template/ Border#PART_SelectedPipe">
 		<Setter Property="Width" Value="0" />

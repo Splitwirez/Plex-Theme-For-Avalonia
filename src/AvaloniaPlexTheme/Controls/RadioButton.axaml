@@ -76,7 +76,8 @@
 		<Setter Property="Background" Value="{DynamicResource CheckBox-Disabled-Background}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource CheckBox-Disabled-BorderBrush}" />
 	</Style>
-	<Style Selector="RadioButton:disabled /template/ Border#PART_Border :is(Shape)">
+	<Style Selector="RadioButton:disabled /template/ Border#PART_Border :is(Shape),
+					RadioButton:disabled /template/ Panel#CheckArea :is(Shape)">
 		<Setter Property="Fill" Value="{DynamicResource CheckBox-Disabled-CheckMark}" />
 	</Style>
 
@@ -151,11 +152,11 @@
     </Style-->
 
 
-	<Style Selector=":is(TemplatedControl).toolsMenuArea RadioButton /template/ Panel#CheckArea :is(Shape)">
+	<Style Selector=":is(TemplatedControl).toolsMenuArea RadioButton:not(:disabled) /template/ Panel#CheckArea :is(Shape)">
 		<Setter Property="Fill" Value="{DynamicResource CheckBox-ToolsMenuArea-Idle-CheckMark}" />
 	</Style>
 	
-	<Style Selector=":is(TemplatedControl).toolsMenuArea RadioButton:pointerover:not(:pressed) /template/ Panel#CheckArea :is(Shape)">
+	<Style Selector=":is(TemplatedControl).toolsMenuArea RadioButton:pointerover:not(:pressed, :disabled) /template/ Panel#CheckArea :is(Shape)">
 		<Setter Property="Fill" Value="{DynamicResource ToolsMenuAreaControl-Hover-Foreground}" />
 	</Style>
 </Styles>

@@ -52,8 +52,7 @@
 			<Slider Value="0"
 					Minimum="0"
 					Maximum="100"
-					TickFrequency="10"
-					Width="300">
+					TickFrequency="10">
 				<DataValidationErrors.Error>
 					<sys:Exception /> 
 				</DataValidationErrors.Error>

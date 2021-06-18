@@ -81,7 +81,8 @@
 		<Setter Property="Background" Value="{DynamicResource CheckBox-Disabled-Background}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource CheckBox-Disabled-BorderBrush}" />
 	</Style>
-	<Style Selector="CheckBox:disabled /template/ Border#PART_Border :is(Shape)">
+	<Style Selector="CheckBox:disabled /template/ Border#PART_Border :is(Shape),
+					CheckBox:disabled /template/ Panel#CheckArea :is(Shape)">
 		<Setter Property="Fill" Value="{DynamicResource CheckBox-Disabled-CheckMark}" />
 	</Style>
 
@@ -140,11 +141,11 @@
 		</Setter>
 	</Style>
 
-	<Style Selector=":is(TemplatedControl).toolsMenuArea CheckBox /template/ Panel#CheckArea :is(Shape)">
+	<Style Selector=":is(TemplatedControl).toolsMenuArea CheckBox:not(:disabled) /template/ Panel#CheckArea :is(Shape)">
 		<Setter Property="Fill" Value="{DynamicResource CheckBox-ToolsMenuArea-Idle-CheckMark}" />
 	</Style>
 	
-	<Style Selector=":is(TemplatedControl).toolsMenuArea CheckBox:pointerover:not(:pressed) /template/ Panel#CheckArea :is(Shape)">
+	<Style Selector=":is(TemplatedControl).toolsMenuArea CheckBox:pointerover:not(:pressed, :disabled) /template/ Panel#CheckArea :is(Shape)">
 		<Setter Property="Fill" Value="{DynamicResource ToolsMenuAreaControl-Hover-Foreground}" />
 	</Style>
 

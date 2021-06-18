@@ -27,7 +27,6 @@ namespace AvaloniaPlexTheme
             {
                 new ThemeRuleGroup("Idle")
                 {
-                    //new SolidColorBrushThemeRule("Background0", SCM_CTRL, saturation: Over100ToOver255(57), value: Over100ToOver255(84)),
                     new LinearGradientBrushThemeRule("Background", new RelativePoint(0.625, 0.25, RelativeUnit.Relative), new RelativePoint(0.375, 0.625, RelativeUnit.Relative))
                     {
                         new GradientStopThemeRule(SCM_CTRL, 0, saturation: Over100ToOver255(24), value: Over100ToOver255(92)),
@@ -57,24 +56,36 @@ namespace AvaloniaPlexTheme
                 },
                 new ThemeRuleGroup("Checked")
                 {
-                    /*new LinearGradientBrushThemeRule("Background", new RelativePoint(0.625, 0.25, RelativeUnit.Relative), new RelativePoint(0.375, 0.625, RelativeUnit.Relative))
+                    new LinearGradientBrushThemeRule("Background", new RelativePoint(0.625, 0.25, RelativeUnit.Relative), new RelativePoint(0.375, 0.625, RelativeUnit.Relative))
                     {
-                        new GradientStopThemeRule(SCM_CTRL, 0, saturation: Over100ToOver255(34), value: Over100ToOver255(92)),
-                        new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(67), value: Over100ToOver255(84))
-                    },*/
+                        new GradientStopThemeRule(SCM_CTRL, 0, saturation: Over100ToOver255(54), value: Over100ToOver255(97)),
+                        new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(87), value: Over100ToOver255(89))
+                    },
                     new LinearGradientBrushThemeRule("BorderBrush", new RelativePoint(0, 1, RelativeUnit.Relative))
                     {
                         new GradientStopThemeRule(SCM_CTRL, 0, saturation: Over100ToOver255(13), value: Over100ToOver255(70)),
                         new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(12), value: Over100ToOver255(87))
                     }
-                }
+                },
+                new ThemeRuleGroup("Disabled")
+                {
+                    new LinearGradientBrushThemeRule("Background", new RelativePoint(0.625, 0.25, RelativeUnit.Relative), new RelativePoint(0.375, 0.625, RelativeUnit.Relative))
+                    {
+                        new GradientStopThemeRule(SCM_CTRL, 0, saturation: Over100ToOver255(0), value: Over100ToOver255(66)),
+                        new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(0), value: Over100ToOver255(49))
+                    },
+                    new LinearGradientBrushThemeRule("BorderBrush", new RelativePoint(0, 1, RelativeUnit.Relative))
+                    {
+                        new GradientStopThemeRule(SCM_CTRL, 0, saturation: Over100ToOver255(0), value: Over100ToOver255(75)),
+                        new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(0), value: Over100ToOver255(93))
+                    }
+                },
             },
             new ThemeRuleGroup("Track")
             {
                 new ThemeRuleGroup("Idle")
                 {
                     new SolidColorBrushThemeRule("Background", SCM_CTRL, saturation: Over100ToOver255(0), value: Over100ToOver255(100)),
-                    new SolidColorBrushThemeRule("Watermark", SCM_CTRL, saturation: Over100ToOver255(50), value: Over100ToOver255(57)),
                     new SolidColorBrushThemeRule("Foreground", SCM_CTRL, saturation: Over100ToOver255(50), value: Over100ToOver255(17)),
                 },
                 new ThemeRuleGroup("Hover")
@@ -93,10 +104,27 @@ namespace AvaloniaPlexTheme
                         new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(0), value: Over100ToOver255(100))
                     }
                 },
+                new ThemeRuleGroup("Disabled")
+                {
+                    new SolidColorBrushThemeRule("Background", SCM_CTRL, saturation: Over100ToOver255(0), value: Over100ToOver255(68)),
+                    new SolidColorBrushThemeRule("BorderBrush", SCM_CTRL, saturation: Over100ToOver255(0), value: Over100ToOver255(27)),
+                },
                 new LinearGradientBrushThemeRule("BorderBrush", new RelativePoint(0, 1, RelativeUnit.Relative))
                 {
                     new GradientStopThemeRule(SCM_CTRL, 0, saturation: Over100ToOver255(13), value: Over100ToOver255(70)),
                     new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(12), value: Over100ToOver255(87))
+                }
+            },
+            new ThemeRuleGroup("ToolsMenuArea")
+            {
+                new ThemeRuleGroup("Track")
+                {
+                    new ThemeRuleGroup("Idle")
+                    {
+                        new SolidColorBrushThemeRule("Background", SCM_CTRL, saturation: Over100ToOver255(63), value: Over100ToOver255(56)),
+                        new SolidColorBrushThemeRule("BorderBrush0", SCM_CTRL, saturation: Over100ToOver255(63), value: Over100ToOver255(46)),
+                        new SolidColorBrushThemeRule("BorderBrush1", SCM_CTRL, saturation: Over100ToOver255(29), value: Over100ToOver255(100)),
+                    },
                 }
             }
         };

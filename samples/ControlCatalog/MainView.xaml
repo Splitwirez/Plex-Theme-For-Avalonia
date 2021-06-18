@@ -182,13 +182,13 @@
 		</TabItem>
 		<TabItem Header="ToggleSwitch"
 				Tag="Lightswitch-flavoured alternative to a CheckBox. Best suited for 'on'/'off'-type questions.&#x0a;&#x0a;(Also good for turning off the lights before going to bed.)">
-			<!--local:ComparisonControl>
+			<local:ComparisonControl>
 				<local:ComparisonControl.ContentTemplate>
-					<DataTemplate-->
+					<DataTemplate>
 						<pages:ToggleSwitchPage/>
-					<!--/DataTemplate>
+					</DataTemplate>
 				</local:ComparisonControl.ContentTemplate>
-			</local:ComparisonControl-->
+			</local:ComparisonControl>
 		</TabItem>
 		<TabItem Header="ToolTip"
 				Classes="nyiTab"

@@ -62,14 +62,16 @@
 							Height="20"
 							Width="40"
 							BorderThickness="1"
-							CornerRadius="10"/>
+							CornerRadius="10">
+							<Border/>
+						</Border>
 
 						<Canvas x:Name="SwitchKnob" Grid.Row="1"
 							 HorizontalAlignment="Left"
 							 Width="20" Height="20">
 
-							<Panel x:Name="MovingKnobs"
-								Width="20" Height="20">
+							<Panel x:Name="MovingKnobs">
+								<Border x:Name="Outer" Margin="1"/>
 								<Border Margin="2"
 										BorderBrush="{DynamicResource ToggleSwitch-Thumb-BorderBrush}"
 										BorderThickness="1"
@@ -92,6 +94,14 @@
 			</ControlTemplate>
 		</Setter>
 	</Style>
+	<Style Selector="ToggleSwitch /template/ Panel#MovingKnobs">
+		<Setter Property="Width" Value="20"/>
+		<Setter Property="Height" Value="20"/>
+	</Style>
+	<Style Selector="ToggleSwitch /template/ Panel#MovingKnobs > Border#Outer,
+				ToggleSwitch /template/ Border#SwitchKnobBounds > Border">
+		<Setter Property="IsVisible" Value="False"/>
+	</Style>
 
 
 	<Style Selector="ToggleSwitch:checked /template/ Border#SwitchKnobBounds">
@@ -99,7 +109,7 @@
 	</Style>
 	
 	<Style Selector="ToggleSwitch:checked /template/ Panel#MovingKnobs > Border">
-		<!--Setter Property="Background" Value="{DynamicResource ToggleSwitch-Thumb-Checked-Background}"/-->
+		<Setter Property="Background" Value="{DynamicResource ToggleSwitch-Thumb-Checked-Background}"/>
 		<Setter Property="BorderBrush" Value="{DynamicResource ToggleSwitch-Thumb-Checked-BorderBrush}"/>
 	</Style>
 
@@ -150,5 +160,74 @@
 	</Style-->
 	<Style Selector="ToggleSwitch:unchecked /template/ ContentPresenter#PART_OnContentPresenter">
 		<Setter Property="Opacity" Value="0"/>
+	</Style>
+
+
+	<Style Selector="ToggleSwitch:disabled /template/ Border#SwitchKnobBounds">
+		<Setter Property="Background" Value="{DynamicResource ToggleSwitch-Track-Disabled-Background}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource ToggleSwitch-Track-Disabled-BorderBrush}"/>
+	</Style>
+	
+	<Style Selector="ToggleSwitch:disabled /template/ Panel#MovingKnobs > Border">
+		<Setter Property="Background" Value="{DynamicResource ToggleSwitch-Thumb-Disabled-Background}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource ToggleSwitch-Thumb-Disabled-BorderBrush}"/>
+	</Style>
+
+
+	<Style Selector="ToggleSwitch:not(:dragging) /template/ Panel#MovingKnobs">
+		<Setter Property="Transitions">
+			<Transitions>
+				<DoubleTransition Property="Canvas.Left" Duration="0:0:0.125" Easing="CircularEaseOut"/>
+			</Transitions>
+		</Setter>
+	</Style>
+
+
+
+	<Style Selector=":is(TemplatedControl).toolsMenuArea ToggleSwitch /template/ Panel#MovingKnobs > Border#Outer,
+				:is(TemplatedControl).toolsMenuArea ToggleSwitch /template/ Border#SwitchKnobBounds > Border">
+		<Setter Property="IsVisible" Value="True"/>
+		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="CornerRadius" Value="99999"/>
+	</Style>
+
+	<Style Selector=":is(TemplatedControl).toolsMenuArea ToggleSwitch">
+		<Setter Property="BorderBrush" Value="{DynamicResource ToggleSwitch-ToolsMenuArea-Track-Idle-BorderBrush0}"/>
+	</Style>
+
+	<Style Selector=":is(TemplatedControl).toolsMenuArea ToggleSwitch /template/ Panel#MovingKnobs">
+		<Setter Property="Width" Value="18"/>
+		<Setter Property="Height" Value="18"/>
+		<Setter Property="Margin" Value="1,1,0,0"/>
+	</Style>
+
+	<Style Selector=":is(TemplatedControl).toolsMenuArea ToggleSwitch:not(:disabled) /template/ Border#SwitchKnobBounds">
+		<Setter Property="Background" Value="{DynamicResource ToggleSwitch-ToolsMenuArea-Track-Idle-Background}"/>
+	</Style>
+	<Style Selector=":is(TemplatedControl).toolsMenuArea ToggleSwitch:checked:not(:disabled) /template/ Border#SwitchKnobBounds">
+		<Setter Property="Background" Value="{DynamicResource ToggleSwitch-ToolsMenuArea-Track-Idle-Background}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource ToggleSwitch-ToolsMenuArea-Track-Idle-BorderBrush0}"/>
+	</Style>
+
+	<Style Selector=":is(TemplatedControl).toolsMenuArea ToggleSwitch /template/ Border#SwitchKnobBounds > Border">
+		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="CornerRadius" Value="8"/>
+		<Setter Property="OpacityMask">
+			<LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+				<GradientStop Offset="0" Color="Black"/>
+				<GradientStop Offset="1" Color="#7F000000"/>
+			</LinearGradientBrush>
+		</Setter>
+	</Style>
+	<Style Selector=":is(TemplatedControl).toolsMenuArea ToggleSwitch:not(:disabled) /template/ Border#SwitchKnobBounds > Border,
+					:is(TemplatedControl).toolsMenuArea ToggleSwitch:checked:not(:disabled) /template/ Border#SwitchKnobBounds > Border">
+		<Setter Property="BorderBrush" Value="{DynamicResource ToggleSwitch-ToolsMenuArea-Track-Idle-BorderBrush1}"/>
+	</Style>
+	
+	<Style Selector=":is(TemplatedControl).toolsMenuArea ToggleSwitch /template/ Panel#MovingKnobs > Border#Outer">
+		<Setter Property="BorderBrush" Value="{DynamicResource ToggleSwitch-ToolsMenuArea-Track-Idle-BorderBrush0}"/>
+	</Style>
+	<Style Selector=":is(TemplatedControl).toolsMenuArea ToggleSwitch:disabled /template/ Panel#MovingKnobs > Border#Outer">
+		<Setter Property="BorderBrush" Value="{DynamicResource ToggleSwitch-Track-Disabled-BorderBrush}"/>
 	</Style>
 </Styles>
