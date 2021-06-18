@@ -5,6 +5,7 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using AvaloniaPlexTheme;
 using System;
+using System.Linq;
 
 namespace ControlCatalog.Pages
 {
@@ -42,13 +43,12 @@ namespace ControlCatalog.Pages
 
             this.Find<Button>("Apply").Click += (s, e) =>
             {
-                var app = (App.Current as App);
                 PlexColorMode mode = (PlexColorMode)(_colorMode.SelectedIndex);
-                
+
                 if (_overallThemeHue.IsVisible)
-                    app.RefreshColours(_overallThemeHue.Value, mode);
+                    RefreshColours(_overallThemeHue.Value, mode);
                 else
-                    app.RefreshColours(_chromeHue.Value, _toolsMenuAreaHue.Value, _clientAreaBackgroundHue.Value, _controlsHue.Value, mode);
+                    RefreshColours(_chromeHue.Value, _toolsMenuAreaHue.Value, _clientAreaBackgroundHue.Value, _controlsHue.Value, mode);
             };
 
 
@@ -80,5 +80,26 @@ namespace ControlCatalog.Pages
         {
             (App.Current as App).RefreshColours(_chromeHue.Value, _toolsMenuAreaHue.Value, _clientAreaBackgroundHue.Value, _controlsHue.Value);
         }*/
+
+
+
+        void RefreshColours(double hue, PlexColorMode colorMode)
+        {
+            RefreshColours(hue, hue, hue + 7, hue - 5, colorMode);
+        }
+        
+        void RefreshColours(double chromeHue, double toolsMenuAreaHue, double clientAreaBackgroundHue, double controlsHue, PlexColorMode colorMode)
+        {
+            PlexTheme theme = (PlexTheme)((App.Current as App).Styles.FirstOrDefault(x => x is PlexTheme));
+
+            theme.ColorScheme =
+                new PlexColorScheme(
+                    (byte)chromeHue,
+                    (byte)toolsMenuAreaHue,
+                    (byte)clientAreaBackgroundHue,
+                    (byte)controlsHue,
+                    colorMode
+                );
+        }
     }
 }

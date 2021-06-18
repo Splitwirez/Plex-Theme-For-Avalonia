@@ -34,8 +34,8 @@
 		</StackPanel>
 		<Slider x:Name="OverallThemeHue" Value="210" IsVisible="{Binding #UniformColors.IsChecked}"/>
 		<!--CheckBox x:Name="DarkMode" IsChecked=/-->
-		<TextBlock Text="Coloration mode" IsVisible="False"/>
-		<ComboBox x:Name="ColorMode" SelectedIndex="0" IsVisible="False">
+		<TextBlock Text="Coloration mode"/>
+		<ComboBox x:Name="ColorMode" SelectedIndex="0">
 			<!--ComboBoxItem>Light</ComboBoxItem-->
 			<ComboBoxItem>Bright</ComboBoxItem>
 			<ComboBoxItem>Dark</ComboBoxItem>

@@ -174,7 +174,11 @@ namespace AvaloniaPlexTheme
 
         public T GetParameter<T>(string key)
         {
-            if ((typeof(T) == typeof(PlexColorMode)) && (key == nameof(ColorMode)))
+            /*bool sameType = typeof(T) == typeof(PlexColorMode);
+            bool sameKey = key == PlexTheme.SCM_P_CLMD;
+            Console.WriteLine($"key: {key}\nT: {typeof(T).FullName}\n\tsameType: {sameType}\n\tsameKey: {sameKey}");*/
+
+            if ((typeof(T) == typeof(PlexColorMode)) && (key == PlexTheme.SCM_P_CLMD))
                 return (T)((object)ColorMode);
             else
                 return default(T);

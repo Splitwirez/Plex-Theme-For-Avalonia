@@ -24,11 +24,11 @@ namespace AvaloniaPlexTheme
         const string SCM_TMNA = "ToolsMenu";
         const string SCM_CLBG = "Background";
         const string SCM_CTRL = "Controls";*/
-        static readonly string SCM_CHRM = PlexColorScheme.ChromeProperty.Name;
-        static readonly string SCM_TMNA = PlexColorScheme.ToolsMenuAreaProperty.Name;
-        static readonly string SCM_CLBG = PlexColorScheme.BackgroundProperty.Name;
-        static readonly string SCM_CTRL = PlexColorScheme.ControlsProperty.Name;
-        static readonly string SCM_P_CLMD = PlexColorScheme.ColorModeProperty.Name;
+        internal static readonly string SCM_CHRM = PlexColorScheme.ChromeProperty.Name;
+        internal static readonly string SCM_TMNA = PlexColorScheme.ToolsMenuAreaProperty.Name;
+        internal static readonly string SCM_CLBG = PlexColorScheme.BackgroundProperty.Name;
+        internal static readonly string SCM_CTRL = PlexColorScheme.ControlsProperty.Name;
+        internal static readonly string SCM_P_CLMD = PlexColorScheme.ColorModeProperty.Name;
 
 
 

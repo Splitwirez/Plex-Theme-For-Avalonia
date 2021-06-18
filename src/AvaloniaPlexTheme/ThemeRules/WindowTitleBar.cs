@@ -21,7 +21,7 @@ namespace AvaloniaPlexTheme
     public partial class PlexTheme : IStyle, IResourceProvider
     {
         static readonly IThemeRule _windowTitleBarRules =
-        new IfElseRule<PlexColorMode>(nameof(SCM_P_CLMD), PlexColorMode.Dark)
+        new IfElseRule<PlexColorMode>(SCM_P_CLMD, PlexColorMode.Dark)
         {
             TrueValue = 
             new ThemeRuleGroup("WindowTitleBar")
