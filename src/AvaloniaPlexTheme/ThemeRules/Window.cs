@@ -28,7 +28,7 @@ namespace AvaloniaPlexTheme
                 new GradientStopThemeRule(SCM_CLBG, 0, saturation: 0, value: Over100ToOver255(100)),
                 new GradientStopThemeRule(SCM_CLBG, 1, saturation: Over100ToOver255(16), value: Over100ToOver255(91)), //Over100ToOver255(91)),
             },
-            new SolidColorBrushThemeRule("Foreground", SCM_CLBG, saturation: 0, value: Over100ToOver255(100), generateContrastForForeground: true),
+            new SolidColorBrushThemeRule("Foreground", SCM_CLBG, saturation: 0, value: Over100ToOver255(0)),
             new ThemeRuleGroup("TitleBar")
             {
                 new LinearGradientBrushThemeRule("BottomBorderBrush", new RelativePoint(0.5, 0, RelativeUnit.Relative), GradientSpreadMethod.Reflect)

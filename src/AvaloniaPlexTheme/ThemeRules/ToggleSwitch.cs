@@ -84,6 +84,13 @@ namespace AvaloniaPlexTheme
                         new GradientStopThemeRule(SCM_CTRL, 0, saturation: Over100ToOver255(0), value: Over100ToOver255(62)),
                         new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(0), value: Over100ToOver255(54))
                     },
+                    /*new RadialGradientBrushThemeRule("Background", new RelativePoint(0.625, 0.25, RelativeUnit.Relative), 0.625) //, new RelativePoint(0, 1, RelativeUnit.Relative))
+                    {
+                        new GradientStopThemeRule(SCM_CTRL, 0.25, saturation: Over100ToOver255(0), value: Over100ToOver255(62)),
+                        new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(0), value: Over100ToOver255(54))
+                    },*/
+
+
                     /*new LinearGradientBrushThemeRule("BorderBrush0", new RelativePoint(0, 1, RelativeUnit.Relative))
                     {
                         new GradientStopThemeRule(SCM_CTRL, 0, saturation: Over100ToOver255(0), value: Over100ToOver255(40)),
