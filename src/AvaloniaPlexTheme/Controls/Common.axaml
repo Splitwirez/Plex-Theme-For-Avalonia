@@ -22,9 +22,9 @@
 		<Setter Property="Template">
 			<ControlTemplate>
 				<DockPanel Background="Green">
-					<Rectangle Classes="bottomEdge" Fill="{DynamicResource ToolsMenuArea-BottomBorderBrush2}"/>
-					<Rectangle Classes="bottomEdge" Fill="{DynamicResource ToolsMenuArea-BottomBorderBrush1}"/>
 					<Rectangle Classes="bottomEdge" Fill="{DynamicResource ToolsMenuArea-BottomBorderBrush0}"/>
+					<Rectangle Classes="bottomEdge" Fill="{DynamicResource ToolsMenuArea-BottomBorderBrush1}"/>
+					<Rectangle Classes="bottomEdge" Fill="{DynamicResource ToolsMenuArea-BottomBorderBrush2}"/>
 					<Border Background="{TemplateBinding Background}"
 							BorderBrush="{TemplateBinding BorderBrush}"
 							BorderThickness="{TemplateBinding BorderThickness}"
