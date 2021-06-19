@@ -115,10 +115,10 @@
 			</LinearGradientBrush>
 		</Setter>
 	</Style>
-	<Style Selector="ToggleButton:pressed,
-					ToggleButton:checked,
-					ToggleButton:checked /template/ ContentPresenter#PART_ContentPresenter,
-					ToggleButton:checked /template/ ContentPresenter#PART_ContentPresenter">
+	<Style Selector="ToggleButton:not(:is(TemplatedControl).toolsMenuArea ToggleButton):pressed,
+					ToggleButton:not(:is(TemplatedControl).toolsMenuArea ToggleButton):checked,
+					ToggleButton:not(:is(TemplatedControl).toolsMenuArea ToggleButton):checked /template/ ContentPresenter#PART_ContentPresenter,
+					ToggleButton:not(:is(TemplatedControl).toolsMenuArea ToggleButton):checked /template/ ContentPresenter#PART_ContentPresenter">
 		<Setter Property="TextBlock.Foreground" Value="{DynamicResource Button-Pressed-Foreground}" />
 	</Style>
 	<Style Selector="ToggleButton:not(:pressed, :checked) /template/ Border#PressedBackground">
@@ -151,7 +151,7 @@
 	<Style Selector=":is(TemplatedControl).toolsMenuArea ToggleButton:not(:pressed, :checked) /template/ TemplatedControl#PressedBackground">
 		<Setter Property="IsVisible" Value="False"/>
 	</Style>
-	<Style Selector=":is(TemplatedControl).toolsMenuArea ToggleButton:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+	<Style Selector=":is(TemplatedControl).toolsMenuArea ToggleButton:pointerover:not(:pressed, :checked) /template/ ContentPresenter#PART_ContentPresenter">
 		<Setter Property="TextBlock.Foreground" Value="{DynamicResource ToolsMenuAreaControl-Hover-Foreground}" />
 	</Style>
 	<Style Selector=":is(TemplatedControl).toolsMenuArea ToggleButton:disabled,

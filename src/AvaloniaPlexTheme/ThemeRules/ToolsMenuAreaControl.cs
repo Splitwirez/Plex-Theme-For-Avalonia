@@ -46,10 +46,10 @@ namespace AvaloniaPlexTheme
                             //new GradientStopThemeRule(SCM_TMNA, 0, saturation: Over100ToOver255(5), value: Over100ToOver255(79)),
                             /*new GradientStopThemeRule(SCM_TMNA, 0, saturation: Over100ToOver255(17), value: Over100ToOver255(52)),
                             new GradientStopThemeRule(SCM_TMNA, 1, saturation: Over100ToOver255(14), value: Over100ToOver255(64)),*/
-                            new GradientStopThemeRule(SCM_TMNA, 0, saturation: Over100ToOver255(5), value: Over100ToOver255(68)),
-                            new GradientStopThemeRule(SCM_TMNA, 1, saturation: Over100ToOver255(5), value: Over100ToOver255(88)),
+                            new GradientStopThemeRule(SCM_TMNA, 0, saturation: Over100ToOver255(25), value: Over100ToOver255(68)),
+                            new GradientStopThemeRule(SCM_TMNA, 1, saturation: Over100ToOver255(25), value: Over100ToOver255(88)),
                         },
-                        new SolidColorBrushThemeRule("Background1", SCM_TMNA, saturation: Over100ToOver255(17), value: Over100ToOver255(52)),
+                        new SolidColorBrushThemeRule("Background1", SCM_TMNA, saturation: Over100ToOver255(11), value: Over100ToOver255(86)),
                         //new SolidColorBrushThemeRule("Background1", SCM_TMNA, saturation: Over100ToOver255(5), value: Over100ToOver255(79)),
                     },
                     new ThemeRuleGroup("Pressed")
