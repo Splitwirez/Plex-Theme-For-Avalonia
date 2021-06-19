@@ -55,7 +55,6 @@
 					</Border>
 					<Border x:Name="DisabledBackground"
 							Classes="buttonBackground"
-							IsVisible="{Binding !IsEnabled, RelativeSource={RelativeSource Mode=TemplatedParent}}"
 							Background="{DynamicResource Button-Disabled-Background0}"
 							BorderBrush="{DynamicResource Button-Disabled-BorderBrush0}"
 							BorderThickness="{TemplateBinding BorderThickness}">
@@ -91,6 +90,13 @@
 		<Setter Property="Padding" Value="8" />
 	</Style>
 	
+	<Style Selector="Button:not(:disabled) /template/ Border#DisabledBackground">
+		<Setter Property="IsVisible" Value="False"/>
+	</Style>
+	<Style Selector="Button:disabled,
+					Button:disabled /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="TextBlock.Foreground" Value="{DynamicResource Button-Disabled-Foreground}" />
+	</Style>
 	
 	<Style Selector="Button /template/ Border.buttonBackground">
 		<Setter Property="CornerRadius" Value="3"/>
@@ -136,5 +142,9 @@
 	</Style>
 	<Style Selector=":is(TemplatedControl).toolsMenuArea Button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
 		<Setter Property="TextBlock.Foreground" Value="{DynamicResource ToolsMenuAreaControl-Hover-Foreground}" />
+	</Style>
+	<Style Selector=":is(TemplatedControl).toolsMenuArea Button:disabled,
+					:is(TemplatedControl).toolsMenuArea Button:disabled /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="TextBlock.Foreground" Value="{DynamicResource ToolsMenuAreaControl-Disabled-Foreground}" />
 	</Style>
 </Styles>

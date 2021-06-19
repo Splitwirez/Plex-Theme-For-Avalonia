@@ -21,28 +21,31 @@ namespace AvaloniaPlexTheme
     public partial class PlexTheme : IStyle, IResourceProvider
     {
         static readonly IThemeRule _windowRules =
-        new IfElseRule<PlexColorMode>(SCM_P_CLMD, PlexColorMode.Dark)
+        new ThemeRuleGroup("Window")
         {
-            TrueValue = 
-            new ThemeRuleGroup("Window")
+            new IfElseRule<PlexColorMode>(SCM_P_CLMD, PlexColorMode.Dark)
             {
-                new LinearGradientBrushThemeRule("Background", new RelativePoint(0, 1, RelativeUnit.Relative))
+                TrueValue = 
+                new ThemeRuleGroup(string.Empty)
                 {
-                    new GradientStopThemeRule(SCM_CLBG, 0, saturation: Over100ToOver255(0), value: Over100ToOver255(18)),
-                    new GradientStopThemeRule(SCM_CLBG, 1, saturation: Over100ToOver255(36), value: Over100ToOver255(0)), //saturation: Over100ToOver255(48), value: Over100ToOver255(18)),
+                    new LinearGradientBrushThemeRule("Background", new RelativePoint(0, 1, RelativeUnit.Relative))
+                    {
+                        new GradientStopThemeRule(SCM_CLBG, 0, saturation: Over100ToOver255(0), value: Over100ToOver255(18)),
+                        new GradientStopThemeRule(SCM_CLBG, 1, saturation: Over100ToOver255(36), value: Over100ToOver255(0)), //saturation: Over100ToOver255(48), value: Over100ToOver255(18)),
+                    },
+                    new SolidColorBrushThemeRule("Foreground", SCM_CLBG, saturation: Over100ToOver255(0), value: Over100ToOver255(100))
                 },
-                new SolidColorBrushThemeRule("Foreground", SCM_CLBG, saturation: Over100ToOver255(0), value: Over100ToOver255(100))
-            },
-            
-            FalseValue =
-            new ThemeRuleGroup("Window")
-            {
-                new LinearGradientBrushThemeRule("Background", new RelativePoint(0, 1, RelativeUnit.Relative))
+                
+                FalseValue =
+                new ThemeRuleGroup(string.Empty)
                 {
-                    new GradientStopThemeRule(SCM_CLBG, 0, saturation: Over100ToOver255(0), value: Over100ToOver255(100)),
-                    new GradientStopThemeRule(SCM_CLBG, 1, saturation: Over100ToOver255(16), value: Over100ToOver255(91)), //Over100ToOver255(91)),
-                },
-                new SolidColorBrushThemeRule("Foreground", SCM_CLBG, saturation: Over100ToOver255(0), value: Over100ToOver255(0))
+                    new LinearGradientBrushThemeRule("Background", new RelativePoint(0, 1, RelativeUnit.Relative))
+                    {
+                        new GradientStopThemeRule(SCM_CLBG, 0, saturation: Over100ToOver255(0), value: Over100ToOver255(100)),
+                        new GradientStopThemeRule(SCM_CLBG, 1, saturation: Over100ToOver255(16), value: Over100ToOver255(91)), //Over100ToOver255(91)),
+                    },
+                    new SolidColorBrushThemeRule("Foreground", SCM_CLBG, saturation: Over100ToOver255(0), value: Over100ToOver255(0))
+                }
             }
         };
     }

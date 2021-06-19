@@ -55,7 +55,6 @@
 					</Border>
 					<Border x:Name="DisabledBackground"
 							Classes="buttonBackground"
-							IsVisible="{Binding !IsEnabled, RelativeSource={RelativeSource Mode=TemplatedParent}}"
 							Background="{DynamicResource Button-Disabled-Background0}"
 							BorderBrush="{DynamicResource Button-Disabled-BorderBrush0}"
 							BorderThickness="{TemplateBinding BorderThickness}">
@@ -89,6 +88,14 @@
 		<Setter Property="BorderThickness" Value="1" />
 		<Setter Property="FontWeight" Value="DemiBold" />
 		<Setter Property="Padding" Value="8" />
+	</Style>
+	
+	<Style Selector="RepeatButton:not(:disabled) /template/ Border#DisabledBackground">
+		<Setter Property="IsVisible" Value="False"/>
+	</Style>
+	<Style Selector="RepeatButton:disabled,
+					RepeatButton:disabled /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="TextBlock.Foreground" Value="{DynamicResource Button-Disabled-Foreground}" />
 	</Style>
 	
 	
@@ -136,5 +143,9 @@
 	</Style>
 	<Style Selector=":is(TemplatedControl).toolsMenuArea RepeatButton:pointerover /template/ ContentPresenter#PART_ContentPresenter">
 		<Setter Property="TextBlock.Foreground" Value="{DynamicResource ToolsMenuAreaControl-Hover-Foreground}" />
+	</Style>
+	<Style Selector=":is(TemplatedControl).toolsMenuArea RepeatButton:disabled,
+					:is(TemplatedControl).toolsMenuArea RepeatButton:disabled /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="TextBlock.Foreground" Value="{DynamicResource ToolsMenuAreaControl-Disabled-Foreground}" />
 	</Style>
 </Styles>

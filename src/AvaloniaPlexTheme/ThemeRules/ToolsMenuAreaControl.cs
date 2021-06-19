@@ -58,6 +58,10 @@ namespace AvaloniaPlexTheme
             {
                 new SolidColorBrushThemeRule("Background", SCM_TMNA, saturation: Over100ToOver255(63), value: Over100ToOver255(83))
             },  
+            new ThemeRuleGroup("Disabled")
+            {
+                new SolidColorBrushThemeRule("Foreground", SCM_TMNA, saturation: Over100ToOver255(12), value: Over100ToOver255(86))
+            },
         };
     }
 }
