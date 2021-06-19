@@ -1,6 +1,7 @@
 <Styles xmlns="https://github.com/avaloniaui"
 	   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/Common.axaml"/>
+	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/ToolsMenuArea.axaml"/>
+	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/ToolsMenuAreaControl.axaml"/>
 
 
 

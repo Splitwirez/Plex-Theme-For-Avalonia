@@ -20,44 +20,75 @@ namespace AvaloniaPlexTheme
     /// </summary>
     public partial class PlexTheme : IStyle, IResourceProvider
     {
-        static readonly ThemeRuleGroup _toolsMenuAreaControlRules =
+        static readonly IThemeRule _toolsMenuAreaControlRules =
         new ThemeRuleGroup("ToolsMenuAreaControl")
         {
-            new LinearGradientBrushThemeRule("BorderBrush0", new RelativePoint(0, 1, RelativeUnit.Relative))
+            new IfElseRule<PlexColorMode>(SCM_P_CLMD, PlexColorMode.Dark)
             {
-                new GradientStopThemeRule(SCM_TMNA, 0, saturation: Over100ToOver255(63), value: Over100ToOver255(76)),
-                new GradientStopThemeRule(SCM_TMNA, 0.5, saturation: Over100ToOver255(62), value: Over100ToOver255(80)),
-                new GradientStopThemeRule(SCM_TMNA, 1, saturation: Over100ToOver255(58), value: Over100ToOver255(83)),
-            },
-            new LinearGradientBrushThemeRule("BorderBrush1", new RelativePoint(0, 1, RelativeUnit.Relative))
-            {
-                new GradientStopThemeRule(SCM_TMNA, 0, saturation: Over100ToOver255(38), value: Over100ToOver255(85), alpha: 0),
-                new GradientStopThemeRule(SCM_TMNA, 1, saturation: Over100ToOver255(38), value: Over100ToOver255(85)),
-            },
-            new LinearGradientBrushThemeRule("BorderBrush2", new RelativePoint(0, 1, RelativeUnit.Relative))
-            {
-                new GradientStopThemeRule(SCM_TMNA, 0, saturation: Over100ToOver255(63), value: Over100ToOver255(76)),
-                new GradientStopThemeRule(SCM_TMNA, 1, saturation: Over100ToOver255(63), value: Over100ToOver255(50)),
+                TrueValue = 
+                new ThemeRuleGroup(string.Empty)
+                {
+                    new LinearGradientBrushThemeRule("BorderBrush0", new RelativePoint(0, 1, RelativeUnit.Relative))
+                    {
+                        new GradientStopThemeRule(SCM_TMNA, 0, saturation: Over100ToOver255(0), value: Over100ToOver255(32)),
+                        new GradientStopThemeRule(SCM_TMNA, 0.5, saturation: Over100ToOver255(0), value: Over100ToOver255(36)),
+                        new GradientStopThemeRule(SCM_TMNA, 1, saturation: Over100ToOver255(0), value: Over100ToOver255(50)),
+                    },
+                    new LinearGradientBrushThemeRule("BorderBrush1", new RelativePoint(0, 1, RelativeUnit.Relative))
+                    {
+                        new GradientStopThemeRule(SCM_TMNA, 0, saturation: Over100ToOver255(27), value: Over100ToOver255(44)),
+                        new GradientStopThemeRule(SCM_TMNA, 1, saturation: Over100ToOver255(29), value: Over100ToOver255(26)),
+                    },
+                    new ThemeRuleGroup("Hover")
+                    {
+                        new LinearGradientBrushThemeRule("Background0", new RelativePoint(0.5, 1, RelativeUnit.Relative), new RelativePoint(0.96875, 0.9375, RelativeUnit.Relative))
+                        {
+                            new GradientStopThemeRule(SCM_TMNA, 0, saturation: Over100ToOver255(5), value: Over100ToOver255(79)),
+                            new GradientStopThemeRule(SCM_TMNA, 0.5, saturation: Over100ToOver255(14), value: Over100ToOver255(64)),
+                            new GradientStopThemeRule(SCM_TMNA, 1, saturation: Over100ToOver255(17), value: Over100ToOver255(52)),
+                        },
+                        new SolidColorBrushThemeRule("Background1", SCM_TMNA, saturation: Over100ToOver255(5), value: Over100ToOver255(79)),
+                    },
+                    new ThemeRuleGroup("Pressed")
+                    {
+                        new SolidColorBrushThemeRule("Background", SCM_TMNA, saturation: Over100ToOver255(63), value: Over100ToOver255(83))
+                    },
+                },
+
+                FalseValue =
+                new ThemeRuleGroup(string.Empty)
+                {
+                    new LinearGradientBrushThemeRule("BorderBrush0", new RelativePoint(0, 1, RelativeUnit.Relative))
+                    {
+                        new GradientStopThemeRule(SCM_TMNA, 0, saturation: Over100ToOver255(63), value: Over100ToOver255(76)),
+                        new GradientStopThemeRule(SCM_TMNA, 0.5, saturation: Over100ToOver255(62), value: Over100ToOver255(80)),
+                        new GradientStopThemeRule(SCM_TMNA, 1, saturation: Over100ToOver255(38), value: Over100ToOver255(85)),
+                    },
+                    new LinearGradientBrushThemeRule("BorderBrush1", new RelativePoint(0, 1, RelativeUnit.Relative))
+                    {
+                        new GradientStopThemeRule(SCM_TMNA, 0, saturation: Over100ToOver255(63), value: Over100ToOver255(76)),
+                        new GradientStopThemeRule(SCM_TMNA, 1, saturation: Over100ToOver255(63), value: Over100ToOver255(50)),
+                    },
+                    new ThemeRuleGroup("Hover")
+                    {
+                        new LinearGradientBrushThemeRule("Background0", new RelativePoint(0.5, 1, RelativeUnit.Relative), new RelativePoint(0.96875, 0.9375, RelativeUnit.Relative))
+                        {
+                            new GradientStopThemeRule(SCM_TMNA, 0, saturation: Over100ToOver255(20), value: Over100ToOver255(98)),
+                            new GradientStopThemeRule(SCM_TMNA, 0.5, saturation: Over100ToOver255(35), value: Over100ToOver255(93)),
+                            new GradientStopThemeRule(SCM_TMNA, 1, saturation: Over100ToOver255(37), value: Over100ToOver255(91)),
+                        },
+                        new SolidColorBrushThemeRule("Background1", SCM_TMNA, saturation: Over100ToOver255(49), value: Over100ToOver255(80)),
+                    },
+                    new ThemeRuleGroup("Pressed")
+                    {
+                        new SolidColorBrushThemeRule("Background", SCM_TMNA, saturation: Over100ToOver255(63), value: Over100ToOver255(83))
+                    },  
+                }
             },
             new ThemeRuleGroup("Hover")
             {
-                new LinearGradientBrushThemeRule("Background0", new RelativePoint(0.5, 1, RelativeUnit.Relative), new RelativePoint(0.96875, 0.9375, RelativeUnit.Relative))
-                {
-                    new GradientStopThemeRule(SCM_TMNA, 0, saturation: Over100ToOver255(20), value: Over100ToOver255(98)),
-                    new GradientStopThemeRule(SCM_TMNA, 0.5, saturation: Over100ToOver255(35), value: Over100ToOver255(93)),
-                    new GradientStopThemeRule(SCM_TMNA, 1, saturation: Over100ToOver255(37), value: Over100ToOver255(91)),
-                },
-                new LinearGradientBrushThemeRule("Background1", new RelativePoint(0.125, 0, RelativeUnit.Relative), new RelativePoint(0, 0.625, RelativeUnit.Relative))
-                {
-                    new GradientStopThemeRule(SCM_TMNA, 0, saturation: Over100ToOver255(49), value: Over100ToOver255(80)),
-                    new GradientStopThemeRule(SCM_TMNA, 1, saturation: Over100ToOver255(49), value: Over100ToOver255(80), alpha: 0),
-                },
                 new SolidColorBrushThemeRule("Foreground", SCM_TMNA, saturation: Over100ToOver255(0), value: Over100ToOver255(0))
             },
-            new ThemeRuleGroup("Pressed")
-            {
-                new SolidColorBrushThemeRule("Background", SCM_TMNA, saturation: Over100ToOver255(63), value: Over100ToOver255(83))
-            },  
             new ThemeRuleGroup("Disabled")
             {
                 new SolidColorBrushThemeRule("Foreground", SCM_TMNA, saturation: Over100ToOver255(12), value: Over100ToOver255(86))

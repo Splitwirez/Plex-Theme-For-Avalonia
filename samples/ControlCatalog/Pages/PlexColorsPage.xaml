@@ -12,7 +12,7 @@
 				<!--Setter Property="Width" Value="640"/-->
 				<Setter Property="Orientation" Value="Horizontal"/>
 			</Style>
-			<Style Selector="TextBlock">
+			<Style Selector="StackPanel[Orientation=Vertical] > TextBlock">
 				<Setter Property="Margin" Value="0,0,0,-10"/>
 			</Style>
 		</StackPanel.Styles>
