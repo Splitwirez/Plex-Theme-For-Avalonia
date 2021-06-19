@@ -69,7 +69,7 @@
 	<Style Selector="TemplatedControl.toolsMenuControlBackground.hover /template/ Border.rootBorder Border.controlFrame > Border">
 		<Setter Property="Background" Value="{DynamicResource ToolsMenuAreaControl-Hover-Background1}"/>
 		<Setter Property="OpacityMask">
-			<LinearGradientBrush StartPoint="12.5%,0%" EndPoint="0%,62.5%">
+			<LinearGradientBrush StartPoint="0,25" EndPoint="15,0">
 				<GradientStop Offset="0" Color="Black"/>
 				<GradientStop Offset="1" Color="Transparent"/>
 			</LinearGradientBrush>

@@ -41,13 +41,16 @@ namespace AvaloniaPlexTheme
                     },
                     new ThemeRuleGroup("Hover")
                     {
-                        new LinearGradientBrushThemeRule("Background0", new RelativePoint(0.5, 1, RelativeUnit.Relative), new RelativePoint(0.96875, 0.9375, RelativeUnit.Relative))
+                        new LinearGradientBrushThemeRule("Background0", new RelativePoint(0, 1, RelativeUnit.Relative)) //new RelativePoint(0.5, 1, RelativeUnit.Relative), new RelativePoint(0.96875, 0.9375, RelativeUnit.Relative))
                         {
-                            new GradientStopThemeRule(SCM_TMNA, 0, saturation: Over100ToOver255(5), value: Over100ToOver255(79)),
-                            new GradientStopThemeRule(SCM_TMNA, 0.5, saturation: Over100ToOver255(14), value: Over100ToOver255(64)),
-                            new GradientStopThemeRule(SCM_TMNA, 1, saturation: Over100ToOver255(17), value: Over100ToOver255(52)),
+                            //new GradientStopThemeRule(SCM_TMNA, 0, saturation: Over100ToOver255(5), value: Over100ToOver255(79)),
+                            /*new GradientStopThemeRule(SCM_TMNA, 0, saturation: Over100ToOver255(17), value: Over100ToOver255(52)),
+                            new GradientStopThemeRule(SCM_TMNA, 1, saturation: Over100ToOver255(14), value: Over100ToOver255(64)),*/
+                            new GradientStopThemeRule(SCM_TMNA, 0, saturation: Over100ToOver255(5), value: Over100ToOver255(68)),
+                            new GradientStopThemeRule(SCM_TMNA, 1, saturation: Over100ToOver255(5), value: Over100ToOver255(88)),
                         },
-                        new SolidColorBrushThemeRule("Background1", SCM_TMNA, saturation: Over100ToOver255(5), value: Over100ToOver255(79)),
+                        new SolidColorBrushThemeRule("Background1", SCM_TMNA, saturation: Over100ToOver255(17), value: Over100ToOver255(52)),
+                        //new SolidColorBrushThemeRule("Background1", SCM_TMNA, saturation: Over100ToOver255(5), value: Over100ToOver255(79)),
                     },
                     new ThemeRuleGroup("Pressed")
                     {
@@ -71,13 +74,16 @@ namespace AvaloniaPlexTheme
                     },
                     new ThemeRuleGroup("Hover")
                     {
-                        new LinearGradientBrushThemeRule("Background0", new RelativePoint(0.5, 1, RelativeUnit.Relative), new RelativePoint(0.96875, 0.9375, RelativeUnit.Relative))
+                        new LinearGradientBrushThemeRule("Background0", new RelativePoint(0, 1, RelativeUnit.Relative)) //, new RelativePoint(0.5, 1, RelativeUnit.Relative), new RelativePoint(0.96875, 0.9375, RelativeUnit.Relative))
                         {
-                            new GradientStopThemeRule(SCM_TMNA, 0, saturation: Over100ToOver255(20), value: Over100ToOver255(98)),
-                            new GradientStopThemeRule(SCM_TMNA, 0.5, saturation: Over100ToOver255(35), value: Over100ToOver255(93)),
-                            new GradientStopThemeRule(SCM_TMNA, 1, saturation: Over100ToOver255(37), value: Over100ToOver255(91)),
+                            //new GradientStopThemeRule(SCM_TMNA, 0, saturation: Over100ToOver255(20), value: Over100ToOver255(98)),
+                            /*new GradientStopThemeRule(SCM_TMNA, 0, saturation: Over100ToOver255(37), value: Over100ToOver255(91)),
+                            //new GradientStopThemeRule(SCM_TMNA, 1, saturation: Over100ToOver255(35), value: Over100ToOver255(93)),*/
+                            new GradientStopThemeRule(SCM_TMNA, 0, saturation: Over100ToOver255(49), value: Over100ToOver255(80)),
+                            new GradientStopThemeRule(SCM_TMNA, 1, saturation: Over100ToOver255(49), value: Over100ToOver255(100))
                         },
-                        new SolidColorBrushThemeRule("Background1", SCM_TMNA, saturation: Over100ToOver255(49), value: Over100ToOver255(80)),
+                        new SolidColorBrushThemeRule("Background1", SCM_TMNA, saturation: Over100ToOver255(20), value: Over100ToOver255(98))
+                        //new SolidColorBrushThemeRule("Background1", SCM_TMNA, saturation: Over100ToOver255(49), value: Over100ToOver255(80)),
                     },
                     new ThemeRuleGroup("Pressed")
                     {
