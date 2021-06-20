@@ -30,8 +30,8 @@
 									Spacing="6"
 									HorizontalAlignment="Left"
 									DockPanel.Dock="Top">
-							<TextBlock Text="Plex-styled" Classes="groupHeader"/>
-							<TextBlock Text="Controls" Classes="groupHeader emphasize"/>
+							<TextBlock Text="Plex-styled" Classes="subHeader" />
+							<TextBlock Text="Controls" Classes="subHeader emphasize" />
 						</StackPanel>
 						<ScrollViewer
 							Name="PART_ScrollViewer"
@@ -203,9 +203,9 @@
 										Margin="28,21,28,-10"
 										HorizontalAlignment="Stretch"
 										VerticalAlignment="Center">
-								<TextBlock Classes="beegHeader"
+								<TextBlock Classes="header"
 										Text="{Binding SelectedItem.Header, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
-								<TextBlock Classes="beegSubHeader"
+								<TextBlock Classes="description"
 										Text="{Binding SelectedItem.Tag, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
 							</StackPanel>
 						</Panel>

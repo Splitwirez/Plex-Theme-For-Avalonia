@@ -28,36 +28,42 @@ namespace AvaloniaPlexTheme
         public const PlexColorMode DEFAULT_COLOR_MODE = PlexColorMode.Bright;
 
 
-        public static readonly StyledProperty<byte> ChromeProperty =
-            AvaloniaProperty.Register<PlexColorScheme, byte>(nameof(Chrome), 210);
-        public byte Chrome
+        public static readonly StyledProperty<int> ChromeProperty =
+            AvaloniaProperty.Register<PlexColorScheme, int>(nameof(Chrome), 210, coerce: CoerceHueProperties);
+        public int Chrome
         {
             get => GetValue(ChromeProperty);
             set => SetValue(ChromeProperty, value);
         }
 
-        public static readonly StyledProperty<byte> ToolsMenuAreaProperty =
-            AvaloniaProperty.Register<PlexColorScheme, byte>(nameof(ToolsMenuArea), 210);
-        public byte ToolsMenuArea
+        public static readonly StyledProperty<int> ToolsMenuAreaProperty =
+            AvaloniaProperty.Register<PlexColorScheme, int>(nameof(ToolsMenuArea), 210, coerce: CoerceHueProperties);
+        public int ToolsMenuArea
         {
             get => GetValue(ToolsMenuAreaProperty);
             set => SetValue(ToolsMenuAreaProperty, value);
         }
 
-        public static readonly StyledProperty<byte> BackgroundProperty =
-            AvaloniaProperty.Register<PlexColorScheme, byte>(nameof(Background), 217);
-        public byte Background
+        public static readonly StyledProperty<int> BackgroundProperty =
+            AvaloniaProperty.Register<PlexColorScheme, int>(nameof(Background), 217, coerce: CoerceHueProperties);
+        public int Background
         {
             get => GetValue(BackgroundProperty);
             set => SetValue(BackgroundProperty, value);
         }
 
-        public static readonly StyledProperty<byte> ControlsProperty =
-            AvaloniaProperty.Register<PlexColorScheme, byte>(nameof(Controls), 205);
-        public byte Controls
+        public static readonly StyledProperty<int> ControlsProperty =
+            AvaloniaProperty.Register<PlexColorScheme, int>(nameof(Controls), 205, coerce: CoerceHueProperties);
+        public int Controls
         {
             get => GetValue(ControlsProperty);
             set => SetValue(ControlsProperty, value);
+        }
+
+
+        static int CoerceHueProperties(IAvaloniaObject s, int e)
+        {
+            return Math.Clamp(e, byte.MinValue, byte.MaxValue);
         }
 
 
@@ -70,8 +76,8 @@ namespace AvaloniaPlexTheme
         }
 
 
-        static ThemeColor GetDefaultThemeColor(StyledProperty<byte> property) =>
-            new ThemeColor(property.GetDefaultValue(typeof(byte)));
+        static ThemeColor GetDefaultThemeColor(StyledProperty<int> property) =>
+            new ThemeColor((byte)property.GetDefaultValue(typeof(int)));
         
         ThemeColor _chromeColor = GetDefaultThemeColor(ChromeProperty);
         ThemeColor _toolsMenuAreaColor = GetDefaultThemeColor(ToolsMenuAreaProperty);
@@ -89,11 +95,11 @@ namespace AvaloniaPlexTheme
         static void OnColorHuePropertiesChanged(AvaloniaObject sender, AvaloniaPropertyChangedEventArgs e)
         {
             if (sender is PlexColorScheme scheme)
-                scheme.RefreshColorProperty(e.Property.Name, (byte)e.NewValue);
+                scheme.RefreshColorProperty(e.Property.Name, (int)e.NewValue);
         }
 
 
-        public PlexColorScheme(byte chrome, byte toolsMenuArea, byte background, byte controls, PlexColorMode mode)
+        public PlexColorScheme(int chrome, int toolsMenuArea, int background, int controls, PlexColorMode mode)
         {
             Chrome = EnsureHue(chrome);
             ToolsMenuArea = EnsureHue(toolsMenuArea);
@@ -126,8 +132,12 @@ namespace AvaloniaPlexTheme
             return (byte)retVal;
         }
 
-        void RefreshColorProperty(string propertyName, byte newValue)
+        void RefreshColorProperty(string propertyName, int newHue)
         {
+            Console.WriteLine($"hue: {newHue}");
+            int real = Math.Max(0, Math.Min((newHue + 1) - 1, 249));
+            byte newValue = (byte)real; //(byte)Math.Max(0, Math.Min(newHue, 255));
+
             if (propertyName == ChromeProperty.Name)
                 _chromeColor = new ThemeColor(newValue, 53, 96);
             else if (propertyName == ToolsMenuAreaProperty.Name)

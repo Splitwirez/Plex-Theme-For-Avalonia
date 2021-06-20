@@ -94,10 +94,10 @@ namespace ControlCatalog.Pages
 
             theme.ColorScheme =
                 new PlexColorScheme(
-                    (byte)chromeHue,
-                    (byte)toolsMenuAreaHue,
-                    (byte)clientAreaBackgroundHue,
-                    (byte)controlsHue,
+                    (byte)Math.Min(Math.Max(byte.MinValue, chromeHue), byte.MaxValue),
+                    (byte)Math.Min(Math.Max(byte.MinValue, toolsMenuAreaHue), byte.MaxValue),
+                    (byte)Math.Min(Math.Max(byte.MinValue, clientAreaBackgroundHue), byte.MaxValue),
+                    (byte)Math.Min(Math.Max(byte.MinValue, controlsHue), byte.MaxValue),
                     colorMode
                 );
         }

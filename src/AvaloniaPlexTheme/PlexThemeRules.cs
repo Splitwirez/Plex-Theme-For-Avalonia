@@ -45,6 +45,7 @@ namespace AvaloniaPlexTheme
                 _menuRules,
                 _menuItemRules,
                 _sliderRules,
+                _textBlockRules,
                 _textBoxRules,
                 _toggleSwitchRules,
                 _toolsMenuAreaRules,

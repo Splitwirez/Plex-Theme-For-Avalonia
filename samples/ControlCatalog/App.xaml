@@ -9,32 +9,27 @@
 		<plex:PlexTheme/>
 		<!--StyleInclude Source="avares://AvaloniaUI.Themes.Plex/Internal/Plex.axaml"/-->
 
-		<Style Selector="TextBlock.h1">
-			<Setter Property="FontSize" Value="16" />
-			<Setter Property="FontWeight" Value="Medium" />
-			<Setter Property="Foreground" Value="#FF0166C0"/>
+		
+		<Style Selector="TextBlock.subHeader">
+			<Setter Property="FontSize" Value="17" />
+			<Setter Property="Foreground" Value="{DynamicResource TextBlock-Header-Normal}"/>
 		</Style>
-		<Style Selector="TextBlock.h2">
-			<Setter Property="FontSize" Value="14" />
-			<Setter Property="Foreground" Value="#FF458ED3"/>
+		<Style Selector="TextBlock.header">
+			<Setter Property="FontSize" Value="23" />
 		</Style>
-		<Style Selector="TextBlock.h3">
-			<Setter Property="FontSize" Value="12" />
+		<Style Selector="TextBlock.subHeader">
 		</Style>
-		<Style Selector="Label.h1">
-			<Setter Property="FontSize" Value="16" />
-			<Setter Property="FontWeight" Value="Medium" />
-			<Setter Property="Foreground" Value="#FF0166C0"/>
+		<Style Selector="TextBlock.header,
+						TextBlock.emphasize">
+			<Setter Property="Foreground" Value="{DynamicResource TextBlock-Header-Emphasized}"/>
 		</Style>
-		<Style Selector="Label.h2">
-			<Setter Property="FontSize" Value="14" />
-			<Setter Property="Foreground" Value="#FF458ED3"/>
-		</Style>
-		<Style Selector="Label.h3">
-			<Setter Property="FontSize" Value="12" />
+		<Style Selector="TextBlock.description">
+			<Setter Property="Foreground" Value="{DynamicResource TextBlock-Soft}"/>
 		</Style>
 
-		<Style Selector="TextBlock.beegHeader,
+
+
+		<!--Style Selector="TextBlock.beegHeader,
 										TextBlock.beegSubHeader,
 										TextBlock.groupHeader,
 										TextBlock.description">
@@ -45,30 +40,17 @@
 			<Setter Property="TextBlock.TextWrapping" Value="Wrap" />
 			<Setter Property="TextBlock.TextAlignment" Value="Left" />
 		</Style>
-		<Style Selector="TextBlock.beegHeader">
-			<Setter Property="FontSize" Value="23" />
-			<Setter Property="Foreground" Value="#FF0166C0"/>
-		</Style>
-		<Style Selector="Label.beegSubHeader">
-			<Setter Property="Foreground" Value="#FF656565"/>
-			<!--Setter Property="Foreground" Value="#FF458ED3"/-->
-		</Style>
 		<Style Selector="TextBlock.beegSubHeader">
-			<Setter Property="Foreground" Value="#FF656565"/>
-		</Style>
-		<Style Selector="TextBlock.groupHeader">
-			<Setter Property="FontSize" Value="17" />
-			<Setter Property="Foreground" Value="#FF619DE5"/>
-		</Style>
-		<Style Selector="TextBlock.groupHeader.emphasize">
-			<Setter Property="Foreground" Value="#FF0267C1"/>
+			<!-Setter Property="Foreground" Value="#FF656565"/->
 		</Style>
 		<Style Selector="TextBlock.description">
+			<!-Setter Property="Foreground" Value="#FF656565"/->
+			<!-Setter Property="Foreground" Value="{DynamicResource TextBlock-Soft}"/->
+			<Setter Property="Foreground" Value="Green"/>
+		</Style-->
+		<!--Style Selector="TextBlock.description">
 			<Setter Property="Foreground" Value="#FF656565"/>
-		</Style>
-		<Style Selector="TextBlock.description">
-			<Setter Property="Foreground" Value="#FF656565"/>
-		</Style>
+		</Style-->
 
 		<Style Selector="HeaderedContentControl.groupBox">
 			<Setter Property="Padding" Value="2"/>
