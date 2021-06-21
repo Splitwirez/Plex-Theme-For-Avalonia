@@ -76,13 +76,13 @@ namespace AvaloniaPlexTheme
         }
 
 
-        static ThemeColor GetDefaultThemeColor(StyledProperty<int> property) =>
-            new ThemeColor((byte)property.GetDefaultValue(typeof(int)));
+        static HsvColor GetDefaultThemeColor(StyledProperty<int> property) =>
+            new HsvColor((byte)property.GetDefaultValue(typeof(int)));
         
-        ThemeColor _chromeColor = GetDefaultThemeColor(ChromeProperty);
-        ThemeColor _toolsMenuAreaColor = GetDefaultThemeColor(ToolsMenuAreaProperty);
-        ThemeColor _backgroundColor = GetDefaultThemeColor(BackgroundProperty);
-        ThemeColor _controlsColor = GetDefaultThemeColor(ControlsProperty);
+        HsvColor _chromeColor = GetDefaultThemeColor(ChromeProperty);
+        HsvColor _toolsMenuAreaColor = GetDefaultThemeColor(ToolsMenuAreaProperty);
+        HsvColor _backgroundColor = GetDefaultThemeColor(BackgroundProperty);
+        HsvColor _controlsColor = GetDefaultThemeColor(ControlsProperty);
         
         static PlexColorScheme()
         {
@@ -134,18 +134,18 @@ namespace AvaloniaPlexTheme
 
         void RefreshColorProperty(string propertyName, int newHue)
         {
-            Console.WriteLine($"hue: {newHue}");
+            //Console.WriteLine($"hue: {newHue}");
             int real = Math.Max(0, Math.Min((newHue + 1) - 1, 249));
             byte newValue = (byte)real; //(byte)Math.Max(0, Math.Min(newHue, 255));
 
             if (propertyName == ChromeProperty.Name)
-                _chromeColor = new ThemeColor(newValue, 53, 96);
+                _chromeColor = new HsvColor(newValue, 53, 96);
             else if (propertyName == ToolsMenuAreaProperty.Name)
-                _toolsMenuAreaColor = new ThemeColor(newValue, 53, 85);
+                _toolsMenuAreaColor = new HsvColor(newValue, 53, 85);
             else if (propertyName == BackgroundProperty.Name)
-                _backgroundColor = new ThemeColor(newValue, 12, 90);
+                _backgroundColor = new HsvColor(newValue, 12, 90);
             else if (propertyName == ControlsProperty.Name)
-                _controlsColor = new ThemeColor(newValue, 62, 99);
+                _controlsColor = new HsvColor(newValue, 62, 99);
             else
                 throw new Exception($"Incorrect property: {propertyName}");
         }
@@ -159,13 +159,13 @@ namespace AvaloniaPlexTheme
             (key == nameof(Controls));
         }
 
-        public bool TryGetColor(string key, out ThemeColor color)
+        public bool TryGetColor(string key, out HsvColor color)
         {
             color = this[key];
             return HasColor(key);
         }
         
-        public ThemeColor this[string key]
+        public HsvColor this[string key]
         {
             get
             {

@@ -25,15 +25,15 @@ namespace AvaloniaPlexTheme
         {
             new ThemeRuleGroup("Active")
             {
-                new SolidColorBrushThemeRule("Idle", SCM_CHRM, saturation: Over100ToOver255(23), value: Over100ToOver255(100)),
+                new SolidColorBrushThemeRule("Idle", SCM_CHRM, FilterSaturationAndValue(23, 100)),
             },
             new ThemeRuleGroup("Inactive")
             {
-                new SolidColorBrushThemeRule("Idle", SCM_CHRM, saturation: Over100ToOver255(34), value: Over100ToOver255(82)),
+                new SolidColorBrushThemeRule("Idle", SCM_CHRM, FilterSaturationAndValue(34, 82)),
             },
-            new SolidColorBrushThemeRule("Hover", SCM_CHRM, saturation: Over100ToOver255(0), value: Over100ToOver255(100)),
-            new SolidColorBrushThemeRule("Pressed", SCM_CHRM, saturation: Over100ToOver255(34), value: Over100ToOver255(82)),
-            new SolidColorBrushThemeRule("Stroke", SCM_CHRM, saturation: Over100ToOver255(0), value: Over100ToOver255(0), alpha: 64),
+            new SolidColorBrushThemeRule("Hover", SCM_CHRM, FilterSaturationAndValue(0, 100)),
+            new SolidColorBrushThemeRule("Pressed", SCM_CHRM, FilterSaturationAndValue(34, 82)),
+            new SolidColorBrushThemeRule("Stroke", SCM_CHRM, FilterSaturationAndValue(0, 0, 64)),
         };
     }
 }

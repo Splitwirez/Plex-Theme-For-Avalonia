@@ -3,6 +3,10 @@
 			xmlns:plex="splitwirez://AvaloniaPlexTheme"
 			xmlns:local="clr-namespace:ControlCatalog"
 			x:Class="ControlCatalog.App">
+	<!--Application.Resources>
+		<Color x:Key="Window-Background__COLOR1">#FF00FF</Color>
+	</Application.Resources-->
+	
 	<Application.Styles>
 		<!--FluentTheme/-->
 		

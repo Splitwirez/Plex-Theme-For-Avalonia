@@ -23,10 +23,10 @@ namespace AvaloniaPlexTheme
         static readonly ThemeRuleGroup _menuRules =
         new ThemeRuleGroup("Menu")
         {
-            new SolidColorBrushThemeRule("Foreground", SCM_CLBG, saturation: Over100ToOver255(77), value: Over100ToOver255(58)),
+            new SolidColorBrushThemeRule("Foreground", SCM_CLBG, FilterSaturationAndValue(77, 58)),
             new ThemeRuleGroup("ToolsMenuArea")
             {
-                new SolidColorBrushThemeRule("Foreground", SCM_TMNA, saturation: Over100ToOver255(39), value: Over100ToOver255(99))
+                new SolidColorBrushThemeRule("Foreground", SCM_TMNA, FilterSaturationAndValue(39, 99))
             },
         };
     }

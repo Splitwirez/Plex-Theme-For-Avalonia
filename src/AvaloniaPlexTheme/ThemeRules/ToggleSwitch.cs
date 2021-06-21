@@ -29,120 +29,120 @@ namespace AvaloniaPlexTheme
                 {
                     new LinearGradientBrushThemeRule("Background", new RelativePoint(0.625, 0.25, RelativeUnit.Relative), new RelativePoint(0.375, 0.625, RelativeUnit.Relative))
                     {
-                        new GradientStopThemeRule(SCM_CTRL, 0, saturation: Over100ToOver255(24), value: Over100ToOver255(92)),
-                        new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(57), value: Over100ToOver255(84))
+                        new GradientStopThemeRule(SCM_CTRL, 0, FilterSaturationAndValue(24, 92)),
+                        new GradientStopThemeRule(SCM_CTRL, 1, FilterSaturationAndValue(57, 84))
                     },
                     /*new LinearGradientBrushThemeRule("BorderBrush0", new RelativePoint(0, 1, RelativeUnit.Relative))
                     {
-                        new GradientStopThemeRule(SCM_CTRL, 0, saturation: Over100ToOver255(8), value: Over100ToOver255(50)),
-                        new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(7), value: Over100ToOver255(67))
+                        new GradientStopThemeRule(SCM_CTRL, 0, FilterSaturationAndValue(8, 50)),
+                        new GradientStopThemeRule(SCM_CTRL, 1, FilterSaturationAndValue(7, 67))
                     },*/
                     new LinearGradientBrushThemeRule("BorderBrush1", new RelativePoint(0.625, 0.25, RelativeUnit.Relative), new RelativePoint(0.375, 0.625, RelativeUnit.Relative))
                     {
-                        new GradientStopThemeRule(SCM_CTRL, 0, saturation: Over100ToOver255(13), value: Over100ToOver255(97)),
-                        new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(12), value: Over100ToOver255(89))
+                        new GradientStopThemeRule(SCM_CTRL, 0, FilterSaturationAndValue(13, 97)),
+                        new GradientStopThemeRule(SCM_CTRL, 1, FilterSaturationAndValue(12, 89))
                     }
                 },
                 new ThemeRuleGroup("Hover")
                 {
                     new LinearGradientBrushThemeRule("Background", new RelativePoint(0.625, 0.25, RelativeUnit.Relative), new RelativePoint(0.375, 0.625, RelativeUnit.Relative))
                     {
-                        new GradientStopThemeRule(SCM_CTRL, 0, saturation: Over100ToOver255(17), value: Over100ToOver255(100)),
-                        new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(57), value: Over100ToOver255(99))
+                        new GradientStopThemeRule(SCM_CTRL, 0, FilterSaturationAndValue(17, 100)),
+                        new GradientStopThemeRule(SCM_CTRL, 1, FilterSaturationAndValue(57, 99))
                     }
                 },
                 new ThemeRuleGroup("Pressed")
                 {
                     new LinearGradientBrushThemeRule("Background", new RelativePoint(0.625, 0.25, RelativeUnit.Relative), new RelativePoint(0.375, 0.625, RelativeUnit.Relative))
                     {
-                        new GradientStopThemeRule(SCM_CTRL, 0, saturation: Over100ToOver255(44), value: Over100ToOver255(92)),
-                        new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(77), value: Over100ToOver255(84))
+                        new GradientStopThemeRule(SCM_CTRL, 0, FilterSaturationAndValue(44, 92)),
+                        new GradientStopThemeRule(SCM_CTRL, 1, FilterSaturationAndValue(77, 84))
                     }
                 },
                 new ThemeRuleGroup("Checked")
                 {
                     new LinearGradientBrushThemeRule("Background", new RelativePoint(0.625, 0.25, RelativeUnit.Relative), new RelativePoint(0.375, 0.625, RelativeUnit.Relative))
                     {
-                        new GradientStopThemeRule(SCM_CTRL, 0, saturation: Over100ToOver255(54), value: Over100ToOver255(97)),
-                        new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(87), value: Over100ToOver255(89))
+                        new GradientStopThemeRule(SCM_CTRL, 0, FilterSaturationAndValue(54, 97)),
+                        new GradientStopThemeRule(SCM_CTRL, 1, FilterSaturationAndValue(87, 89))
                     },
                     /*new LinearGradientBrushThemeRule("BorderBrush0", new RelativePoint(0, 1, RelativeUnit.Relative))
                     {
-                        new GradientStopThemeRule(SCM_CTRL, 0, saturation: Over100ToOver255(13), value: Over100ToOver255(70)),
-                        new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(12), value: Over100ToOver255(87))
+                        new GradientStopThemeRule(SCM_CTRL, 0, FilterSaturationAndValue(13, 70)),
+                        new GradientStopThemeRule(SCM_CTRL, 1, FilterSaturationAndValue(12, 87))
                     }*/
                 },
                 new ThemeRuleGroup("Disabled")
                 {
                     /*new LinearGradientBrushThemeRule("Background", new RelativePoint(0.625, 0.25, RelativeUnit.Relative), new RelativePoint(0.375, 0.625, RelativeUnit.Relative))
                     {
-                        new GradientStopThemeRule(SCM_CTRL, 0, saturation: Over100ToOver255(0), value: Over100ToOver255(66)),
-                        new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(0), value: Over100ToOver255(49))
+                        new GradientStopThemeRule(SCM_CTRL, 0, FilterSaturationAndValue(0, 66)),
+                        new GradientStopThemeRule(SCM_CTRL, 1, FilterSaturationAndValue(0, 49))
                     },*/
                     new LinearGradientBrushThemeRule("Background", new RelativePoint(0.625, 0.25, RelativeUnit.Relative), new RelativePoint(0.375, 0.625, RelativeUnit.Relative)) //, new RelativePoint(0, 1, RelativeUnit.Relative))
                     {
-                        new GradientStopThemeRule(SCM_CTRL, 0, saturation: Over100ToOver255(0), value: Over100ToOver255(62)),
-                        new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(0), value: Over100ToOver255(54))
+                        new GradientStopThemeRule(SCM_CTRL, 0, FilterSaturationAndValue(0, 62)),
+                        new GradientStopThemeRule(SCM_CTRL, 1, FilterSaturationAndValue(0, 54))
                     },
                     /*new RadialGradientBrushThemeRule("Background", new RelativePoint(0.625, 0.25, RelativeUnit.Relative), 0.625) //, new RelativePoint(0, 1, RelativeUnit.Relative))
                     {
-                        new GradientStopThemeRule(SCM_CTRL, 0.25, saturation: Over100ToOver255(0), value: Over100ToOver255(62)),
-                        new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(0), value: Over100ToOver255(54))
+                        new GradientStopThemeRule(SCM_CTRL, 0.25, FilterSaturationAndValue(0, 62)),
+                        new GradientStopThemeRule(SCM_CTRL, 1, FilterSaturationAndValue(0, 54))
                     },*/
 
 
                     /*new LinearGradientBrushThemeRule("BorderBrush0", new RelativePoint(0, 1, RelativeUnit.Relative))
                     {
-                        new GradientStopThemeRule(SCM_CTRL, 0, saturation: Over100ToOver255(0), value: Over100ToOver255(40)),
-                        new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(0), value: Over100ToOver255(57))
+                        new GradientStopThemeRule(SCM_CTRL, 0, FilterSaturationAndValue(0, 40)),
+                        new GradientStopThemeRule(SCM_CTRL, 1, FilterSaturationAndValue(0, 57))
                     },*/
-                    //new SolidColorBrushThemeRule("BorderBrush0", SCM_CTRL, saturation: Over100ToOver255(0), value: Over100ToOver255(33)),
-                    new SolidColorBrushThemeRule("BorderBrush0", SCM_CTRL, saturation: Over100ToOver255(0), value: Over100ToOver255(42)),
+                    //new SolidColorBrushThemeRule("BorderBrush0", SCM_CTRL, FilterSaturationAndValue(0, 33)),
+                    new SolidColorBrushThemeRule("BorderBrush0", SCM_CTRL, FilterSaturationAndValue(0, 42)),
                     new LinearGradientBrushThemeRule("BorderBrush1", new RelativePoint(0.625, 0.25, RelativeUnit.Relative), new RelativePoint(0.375, 0.625, RelativeUnit.Relative))
                     {
-                        new GradientStopThemeRule(SCM_CTRL, 0, saturation: Over100ToOver255(0), value: Over100ToOver255(67)),
-                        new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(0), value: Over100ToOver255(59))
+                        new GradientStopThemeRule(SCM_CTRL, 0, FilterSaturationAndValue(0, 67)),
+                        new GradientStopThemeRule(SCM_CTRL, 1, FilterSaturationAndValue(0, 59))
                     }
                 },
-                new SolidColorBrushThemeRule("BorderBrush0", SCM_CTRL, saturation: Over100ToOver255(7), value: Over100ToOver255(72)),
+                new SolidColorBrushThemeRule("BorderBrush0", SCM_CTRL, FilterSaturationAndValue(7, 72)),
             },
             new ThemeRuleGroup("Track")
             {
                 new ThemeRuleGroup("Idle")
                 {
-                    new SolidColorBrushThemeRule("Background", SCM_CTRL, saturation: Over100ToOver255(0), value: Over100ToOver255(100)),
-                    new SolidColorBrushThemeRule("Foreground", SCM_CTRL, saturation: Over100ToOver255(50), value: Over100ToOver255(17)),
+                    new SolidColorBrushThemeRule("Background", SCM_CTRL, FilterSaturationAndValue(0, 100)),
+                    new SolidColorBrushThemeRule("Foreground", SCM_CTRL, FilterSaturationAndValue(50, 17)),
                 },
                 new ThemeRuleGroup("Hover")
                 {
-                    new SolidColorBrushThemeRule("Background", SCM_CTRL, saturation: Over100ToOver255(16), value: Over100ToOver255(95)),
+                    new SolidColorBrushThemeRule("Background", SCM_CTRL, FilterSaturationAndValue(16, 95)),
                 },
                 new ThemeRuleGroup("Pressed")
                 {
-                    new SolidColorBrushThemeRule("Background", SCM_CTRL, saturation: Over100ToOver255(16), value: Over100ToOver255(85)),
+                    new SolidColorBrushThemeRule("Background", SCM_CTRL, FilterSaturationAndValue(16, 85)),
                 },
                 new ThemeRuleGroup("Checked")
                 {
                     new LinearGradientBrushThemeRule("Background", new RelativePoint(1, 0, RelativeUnit.Relative), new RelativePoint(0.5, 1, RelativeUnit.Relative))
                     {
-                        new GradientStopThemeRule(SCM_CTRL, 0, saturation: Over100ToOver255(19), value: Over100ToOver255(89)),
-                        new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(0), value: Over100ToOver255(100))
+                        new GradientStopThemeRule(SCM_CTRL, 0, FilterSaturationAndValue(19, 89)),
+                        new GradientStopThemeRule(SCM_CTRL, 1, FilterSaturationAndValue(0, 100))
                     }
                 },
                 new ThemeRuleGroup("Disabled")
                 {
-                    new SolidColorBrushThemeRule("Background", SCM_CTRL, saturation: Over100ToOver255(0), value: Over100ToOver255(70)),
-                    //new SolidColorBrushThemeRule("BorderBrush", SCM_CTRL, saturation: Over100ToOver255(0), value: Over100ToOver255(27)),
+                    new SolidColorBrushThemeRule("Background", SCM_CTRL, FilterSaturationAndValue(0, 70)),
+                    //new SolidColorBrushThemeRule("BorderBrush", SCM_CTRL, FilterSaturationAndValue(0, 27)),
                     new LinearGradientBrushThemeRule("BorderBrush", new RelativePoint(0, 1, RelativeUnit.Relative))
                     {
-                        new GradientStopThemeRule(SCM_CTRL, 0, saturation: Over100ToOver255(0), value: Over100ToOver255(40)),
-                        new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(0), value: Over100ToOver255(57))
+                        new GradientStopThemeRule(SCM_CTRL, 0, FilterSaturationAndValue(0, 40)),
+                        new GradientStopThemeRule(SCM_CTRL, 1, FilterSaturationAndValue(0, 57))
                     }
                 },
                 new LinearGradientBrushThemeRule("BorderBrush", new RelativePoint(0, 1, RelativeUnit.Relative))
                 {
-                    new GradientStopThemeRule(SCM_CTRL, 0, saturation: Over100ToOver255(13), value: Over100ToOver255(70)),
-                    new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(12), value: Over100ToOver255(87))
+                    new GradientStopThemeRule(SCM_CTRL, 0, FilterSaturationAndValue(13, 70)),
+                    new GradientStopThemeRule(SCM_CTRL, 1, FilterSaturationAndValue(12, 87))
                 }
             },
             new ThemeRuleGroup("ToolsMenuArea")
@@ -151,9 +151,9 @@ namespace AvaloniaPlexTheme
                 {
                     new ThemeRuleGroup("Idle")
                     {
-                        new SolidColorBrushThemeRule("Background", SCM_CTRL, saturation: Over100ToOver255(63), value: Over100ToOver255(56)),
-                        new SolidColorBrushThemeRule("BorderBrush0", SCM_CTRL, saturation: Over100ToOver255(63), value: Over100ToOver255(46)),
-                        new SolidColorBrushThemeRule("BorderBrush1", SCM_CTRL, saturation: Over100ToOver255(29), value: Over100ToOver255(100)),
+                        new SolidColorBrushThemeRule("Background", SCM_CTRL, FilterSaturationAndValue(63, 56)),
+                        new SolidColorBrushThemeRule("BorderBrush0", SCM_CTRL, FilterSaturationAndValue(63, 46)),
+                        new SolidColorBrushThemeRule("BorderBrush1", SCM_CTRL, FilterSaturationAndValue(29, 100)),
                     },
                 }
             }

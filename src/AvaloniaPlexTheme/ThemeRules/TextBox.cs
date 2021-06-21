@@ -25,14 +25,14 @@ namespace AvaloniaPlexTheme
         {
             new ThemeRuleGroup("Idle")
             {
-                new SolidColorBrushThemeRule("Background", SCM_CTRL, saturation: Over100ToOver255(0), value: Over100ToOver255(100)),
+                new SolidColorBrushThemeRule("Background", SCM_CTRL, FilterSaturationAndValue(0, 100)),
                 new LinearGradientBrushThemeRule("BorderBrush", new RelativePoint(0, 1, RelativeUnit.Relative))
                 {
-                    new GradientStopThemeRule(SCM_CTRL, 0, saturation: Over100ToOver255(13), value: Over100ToOver255(80)),
-                    new GradientStopThemeRule(SCM_CTRL, 1, saturation: Over100ToOver255(12), value: Over100ToOver255(97))
+                    new GradientStopThemeRule(SCM_CTRL, 0, FilterSaturationAndValue(13, 80)),
+                    new GradientStopThemeRule(SCM_CTRL, 1, FilterSaturationAndValue(12, 97))
                 },
-                new SolidColorBrushThemeRule("Watermark", SCM_CTRL, saturation: Over100ToOver255(50), value: Over100ToOver255(57)),
-                new SolidColorBrushThemeRule("Foreground", SCM_CTRL, saturation: Over100ToOver255(50), value: Over100ToOver255(17)),
+                new SolidColorBrushThemeRule("Watermark", SCM_CTRL, FilterSaturationAndValue(50, 57)),
+                new SolidColorBrushThemeRule("Foreground", SCM_CTRL, FilterSaturationAndValue(50, 17)),
             }
         };
     }

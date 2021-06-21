@@ -30,10 +30,10 @@ namespace AvaloniaPlexTheme
                 {
                     new LinearGradientBrushThemeRule("Background", new RelativePoint(0, 1, RelativeUnit.Relative))
                     {
-                        new GradientStopThemeRule(SCM_CLBG, 0, saturation: Over100ToOver255(0), value: Over100ToOver255(18)),
-                        new GradientStopThemeRule(SCM_CLBG, 1, saturation: Over100ToOver255(36), value: Over100ToOver255(0)), //saturation: Over100ToOver255(48), value: Over100ToOver255(18)),
+                        new GradientStopThemeRule(SCM_CLBG, 0, FilterSaturationAndValue(0, 18)),
+                        new GradientStopThemeRule(SCM_CLBG, 1, FilterSaturationAndValue(36, 0)), //saturation: Over100ToOver255(48, 18)),
                     },
-                    new SolidColorBrushThemeRule("Foreground", SCM_CLBG, saturation: Over100ToOver255(0), value: Over100ToOver255(100))
+                    new SolidColorBrushThemeRule("Foreground", SCM_CLBG, FilterSaturationAndValue(0, 100))
                 },
                 
                 FalseValue =
@@ -41,10 +41,10 @@ namespace AvaloniaPlexTheme
                 {
                     new LinearGradientBrushThemeRule("Background", new RelativePoint(0, 1, RelativeUnit.Relative))
                     {
-                        new GradientStopThemeRule(SCM_CLBG, 0, saturation: Over100ToOver255(0), value: Over100ToOver255(100)),
-                        new GradientStopThemeRule(SCM_CLBG, 1, saturation: Over100ToOver255(16), value: Over100ToOver255(91)), //Over100ToOver255(91)),
+                        new GradientStopThemeRule(SCM_CLBG, 0, FilterSaturationAndValue(0, 100)),
+                        new GradientStopThemeRule(SCM_CLBG, 1, FilterSaturationAndValue(16, 91)), //Over100ToOver255(91)),
                     },
-                    new SolidColorBrushThemeRule("Foreground", SCM_CLBG, saturation: Over100ToOver255(0), value: Over100ToOver255(0))
+                    new SolidColorBrushThemeRule("Foreground", SCM_CLBG, FilterSaturationAndValue(0, 0))
                 }
             }
         };

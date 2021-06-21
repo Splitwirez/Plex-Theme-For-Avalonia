@@ -30,10 +30,10 @@ namespace AvaloniaPlexTheme
                 {
                     new ThemeRuleGroup("Header")
                     {
-                        new SolidColorBrushThemeRule("Normal", SCM_CLBG, saturation: Over100ToOver255(83), value: Over100ToOver255(85)),
-                        new SolidColorBrushThemeRule("Emphasized", SCM_CLBG, saturation: Over100ToOver255(75), value: Over100ToOver255(99))
+                        new SolidColorBrushThemeRule("Normal", SCM_CLBG, FilterSaturationAndValue(83, 85)),
+                        new SolidColorBrushThemeRule("Emphasized", SCM_CLBG, FilterSaturationAndValue(75, 99))
                     },
-                    new SolidColorBrushThemeRule("Soft", SCM_CLBG, saturation: Over100ToOver255(0), value: Over100ToOver255(60))
+                    new SolidColorBrushThemeRule("Soft", SCM_CLBG, FilterSaturationAndValue(0, 60))
                 },
                 
                 FalseValue =
@@ -41,10 +41,10 @@ namespace AvaloniaPlexTheme
                 {
                     new ThemeRuleGroup("Header")
                     {
-                        new SolidColorBrushThemeRule("Normal", SCM_CLBG, saturation: Over100ToOver255(57), value: Over100ToOver255(89)),
-                        new SolidColorBrushThemeRule("Emphasized", SCM_CLBG, saturation: Over100ToOver255(99), value: Over100ToOver255(75))
+                        new SolidColorBrushThemeRule("Normal", SCM_CLBG, FilterSaturationAndValue(57, 89)),
+                        new SolidColorBrushThemeRule("Emphasized", SCM_CLBG, FilterSaturationAndValue(99, 75))
                     },
-                    new SolidColorBrushThemeRule("Soft", SCM_CLBG, saturation: Over100ToOver255(0), value: Over100ToOver255(39))
+                    new SolidColorBrushThemeRule("Soft", SCM_CLBG, FilterSaturationAndValue(0, 39))
                 }
             }
         };
