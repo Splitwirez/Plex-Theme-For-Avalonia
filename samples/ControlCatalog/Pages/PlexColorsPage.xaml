@@ -4,18 +4,19 @@
 						 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 						 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 						 x:Class="ControlCatalog.Pages.PlexColorsPage">
-	<StackPanel Spacing="10">
+	<StackPanel Spacing="20">
 		<StackPanel.Styles>
 			<Style Selector="Slider">
 				<Setter Property="Minimum" Value="0"/>
 				<Setter Property="Maximum" Value="255"/>
 				<Setter Property="Width" Value="255"/>
+				<Setter Property="Margin" Value="10,-20"/>
 				<!--Setter Property="Width" Value="640"/-->
 				<Setter Property="Orientation" Value="Horizontal"/>
 			</Style>
-			<Style Selector="StackPanel[Orientation=Vertical] > TextBlock">
+			<!--Style Selector="StackPanel[Orientation=Vertical] > TextBlock">
 				<Setter Property="Margin" Value="0,0,0,-10"/>
-			</Style>
+			</Style-->
 		</StackPanel.Styles>
 		<CheckBox x:Name="UniformColors" IsChecked="True">Adjust colors uniformly</CheckBox>
 		<StackPanel Orientation="Vertical" Spacing="10" IsVisible="{Binding !#UniformColors.IsChecked}">
@@ -52,11 +53,18 @@
 				<Slider x:Name="ControlsHue" Value="205"/>
 			</DockPanel>
 		</StackPanel>
-		<DockPanel>
-			<TextBlock DockPanel.Dock="Right"
-					Text="{Binding #OverallThemeHue.Value}"/>
-			<Slider x:Name="OverallThemeHue" Value="210" IsVisible="{Binding #UniformColors.IsChecked}"/>
-		</DockPanel>
+		<StackPanel Orientation="Vertical" Spacing="20" IsVisible="{Binding #UniformColors.IsChecked}">
+			<StackPanel>
+				<TextBlock Text="Hue:"/>
+				<Slider x:Name="OverallThemeHue" Value="210"/>
+				<TextBlock Text="{Binding #OverallThemeHue.Value}"/>
+			</StackPanel>
+			<StackPanel>
+				<TextBlock Text="Saturation:"/>
+				<Slider x:Name="OverallThemeSat" Value="255"/>
+				<TextBlock Text="{Binding #OverallThemeSat.Value}"/>
+			</StackPanel>
+		</StackPanel>
 		<!--CheckBox x:Name="DarkMode" IsChecked=/-->
 		<TextBlock Text="Coloration mode"/>
 		<ComboBox x:Name="ColorMode" SelectedIndex="0">

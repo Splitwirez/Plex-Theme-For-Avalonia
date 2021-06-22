@@ -28,33 +28,33 @@ namespace AvaloniaPlexTheme
         public const PlexColorMode DEFAULT_COLOR_MODE = PlexColorMode.Bright;
 
 
-        public static readonly StyledProperty<int> ChromeProperty =
-            AvaloniaProperty.Register<PlexColorScheme, int>(nameof(Chrome), 210, coerce: CoerceHueProperties);
-        public int Chrome
+        public static readonly StyledProperty<HsvColor> ChromeProperty =
+            AvaloniaProperty.Register<PlexColorScheme, HsvColor>(nameof(Chrome), new HsvColor(210, 0xFF));
+        public HsvColor Chrome
         {
             get => GetValue(ChromeProperty);
             set => SetValue(ChromeProperty, value);
         }
 
-        public static readonly StyledProperty<int> ToolsMenuAreaProperty =
-            AvaloniaProperty.Register<PlexColorScheme, int>(nameof(ToolsMenuArea), 210, coerce: CoerceHueProperties);
-        public int ToolsMenuArea
+        public static readonly StyledProperty<HsvColor> ToolsMenuAreaProperty =
+            AvaloniaProperty.Register<PlexColorScheme, HsvColor>(nameof(ToolsMenuArea), new HsvColor(210));
+        public HsvColor ToolsMenuArea
         {
             get => GetValue(ToolsMenuAreaProperty);
             set => SetValue(ToolsMenuAreaProperty, value);
         }
 
-        public static readonly StyledProperty<int> BackgroundProperty =
-            AvaloniaProperty.Register<PlexColorScheme, int>(nameof(Background), 217, coerce: CoerceHueProperties);
-        public int Background
+        public static readonly StyledProperty<HsvColor> BackgroundProperty =
+            AvaloniaProperty.Register<PlexColorScheme, HsvColor>(nameof(Background), new HsvColor(217));
+        public HsvColor Background
         {
             get => GetValue(BackgroundProperty);
             set => SetValue(BackgroundProperty, value);
         }
 
-        public static readonly StyledProperty<int> ControlsProperty =
-            AvaloniaProperty.Register<PlexColorScheme, int>(nameof(Controls), 205, coerce: CoerceHueProperties);
-        public int Controls
+        public static readonly StyledProperty<HsvColor> ControlsProperty =
+            AvaloniaProperty.Register<PlexColorScheme, HsvColor>(nameof(Controls), new HsvColor(205));
+        public HsvColor Controls
         {
             get => GetValue(ControlsProperty);
             set => SetValue(ControlsProperty, value);
@@ -76,7 +76,7 @@ namespace AvaloniaPlexTheme
         }
 
 
-        static HsvColor GetDefaultThemeColor(StyledProperty<int> property) =>
+        /*static HsvColor GetDefaultThemeColor(StyledProperty<int> property) =>
             new HsvColor((byte)property.GetDefaultValue(typeof(int)));
         
         HsvColor _chromeColor = GetDefaultThemeColor(ChromeProperty);
@@ -96,27 +96,31 @@ namespace AvaloniaPlexTheme
         {
             if (sender is PlexColorScheme scheme)
                 scheme.RefreshColorProperty(e.Property.Name, (int)e.NewValue);
-        }
+        }*/
 
 
-        public PlexColorScheme(int chrome, int toolsMenuArea, int background, int controls, PlexColorMode mode)
+        public PlexColorScheme(HsvColor chrome, HsvColor toolsMenuArea, HsvColor background, HsvColor controls, PlexColorMode mode)
         {
-            Chrome = EnsureHue(chrome);
-            ToolsMenuArea = EnsureHue(toolsMenuArea);
-            Background = EnsureHue(background + 7);
-            Controls = EnsureHue(controls - 5);
+            Chrome = chrome;
+            ToolsMenuArea = toolsMenuArea;
+            Background = background; // + 7);
+            Controls = controls; // - 5);
 
             ColorMode = mode;
         }
-        public PlexColorScheme(byte chrome, byte toolsMenuArea, byte background, byte controls)
+        /*public PlexColorScheme(byte chrome, byte toolsMenuArea, byte background, byte controls)
             : this(chrome, toolsMenuArea, background, controls, DEFAULT_COLOR_MODE)
+        { }*/
+        public PlexColorScheme(double hue, double saturation, PlexColorMode mode)
+            : this(new HsvColor(hue, saturation), new HsvColor(hue, saturation), new HsvColor(hue + 7, saturation), new HsvColor(hue - 5, saturation), mode)
         { }
-        public PlexColorScheme(byte hue, PlexColorMode mode)
-            : this(hue, hue, hue, hue, mode)
+
+        public PlexColorScheme(double hue, PlexColorMode mode)
+            : this(hue, 0xFF, mode)
         { }
-        public PlexColorScheme(byte hue)
+        /*public PlexColorScheme(byte hue)
             :this(hue, DEFAULT_COLOR_MODE)
-        { }
+        { }*/
 
 
         static byte EnsureHue(int potentiallyInvalidHue)
@@ -132,7 +136,7 @@ namespace AvaloniaPlexTheme
             return (byte)retVal;
         }
 
-        void RefreshColorProperty(string propertyName, int newHue)
+        /*void RefreshColorProperty(string propertyName, int newHue)
         {
             //Console.WriteLine($"hue: {newHue}");
             int real = Math.Max(0, Math.Min((newHue + 1) - 1, 249));
@@ -148,7 +152,7 @@ namespace AvaloniaPlexTheme
                 _controlsColor = new HsvColor(newValue, 62, 99);
             else
                 throw new Exception($"Incorrect property: {propertyName}");
-        }
+        }*/
 
 
         public bool HasColor(string key)
@@ -170,13 +174,13 @@ namespace AvaloniaPlexTheme
             get
             {
                 if (key == nameof(Chrome))
-                    return _chromeColor;
+                    return Chrome;
                 else if (key == nameof(ToolsMenuArea))
-                    return _toolsMenuAreaColor;
+                    return ToolsMenuArea;
                 else if (key == nameof(Background))
-                    return _backgroundColor;
+                    return Background;
                 else if (key == nameof(Controls))
-                    return _controlsColor;
+                    return Controls;
                 else
                     return null;
             }
@@ -206,7 +210,7 @@ namespace AvaloniaPlexTheme
             return has;
         }
 
-        public static PlexColorScheme Parse(string inText)
+        /*public static PlexColorScheme Parse(string inText)
         {
             PlexColorMode mode = DEFAULT_COLOR_MODE;
 
@@ -273,6 +277,6 @@ namespace AvaloniaPlexTheme
             
             
             throw new Exception("...are you Desmond the Moon Bear or something? How did you get here?");
-        }
+        }*/
     }
 }

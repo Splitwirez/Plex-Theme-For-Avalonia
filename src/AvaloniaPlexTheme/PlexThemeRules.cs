@@ -97,7 +97,7 @@ namespace AvaloniaPlexTheme
         {
             double s = Over100ToOver255(saturation);
             double v = Over100ToOver255(value);
-            return (schemeColor, e) => new HsvColor(schemeColor.H, s, v).ToColor(alpha);
+            return (schemeColor, e) => new HsvColor(schemeColor.H, s * (schemeColor.S / 255), v).ToColor(alpha);
         }
 
         static double Over100ToOver255(byte over100)

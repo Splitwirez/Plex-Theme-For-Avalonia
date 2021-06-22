@@ -4,6 +4,7 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using AvaloniaPlexTheme;
+using AvaloniaThemeColorization;
 using System;
 using System.Linq;
 
@@ -12,6 +13,7 @@ namespace ControlCatalog.Pages
     public class PlexColorsPage : UserControl
     {
         Slider _overallThemeHue;
+        Slider _overallThemeSat;
 
         Slider _chromeHue;
         Slider _toolsMenuAreaHue;
@@ -37,6 +39,7 @@ namespace ControlCatalog.Pages
             _controlsHue = this.Find<Slider>("ControlsHue");
             
             _overallThemeHue = this.Find<Slider>("OverallThemeHue");
+            _overallThemeSat = this.Find<Slider>("OverallThemeSat");
 
             _colorMode = this.Find<ComboBox>("ColorMode");
 
@@ -46,7 +49,7 @@ namespace ControlCatalog.Pages
                 PlexColorMode mode = (PlexColorMode)(_colorMode.SelectedIndex);
 
                 if (_overallThemeHue.IsVisible)
-                    RefreshColours(_overallThemeHue.Value, mode);
+                    RefreshColours(_overallThemeHue.Value, _overallThemeSat.Value, mode);
                 else
                     RefreshColours(_chromeHue.Value, _toolsMenuAreaHue.Value, _clientAreaBackgroundHue.Value, _controlsHue.Value, mode);
             };
@@ -83,9 +86,11 @@ namespace ControlCatalog.Pages
 
 
 
-        void RefreshColours(double hue, PlexColorMode colorMode)
+        void RefreshColours(double hue, double saturation, PlexColorMode colorMode)
         {
-            RefreshColours(hue, hue, hue + 7, hue - 5, colorMode);
+            PlexTheme theme = (PlexTheme)((App.Current as App).Styles.FirstOrDefault(x => x is PlexTheme));
+
+            theme.ColorScheme = new PlexColorScheme(hue, saturation, colorMode);
         }
         
         void RefreshColours(double chromeHue, double toolsMenuAreaHue, double clientAreaBackgroundHue, double controlsHue, PlexColorMode colorMode)
@@ -94,10 +99,10 @@ namespace ControlCatalog.Pages
 
             theme.ColorScheme =
                 new PlexColorScheme(
-                    (byte)Math.Min(Math.Max(byte.MinValue, chromeHue), byte.MaxValue),
-                    (byte)Math.Min(Math.Max(byte.MinValue, toolsMenuAreaHue), byte.MaxValue),
-                    (byte)Math.Min(Math.Max(byte.MinValue, clientAreaBackgroundHue), byte.MaxValue),
-                    (byte)Math.Min(Math.Max(byte.MinValue, controlsHue), byte.MaxValue),
+                    new HsvColor(chromeHue),
+                    new HsvColor(toolsMenuAreaHue),
+                    new HsvColor(clientAreaBackgroundHue),
+                    new HsvColor(controlsHue),
                     colorMode
                 );
         }

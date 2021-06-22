@@ -58,7 +58,7 @@ namespace AvaloniaPlexTheme
 
 
 
-        PlexColorScheme _colorScheme = new PlexColorScheme(210);
+        PlexColorScheme _colorScheme = new PlexColorScheme(210, PlexColorMode.Bright);
         /*{
             Chrome = new ThemeColor(210, 53, 96),
             ToolsMenuArea = new ThemeColor(210, 56, 85),
