@@ -4,9 +4,11 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using AvaloniaPlexTheme;
-using AvaloniaThemeColorization;
 using System;
 using System.Linq;
+#if OLD_COLORS
+using AvaloniaThemeColorization;
+#endif
 
 namespace ControlCatalog.Pages
 {
@@ -31,8 +33,9 @@ namespace ControlCatalog.Pages
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
-
-
+#if !OLD_COLORS
+        }
+#else
             _chromeHue = this.Find<Slider>("ChromeHue");
             _toolsMenuAreaHue = this.Find<Slider>("ToolsMenuAreaHue");
             _clientAreaBackgroundHue = this.Find<Slider>("ClientAreaBackgroundHue");
@@ -106,5 +109,6 @@ namespace ControlCatalog.Pages
                     colorMode
                 );
         }
+#endif
     }
 }

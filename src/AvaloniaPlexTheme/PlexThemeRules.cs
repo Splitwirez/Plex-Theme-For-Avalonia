@@ -1,3 +1,4 @@
+#if OLD_COLORS
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -106,3 +107,4 @@ namespace AvaloniaPlexTheme
         }
     }
 }
+#endif

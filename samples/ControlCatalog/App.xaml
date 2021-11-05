@@ -1,17 +1,12 @@
 <Application xmlns="https://github.com/avaloniaui"
 			xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-			xmlns:plex="splitwirez://AvaloniaPlexTheme"
+			
 			xmlns:local="clr-namespace:ControlCatalog"
 			x:Class="ControlCatalog.App">
-	<!--Application.Resources>
-		<Color x:Key="Window-Background__COLOR1">#FF00FF</Color>
-	</Application.Resources-->
-	
+			<!--xmlns:plex="splitwirez://AvaloniaPlexTheme"-->
 	<Application.Styles>
-		<!--FluentTheme/-->
-		
-		<plex:PlexTheme/>
-		<!--StyleInclude Source="avares://AvaloniaUI.Themes.Plex/Internal/Plex.axaml"/-->
+		<StyleInclude Source="avares://AvaloniaPlexTheme/Plex.axaml"/>
+		<!--plex:PlexTheme/-->
 
 		
 		<Style Selector="TextBlock.subHeader">

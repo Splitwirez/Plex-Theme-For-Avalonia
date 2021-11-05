@@ -178,7 +178,7 @@
 										</StackPanel>
 									</Border>
 								</Popup>
-								<ToggleButton x:Name="Colors"
+								<!--ToggleButton x:Name="Colors"
 											Background="Transparent"
 											Padding="0,5,8,6">
 									<DockPanel>
@@ -193,7 +193,7 @@
 											<pages:PlexColorsPage/>
 										</StackPanel>
 									</Border>
-								</Popup>
+								</Popup-->
 							</StackPanel>
 						</Grid>
 					</DockPanel>

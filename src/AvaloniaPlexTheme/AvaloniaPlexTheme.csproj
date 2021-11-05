@@ -4,12 +4,16 @@
 		<Nullable>enable</Nullable>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<!--DefineConstants>$(DefineConstants);DUMP_RESOURCES</DefineConstants-->
 	</PropertyGroup>
 	<ItemGroup>
 		<AvaloniaResource Include="Assets\**" />
 	</ItemGroup>
-	<ItemGroup>
+	<ItemGroup Condition="$(DefineConstants.Contains(OLD_COLORS))">
 		<ProjectReference Include="..\..\build\Avalonia-Theme-Colorization\src\AvaloniaThemeColorization\AvaloniaThemeColorization.csproj" />
+	</ItemGroup>
+	<ItemGroup Condition="!$(DefineConstants.Contains(OLD_COLORS))">
+		<Compile Remove="ThemeRules\*.cs"/>
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Avalonia" Version="0.10.0" />

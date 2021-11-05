@@ -1,3 +1,4 @@
+#if OLD_COLORS
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,10 @@ using Avalonia.Media;
 using Avalonia.Styling;
 using AvaloniaThemeColorization;
 using AvaloniaThemeColorization.Rules;
+#if DUMP_RESOURCES
+using System.IO;
+using System.Diagnostics;
+#endif
 
 #nullable enable
 
@@ -165,12 +170,154 @@ namespace AvaloniaPlexTheme
             var testResources = _themeRules.ToFixedResources(ColorScheme, owner);
                 
             var tKeys = testResources.Keys;
+#if DUMP_RESOURCES
+            string xamlSpacer = "\t\t";
+            List<string> beginXaml = new List<string>()
+            {
+                "<Styles xmlns=\"https://github.com/avaloniaui\"",
+                "\t\txmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\"",
+                "\t\txmlns:sys=\"clr-namespace:System;assembly=netstandard\">",
+                "\t<Styles.Resources>"/*,
+                xamlSpacer,
+                "\t\t<!--begin coloures-->"*/
+            };
 
+            List<string> colouresXaml = new List<string>();
+            List<string> brushesXaml = new List<string>();
+            /*{
+                "\t\t<!--end coloures-->",
+                xamlSpacer,
+                xamlSpacer,
+                "\t\t<!--begin brushes-->"
+            };*/
+            
+            List<string> endXaml = new List<string>()
+            {
+                "\t</Styles.Resources>",
+                "</Styles>"
+            };
+            
+            
+            string lineStart = "\t\t<{0} x:Key=\"{1}\"";
+            
+            void addColor(Color color, string resKey)
+                => colouresXaml.Add($"{string.Format(lineStart, "Color", resKey)}>{color}</Color>");
+
+            GradientSpreadMethod linDefaultSpread = new LinearGradientBrush().SpreadMethod;
+            GradientSpreadMethod rdalDefaultSpread = new RadialGradientBrush().SpreadMethod;
+            
+#endif
             foreach (string resKey in tKeys)
             {
-                //_fixed.Add(new KeyValuePair(resKey, tKeys));
-                _style.Resources[resKey] = testResources[resKey];
+                var resVal = testResources[resKey];
+                _style.Resources[resKey] = resVal;
+                #if DUMP_RESOURCES
+                /*string typeName = resVal.GetType().FullName;
+
+                if (!typeName.Contains('.'))
+                    throw new TypeAccessException($"'{typeName}' lmao what?????");
+                
+                int lastPeriod = typeName.LastIndexOf('.');
+                
+                string classNameOnly = typeName.Substring(lastPeriod + 1);
+                string tagName = classNameOnly;
+                if
+                (
+                    typeName.StartsWith("System.") &&
+                    (typeName.IndexOf('.') == lastPeriod)
+                )
+                    tagName = $"sys:{classNameOnly}";
+                else if (!typeName.StartsWith("Avalonia."))
+                    throw new TypeAccessException($"'{typeName}' in ????? namespace");
+                
+                
+                string line = $"<{tagName} x:Key=\"{resKey}\""; //>{resVal.ToString()}</{tagName}>";
+                */
+
+                
+
+                brushesXaml.Add(xamlSpacer);
+                colouresXaml.Add(xamlSpacer);
+
+                if (resVal is SolidColorBrush colorBrush)
+                {
+                    string colorResKey = $"{resKey}-Color";
+                    brushesXaml.Add($"{string.Format(lineStart, "SolidColorBrush", resKey)} Color=\"" + "{DynamicResource " + colorResKey + "}\"/>");
+                    
+                    addColor(colorBrush.Color, colorResKey);
+                }
+                else if (resVal is GradientBrush gradBrush)
+                {
+                    string typeName = gradBrush.GetType().FullName;
+                    typeName = typeName.Substring(typeName.LastIndexOf('.') + 1);
+                    GradientSpreadMethod thisDefaultSpread = linDefaultSpread;
+                    string beginLine = string.Format(lineStart, typeName, resKey);
+                    if (gradBrush is LinearGradientBrush linBrush)
+                    {
+                        thisDefaultSpread = linDefaultSpread;
+                        beginLine = $"{beginLine} StartPoint=\"{linBrush.StartPoint}\" EndPoint=\"{linBrush.EndPoint}\"";
+                    }
+                    else if (gradBrush is RadialGradientBrush rdalBrush)
+                    {
+                        thisDefaultSpread = rdalDefaultSpread;
+                        beginLine = $"{beginLine} Center=\"{rdalBrush.Center}\" GradientOrigin=\"{rdalBrush.GradientOrigin}\" Radius=\"{rdalBrush.Radius}\"";
+                    }
+
+                    if (gradBrush.SpreadMethod != thisDefaultSpread)
+                        beginLine = $"{beginLine} SpreadMethod=\"{gradBrush.SpreadMethod}\"";
+                    
+                    brushesXaml.Add($"{beginLine}>");
+                    
+                    var stops = gradBrush.GradientStops;
+                    int stopsCount = stops.Count;
+                    for (int stopIndex = 0; stopIndex < stopsCount; stopIndex++)
+                    {
+                        GradientStop stop = stops[stopIndex];
+                        string colorResKey = $"{resKey}-Stop{stopIndex}-Color";
+                        brushesXaml.Add($"\t\t\t<GradientStop Offset=\"{stop.Offset}\" Color=\"" + "{DynamicResource " + colorResKey + "}\"/>");
+                        addColor(stop.Color, colorResKey);
+                    }
+                    
+                    
+                    brushesXaml.Add($"\t\t</{typeName}>");
+                }
+                #endif
             }
+            #if DUMP_RESOURCES
+            
+            //Console.WriteLine($"\n\nXAML:\n{outXaml}\n\n");
+            string outDirPath = @"/home/splitwirez/repos/currentProjects/PlexThemeForAvalonia/XAMLOut";
+            string outNameBase = "{0}-Plex{1}";
+            string outExt = ".axaml.xml";
+            string outColoures = $"Colors{outExt}";
+            string outBrushes = $"Brushes{outExt}";
+            int nm = 0;
+            string outColouresName = null;
+            string outBrushesName = null;
+            string outColouresPath = null;
+            string outBrushesPath = null;
+            bool ensureOutPath()
+            {
+                outColouresPath = Path.Combine(outDirPath, outColouresName);
+                outBrushesPath = Path.Combine(outDirPath, outBrushesName);
+                return File.Exists(outColouresPath) || File.Exists(outBrushesPath);
+            };
+
+            do
+            {
+                outColouresName = string.Format(outNameBase, nm, outColoures);
+                outBrushesName = string.Format(outNameBase, nm, outBrushes);
+                nm++;
+            }
+            while (ensureOutPath());
+            colouresXaml.InsertRange(0, beginXaml);
+            brushesXaml.InsertRange(0, beginXaml);
+            colouresXaml.AddRange(endXaml);
+            brushesXaml.AddRange(endXaml);
+            File.WriteAllLines(outColouresPath, colouresXaml);
+            File.WriteAllLines(outBrushesPath, brushesXaml);
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+            #endif
         }
 
 
@@ -513,3 +660,4 @@ ColorMode = PlexColorMode.Bright
         }
     }*/
 }
+#endif
