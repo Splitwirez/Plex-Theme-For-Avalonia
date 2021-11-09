@@ -111,7 +111,6 @@
 			<pages:ListBoxPage/>
 		</TabItem>
 		<TabItem Header="Menu"
-				Classes="nyiTab"
 				Tag="A window menu.">
 			<pages:MenuPage/>
 		</TabItem>
@@ -200,10 +199,10 @@
 				Tag="Displays a hierachical tree of data.">
 			<pages:TreeViewPage/>
 		</TabItem>
-		<TabItem Header="RelativeBrushDecorator"
+		<!--TabItem Header="RelativeBrushDecorator"
 				Tag="Decorative control which positions its brush relative to another element. Ain't that nifty?&#x0a;&#x0a;(Always corresponding to someone else's location...like a stalker.)">
 			<pages:RelativeBrushDecoratorPage/>
-		</TabItem>
+		</TabItem-->
 	</TabControl>
   </Panel>
 </UserControl>

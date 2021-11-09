@@ -4,13 +4,13 @@
 	<ResourceDictionary.MergedDictionaries>
 	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Dark/Button.axaml"/>
 	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Dark/CaptionButtons.axaml"/>
-	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Dark/CheckBox.axaml"/>
-	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Dark/Menu.axaml"/>
-	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Dark/MenuItem.axaml"/>
-	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Dark/Slider.axaml"/>
+	<!--TODO--><ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Bright/CheckBox.axaml"/>
+	<!--TODO--><ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Bright/Menu.axaml"/>
+	<!--TODO--><ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Bright/MenuItem.axaml"/>
+	<!--TODO--><ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Bright/Slider.axaml"/>
 	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Dark/TextBlock.axaml"/>
-	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Dark/TextBox.axaml"/>
-	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Dark/ToggleSwitch.axaml"/>
+	<!--TODO--><ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Bright/TextBox.axaml"/>
+	<!--TODO--><ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Bright/ToggleSwitch.axaml"/>
 	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Dark/ToolsMenuArea.axaml"/>
 	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Dark/ToolsMenuAreaControl.axaml"/>
 	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Dark/Window.axaml"/>

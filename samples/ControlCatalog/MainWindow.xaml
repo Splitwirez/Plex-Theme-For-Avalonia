@@ -168,7 +168,7 @@
 											Padding="0,5,8,6">
 									<DockPanel>
 										<Rectangle Width="16" Height="16" Fill="Red" Margin="10,0" DockPanel.Dock="Left"/>
-										<TextBlock Text="Window options"/>
+										<TextBlock Text="Window options" VerticalAlignment="Center"/>
 									</DockPanel>
 								</ToggleButton>
 								<Popup PlacementTarget="{Binding #WindowOptions}" IsOpen="{Binding #WindowOptions.IsChecked, Mode=TwoWay}" StaysOpen="False">

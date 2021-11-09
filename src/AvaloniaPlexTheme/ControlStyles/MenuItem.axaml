@@ -150,12 +150,12 @@
 		<Setter Property="Foreground" Value="Red"/>
 	</Style>
 	<Style Selector="MenuItem /template/ Panel#PART_LayoutRoot:pointerover">
-		<Setter Property="TextBlock.Foreground" Value="#FFFF00FF"/>
+		<Setter Property="TextBlock.Foreground" Value="{DynamicResource ToolsMenuAreaControl-Hover-Foreground}"/>
 	</Style>
 
-	<Style Selector=":is(TemplatedControl).toolsMenuArea MenuItem[IsSubMenuOpen=False] /template/ Panel#PART_LayoutRoot:pointerover">
+	<!--Style Selector=":is(TemplatedControl).toolsMenuArea MenuItem[IsSubMenuOpen=False] /template/ Panel#PART_LayoutRoot:pointerover">
 		<Setter Property="TextBlock.Foreground" Value="{DynamicResource ToolsMenuAreaControl-Hover-Foreground}" />
-	</Style>
+	</Style-->
 
 	<!--Style Selector=":is(TemplatedControl).toolsMenuArea MenuItem">
 		<Setter Property="Foreground" Value="{DynamicResource MenuItem-ToolsMenuAreaForeground}"/>

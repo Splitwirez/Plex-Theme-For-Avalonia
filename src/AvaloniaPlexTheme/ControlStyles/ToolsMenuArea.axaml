@@ -15,13 +15,14 @@
 		</ControlTemplate>
 	</Styles.Resources-->
 
-	<Style Selector="TemplatedControl.toolsMenuBackground">
+	<Style Selector="TemplatedControl.toolsMenuBackground,
+					TemplatedControl.toolsMenuBackground2">
 		<Setter Property="BorderThickness" Value="1,0"/>
 		<Setter Property="Background" Value="{DynamicResource ToolsMenuArea-Background}"/>
 		<Setter Property="BorderBrush" Value="{DynamicResource ToolsMenuArea-SideBorderBrush}"/>
 		<Setter Property="Template">
 			<ControlTemplate>
-				<DockPanel Background="Green">
+				<DockPanel>
 					<Rectangle Classes="bottomEdge" Fill="{DynamicResource ToolsMenuArea-BottomBorderBrush0}"/>
 					<Rectangle Classes="bottomEdge" Fill="{DynamicResource ToolsMenuArea-BottomBorderBrush1}"/>
 					<Rectangle Classes="bottomEdge" Fill="{DynamicResource ToolsMenuArea-BottomBorderBrush2}"/>
@@ -33,6 +34,10 @@
 			</ControlTemplate>
 		</Setter>
     </Style>
+	<Style Selector="TemplatedControl.toolsMenuBackground">
+		<Setter Property="IsVisible" Value="False"/>
+    </Style>
+
 	<Style Selector="TemplatedControl.toolsMenuBackground /template/ Rectangle.bottomEdge">
 		<Setter Property="Height" Value="1"/>
 		<Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -44,22 +49,11 @@
     </Style>
 
 
-
-	<!--Style Selector=":is(TemplatedControl).toolsMenuArea /template/ TemplatedControl.toolsMenuBackground">
-		<Setter Property="Template" Value="{DynamicResource PlexMenuBackgroundTemplate}"/>
-    </Style-->
-	<!--Style Selector=":is(TemplatedControl).toolsMenuArea :is(TemplatedControl) /template/ TemplatedControl.toolsMenuBackground">
-		<Setter Property="Template" Value="{DynamicResource PlexMenuBackgroundTemplate}"/>
-    </Style-->
-
-
-	<Style Selector=":is(TemplatedControl):not(.toolsMenuArea) /template/ TemplatedControl.toolsMenuBackground,
-	
+	<!--Style Selector=":is(TemplatedControl):not(.toolsMenuArea) /template/ TemplatedControl.toolsMenuBackground,
+					:is(TemplatedControl):not(.toolsMenuArea) :is(TemplatedControl) /template/ TemplatedControl.toolsMenuBackground,
 					:is(TemplatedControl).toolsMenuArea :is(TemplatedControl) /template/ TemplatedControl.toolsMenuBackground">
 		<Setter Property="IsVisible" Value="False"/>
-    </Style>
-				<!--,:is(TemplatedControl).noMenuArea /template/ TemplatedControl.toolsMenuBackground,
-					:is(TemplatedControl).noMenuArea :is(TemplatedControl) /template/ TemplatedControl.toolsMenuBackground-->
+    </Style-->
 
 	<Style Selector=":is(TemplatedControl).toolsMenuArea /template/ TemplatedControl.toolsMenuBackground">
 		<Setter Property="IsVisible" Value="True"/>
