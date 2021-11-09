@@ -1,7 +1,7 @@
 <Styles xmlns="https://github.com/avaloniaui"
 	   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/ToolsMenuArea.axaml"/>
-	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/ToolsMenuAreaControl.axaml"/>
+	<StyleInclude Source="avares://AvaloniaPlexTheme/ControlStyles/ToolsMenuArea.axaml"/>
+	<StyleInclude Source="avares://AvaloniaPlexTheme/ControlStyles/ToolsMenuAreaControl.axaml"/>
 
 
 
@@ -10,22 +10,22 @@
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/DataValidationErrors.xaml"/><!--TBD-->
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/FocusAdorner.xaml"/><!--TBD-->
 	
-	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/Button.axaml"/>
+	<StyleInclude Source="avares://AvaloniaPlexTheme/ControlStyles/Button.axaml"/>
 	<!--StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/Button.xaml"/-->
 	
-	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/CaptionButtons.axaml"/>
+	<StyleInclude Source="avares://AvaloniaPlexTheme/ControlStyles/CaptionButtons.axaml"/>
 	<!--StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/CaptionButtons.xaml"/-->
 	
 	
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/Carousel.xaml"/><!--TBD-->
 	
-	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/CheckBox.axaml"/>
+	<StyleInclude Source="avares://AvaloniaPlexTheme/ControlStyles/CheckBox.axaml"/>
 	<!--StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/CheckBox.xaml"/-->
 	
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/ComboBox.xaml"/><!--TBD-->
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/ComboBoxItem.xaml"/><!--TBD-->
 	
-	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/ContentControl.axaml"/>
+	<StyleInclude Source="avares://AvaloniaPlexTheme/ControlStyles/ContentControl.axaml"/>
 	<!--StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/ContentControl.xaml"/-->
 	
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/Label.xaml"/><!--TBD-->
@@ -35,12 +35,12 @@
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/ListBoxItem.xaml"/><!--TBD-->
 	
 
-	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/Menu.axaml"/>
+	<StyleInclude Source="avares://AvaloniaPlexTheme/ControlStyles/Menu.axaml"/>
 	<!--StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/Menu.xaml"/-->
 	
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/ContextMenu.xaml"/><!--TBD-->
 	
-	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/MenuItem.axaml"/>
+	<StyleInclude Source="avares://AvaloniaPlexTheme/ControlStyles/MenuItem.axaml"/>
 	<!--StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/MenuItem.xaml"/-->
 	
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/OverlayPopupHost.xaml"/><!--TBD-->
@@ -48,15 +48,15 @@
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/PopupRoot.xaml"/><!--TBD-->
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/ProgressBar.xaml"/><!--TBD-->
 	
-	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/RadioButton.axaml"/>
+	<StyleInclude Source="avares://AvaloniaPlexTheme/ControlStyles/RadioButton.axaml"/>
 	<!--StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/RadioButton.xaml"/-->
 	
-	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/RepeatButton.axaml"/>
+	<StyleInclude Source="avares://AvaloniaPlexTheme/ControlStyles/RepeatButton.axaml"/>
 	<!--StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/RepeatButton.xaml"/-->
 	
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/Separator.xaml"/><!--TBD-->
 	
-	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/Slider.axaml"/>
+	<StyleInclude Source="avares://AvaloniaPlexTheme/ControlStyles/Slider.axaml"/>
 	<!--StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/Slider.xaml"/-->
 	
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/ScrollBar.xaml"/><!--TBD-->
@@ -69,13 +69,13 @@
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/TabItem.xaml"/><!--TBD-->
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/TextBox.xaml"/><!--TBD-->
 	
-	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/ToggleButton.axaml"/>
+	<StyleInclude Source="avares://AvaloniaPlexTheme/ControlStyles/ToggleButton.axaml"/>
 	<!--StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/ToggleButton.xaml"/-->
 	
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/Expander.xaml"/><!--TBD-->
 	
 	
-	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/WindowTitleBar.axaml"/>
+	<StyleInclude Source="avares://AvaloniaPlexTheme/ControlStyles/WindowTitleBar.axaml"/>
 	
 
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/TitleBar.xaml"/><!--TBD-->
@@ -83,7 +83,7 @@
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/TreeViewItem.xaml"/><!--TBD-->
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/UserControl.xaml"/><!--TBD-->
 	
-	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/Window.axaml"/>
+	<StyleInclude Source="avares://AvaloniaPlexTheme/ControlStyles/Window.axaml"/>
 	<!--StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/Window.xaml"/-->
 	
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/EmbeddableControlRoot.xaml"/><!--TBD-->
@@ -99,10 +99,10 @@
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/NotificationCard.xaml"/><!--TBD-->
 	
 	
-	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/NativeMenuBar.axaml"/>
+	<StyleInclude Source="avares://AvaloniaPlexTheme/ControlStyles/NativeMenuBar.axaml"/>
 	<!--StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/NativeMenuBar.xaml"/-->
 	
-	<StyleInclude Source="avares://AvaloniaPlexTheme/Controls/ToggleSwitch.axaml"/>
+	<StyleInclude Source="avares://AvaloniaPlexTheme/ControlStyles/ToggleSwitch.axaml"/>
 	<!--StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/ToggleSwitch.xaml"/-->
 	
 	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Controls/SplitView.xaml"/><!--TBD-->

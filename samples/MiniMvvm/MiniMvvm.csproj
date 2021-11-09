@@ -2,5 +2,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-  <Import Project="..\..\build\Rx.props" />
+  <ItemGroup>
+    <PackageReference Include="System.Reactive" Version="5.0" />
+  </ItemGroup>
 </Project>

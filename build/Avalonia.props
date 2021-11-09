@@ -1,0 +1,10 @@
+<Project>
+	<PropertyGroup>
+		<AvaloniaVer>0.10.0</AvaloniaVer>
+	</PropertyGroup>
+  <ItemGroup>
+		<PackageReference Include="Avalonia" Version="$(AvaloniaVer)" />
+		<PackageReference Include="Avalonia.Desktop" Version="$(AvaloniaVer)" />
+		<PackageReference Include="Avalonia.Diagnostics" Version="$(AvaloniaVer)" />
+	</ItemGroup>
+</Project>

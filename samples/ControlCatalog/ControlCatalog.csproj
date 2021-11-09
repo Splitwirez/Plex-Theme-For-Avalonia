@@ -24,9 +24,10 @@
 		<ProjectReference Include="..\..\src\AvaloniaPlexTheme\AvaloniaPlexTheme.csproj" />
 		<ProjectReference Include="..\MiniMvvm\MiniMvvm.csproj" />
 	</ItemGroup>
-	<ItemGroup>
+	<!--ItemGroup>
 		<PackageReference Include="Avalonia" Version="0.10.0" />
 		<PackageReference Include="Avalonia.Desktop" Version="0.10.0" />
 		<PackageReference Include="Avalonia.Diagnostics" Version="0.10.0" />
-	</ItemGroup>
+	</ItemGroup-->
+	<Import Project="..\..\build\Avalonia.props" />
 </Project>

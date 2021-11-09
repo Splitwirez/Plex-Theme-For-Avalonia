@@ -50,6 +50,7 @@
 											VerticalAlignment="Top"
 											Height="{Binding #TitleBarContainer.Bounds.Height}"
 											HorizontalAlignment="{Binding #TitleBar.DesiredCaptionButtonsAlignment}"
+											IsVisible="{Binding #TitleBar.IsVisible}"
 											Tag="{Binding #WindowShadowBorder}"/>
 							<!--Border IsHitTestVisible="False"
 									Background="Transparent"
@@ -238,17 +239,18 @@
 		<Setter Property="IsVisible" Value="False"/>
 	</Style>
 
-	<Style Selector="Window[SystemDecorations=None] /template/ ContentPresenter#PART_ContentPresenter">
+	<Style Selector="Window:not(Window[SystemDecorations=Full]) /template/ ContentPresenter#PART_ContentPresenter">
 					<!--Window[WindowState=Maximized] /template/ ContentPresenter#PART_ContentPresenter,
 					Window[WindowState=FullScreen] /template/ ContentPresenter#PART_ContentPresenter-->
 		<Setter Property="CornerRadius" Value="{DynamicResource Window-CornerRadius-Top}"/>
 	</Style>
-	<Style Selector="Window[SystemDecorations=None]:not(Window[ExtendClientAreaToDecorationsHint=true][ExtendClientAreaTitleBarHeightHint=-1]):not(Window[WindowState=Maximized], Window[WindowState=FullScreen]) /template/ ContentPresenter#PART_ContentPresenter">
+	<Style Selector="Window:not(Window[SystemDecorations=Full]):not(Window[ExtendClientAreaToDecorationsHint=true][ExtendClientAreaTitleBarHeightHint=-1]):not(Window[WindowState=Maximized], Window[WindowState=FullScreen]) /template/ ContentPresenter#PART_ContentPresenter">
 		<Setter Property="CornerRadius" Value="{DynamicResource Window-CornerRadius-All}"/>
 	</Style>
 
 
-	<Style Selector="Window[SystemDecorations=None][ClipToBounds=True] /template/ ContentPresenter#PART_ContentPresenter">
+	<!--Style Selector="Window[SystemDecorations=None][ClipToBounds=True] /template/ ContentPresenter#PART_ContentPresenter"-->
+	<Style Selector="Window[ClipToBounds=True]:not(Window[SystemDecorations=Full]) /template/ ContentPresenter#PART_ContentPresenter">
 		<!--[ExtendClientAreaToDecorationsHint=False]:not(Window[WindowState=Maximized], Window[WindowState=FullScreen])-->
 		
 		<!--Setter Property="ClipToBounds" Value="True"/-->
