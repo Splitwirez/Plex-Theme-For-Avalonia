@@ -1,0 +1,33 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:sys="clr-namespace:System;assembly=netstandard">
+		
+	<LinearGradientBrush x:Key="WindowTitleBar-BottomBorderBrush" StartPoint="0%, 0%" EndPoint="50%, 0%" SpreadMethod="Reflect">
+		<GradientStop Offset="0" Color="{DynamicResource WindowTitleBar-BottomBorderBrush-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource WindowTitleBar-BottomBorderBrush-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="WindowTitleBar-Active-Background" StartPoint="0%, 0%" EndPoint="50%, 0%" SpreadMethod="Reflect">
+		<GradientStop Offset="0" Color="{DynamicResource WindowTitleBar-Active-Background-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource WindowTitleBar-Active-Background-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="WindowTitleBar-Active-BorderBrush" StartPoint="0%, 0%" EndPoint="50%, 0%" SpreadMethod="Reflect">
+		<GradientStop Offset="0" Color="{DynamicResource WindowTitleBar-Active-BorderBrush-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource WindowTitleBar-Active-BorderBrush-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<SolidColorBrush x:Key="WindowTitleBar-Active-Foreground" Color="{DynamicResource WindowTitleBar-Active-Foreground-Color}"/>
+		
+	<LinearGradientBrush x:Key="WindowTitleBar-Inactive-Background" StartPoint="0%, 0%" EndPoint="50%, 0%" SpreadMethod="Reflect">
+		<GradientStop Offset="0" Color="{DynamicResource WindowTitleBar-Inactive-Background-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource WindowTitleBar-Inactive-Background-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="WindowTitleBar-Inactive-BorderBrush" StartPoint="0%, 0%" EndPoint="50%, 0%" SpreadMethod="Reflect">
+		<GradientStop Offset="0" Color="{DynamicResource WindowTitleBar-Inactive-BorderBrush-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource WindowTitleBar-Inactive-BorderBrush-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<SolidColorBrush x:Key="WindowTitleBar-Inactive-Foreground" Color="{DynamicResource WindowTitleBar-Inactive-Foreground-Color}"/>
+</ResourceDictionary>

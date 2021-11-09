@@ -1,0 +1,17 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:sys="clr-namespace:System;assembly=netstandard">
+		
+	<LinearGradientBrush x:Key="MenuItem-Hover-Background0" StartPoint="50%, 100%" EndPoint="96.875%, 93.75%">
+		<GradientStop Offset="0" Color="{DynamicResource MenuItem-Hover-Background0-Stop0-Color}"/>
+		<GradientStop Offset="0.5" Color="{DynamicResource MenuItem-Hover-Background0-Stop1-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource MenuItem-Hover-Background0-Stop2-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="MenuItem-Hover-Background1" StartPoint="12.5%, 0%" EndPoint="0%, 62.5%">
+		<GradientStop Offset="0" Color="{DynamicResource MenuItem-Hover-Background1-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource MenuItem-Hover-Background1-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<SolidColorBrush x:Key="MenuItem-Pressed-Background" Color="{DynamicResource MenuItem-Pressed-Background-Color}"/>
+</ResourceDictionary>

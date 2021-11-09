@@ -1,0 +1,14 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:sys="clr-namespace:System;assembly=netstandard">
+		
+	<SolidColorBrush x:Key="CaptionButtons-Active-Idle" Color="{DynamicResource CaptionButtons-Active-Idle-Color}"/>
+		
+	<SolidColorBrush x:Key="CaptionButtons-Inactive-Idle" Color="{DynamicResource CaptionButtons-Inactive-Idle-Color}"/>
+		
+	<SolidColorBrush x:Key="CaptionButtons-Hover" Color="{DynamicResource CaptionButtons-Hover-Color}"/>
+		
+	<SolidColorBrush x:Key="CaptionButtons-Pressed" Color="{DynamicResource CaptionButtons-Pressed-Color}"/>
+		
+	<SolidColorBrush x:Key="CaptionButtons-Stroke" Color="{DynamicResource CaptionButtons-Stroke-Color}"/>
+</ResourceDictionary>

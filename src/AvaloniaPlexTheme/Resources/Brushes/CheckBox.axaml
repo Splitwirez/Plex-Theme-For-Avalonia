@@ -1,0 +1,48 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:sys="clr-namespace:System;assembly=netstandard">
+		
+	<LinearGradientBrush x:Key="CheckBox-Idle-Background" StartPoint="0%, 0%" EndPoint="100%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource CheckBox-Idle-Background-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource CheckBox-Idle-Background-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<SolidColorBrush x:Key="CheckBox-Idle-BorderBrush" Color="{DynamicResource CheckBox-Idle-BorderBrush-Color}"/>
+		
+	<SolidColorBrush x:Key="CheckBox-Idle-CheckMark" Color="{DynamicResource CheckBox-Idle-CheckMark-Color}"/>
+		
+	<LinearGradientBrush x:Key="CheckBox-Hover-Background" StartPoint="0%, 0%" EndPoint="100%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource CheckBox-Hover-Background-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource CheckBox-Hover-Background-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<SolidColorBrush x:Key="CheckBox-Hover-BorderBrush" Color="{DynamicResource CheckBox-Hover-BorderBrush-Color}"/>
+		
+	<SolidColorBrush x:Key="CheckBox-Hover-CheckMark" Color="{DynamicResource CheckBox-Hover-CheckMark-Color}"/>
+		
+	<LinearGradientBrush x:Key="CheckBox-Pressed-Background" StartPoint="0%, 0%" EndPoint="100%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource CheckBox-Pressed-Background-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource CheckBox-Pressed-Background-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<SolidColorBrush x:Key="CheckBox-Pressed-BorderBrush" Color="{DynamicResource CheckBox-Pressed-BorderBrush-Color}"/>
+		
+	<SolidColorBrush x:Key="CheckBox-Pressed-CheckMark" Color="{DynamicResource CheckBox-Pressed-CheckMark-Color}"/>
+		
+	<LinearGradientBrush x:Key="CheckBox-Disabled-Background" StartPoint="0%, 0%" EndPoint="100%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource CheckBox-Disabled-Background-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource CheckBox-Disabled-Background-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<SolidColorBrush x:Key="CheckBox-Disabled-BorderBrush" Color="{DynamicResource CheckBox-Disabled-BorderBrush-Color}"/>
+		
+	<SolidColorBrush x:Key="CheckBox-Disabled-CheckMark" Color="{DynamicResource CheckBox-Disabled-CheckMark-Color}"/>
+		
+	<SolidColorBrush x:Key="CheckBox-ToolsMenuArea-Idle-Background" Color="{DynamicResource CheckBox-ToolsMenuArea-Idle-Background-Color}"/>
+		
+	<SolidColorBrush x:Key="CheckBox-ToolsMenuArea-Idle-BorderBrush0" Color="{DynamicResource CheckBox-ToolsMenuArea-Idle-BorderBrush0-Color}"/>
+		
+	<SolidColorBrush x:Key="CheckBox-ToolsMenuArea-Idle-BorderBrush1" Color="{DynamicResource CheckBox-ToolsMenuArea-Idle-BorderBrush1-Color}"/>
+		
+	<SolidColorBrush x:Key="CheckBox-ToolsMenuArea-Idle-CheckMark" Color="{DynamicResource CheckBox-ToolsMenuArea-Idle-CheckMark-Color}"/>
+</ResourceDictionary>

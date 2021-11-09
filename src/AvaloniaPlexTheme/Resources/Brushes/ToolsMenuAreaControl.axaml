@@ -1,0 +1,28 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:sys="clr-namespace:System;assembly=netstandard">
+		
+	<LinearGradientBrush x:Key="ToolsMenuAreaControl-BorderBrush0" StartPoint="0%, 0%" EndPoint="0%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource ToolsMenuAreaControl-BorderBrush0-Stop0-Color}"/>
+		<GradientStop Offset="0.5" Color="{DynamicResource ToolsMenuAreaControl-BorderBrush0-Stop1-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource ToolsMenuAreaControl-BorderBrush0-Stop2-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="ToolsMenuAreaControl-BorderBrush1" StartPoint="0%, 0%" EndPoint="0%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource ToolsMenuAreaControl-BorderBrush1-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource ToolsMenuAreaControl-BorderBrush1-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="ToolsMenuAreaControl-Hover-Background0" StartPoint="0%, 0%" EndPoint="0%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource ToolsMenuAreaControl-Hover-Background0-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource ToolsMenuAreaControl-Hover-Background0-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<SolidColorBrush x:Key="ToolsMenuAreaControl-Hover-Background1" Color="{DynamicResource ToolsMenuAreaControl-Hover-Background1-Color}"/>
+		
+	<SolidColorBrush x:Key="ToolsMenuAreaControl-Pressed-Background" Color="{DynamicResource ToolsMenuAreaControl-Pressed-Background-Color}"/>
+		
+	<SolidColorBrush x:Key="ToolsMenuAreaControl-Hover-Foreground" Color="{DynamicResource ToolsMenuAreaControl-Hover-Foreground-Color}"/>
+		
+	<SolidColorBrush x:Key="ToolsMenuAreaControl-Disabled-Foreground" Color="{DynamicResource ToolsMenuAreaControl-Disabled-Foreground-Color}"/>
+</ResourceDictionary>

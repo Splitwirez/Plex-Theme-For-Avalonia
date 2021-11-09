@@ -1,0 +1,28 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:sys="clr-namespace:System;assembly=netstandard">
+		
+	<LinearGradientBrush x:Key="ToolsMenuArea-Background" StartPoint="0%, 0%" EndPoint="50%, 0%" SpreadMethod="Reflect">
+		<GradientStop Offset="0" Color="{DynamicResource ToolsMenuArea-Background-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource ToolsMenuArea-Background-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<SolidColorBrush x:Key="ToolsMenuArea-SideBorderBrush" Color="{DynamicResource ToolsMenuArea-SideBorderBrush-Color}"/>
+		
+	<LinearGradientBrush x:Key="ToolsMenuArea-BottomBorderBrush0" StartPoint="0%, 0%" EndPoint="50%, 0%" SpreadMethod="Reflect">
+		<GradientStop Offset="0" Color="{DynamicResource ToolsMenuArea-BottomBorderBrush0-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource ToolsMenuArea-BottomBorderBrush0-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="ToolsMenuArea-BottomBorderBrush1" StartPoint="0%, 0%" EndPoint="50%, 0%" SpreadMethod="Reflect">
+		<GradientStop Offset="0" Color="{DynamicResource ToolsMenuArea-BottomBorderBrush1-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource ToolsMenuArea-BottomBorderBrush1-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="ToolsMenuArea-BottomBorderBrush2" StartPoint="0%, 0%" EndPoint="50%, 0%" SpreadMethod="Reflect">
+		<GradientStop Offset="0" Color="{DynamicResource ToolsMenuArea-BottomBorderBrush2-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource ToolsMenuArea-BottomBorderBrush2-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<SolidColorBrush x:Key="ToolsMenuArea-Foreground" Color="{DynamicResource ToolsMenuArea-Foreground-Color}"/>
+</ResourceDictionary>

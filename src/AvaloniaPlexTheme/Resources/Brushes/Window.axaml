@@ -1,0 +1,11 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:sys="clr-namespace:System;assembly=netstandard">
+		
+	<LinearGradientBrush x:Key="Window-Background" StartPoint="0%, 0%" EndPoint="0%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource Window-Background-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource Window-Background-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<SolidColorBrush x:Key="Window-Foreground" Color="{DynamicResource Window-Foreground-Color}"/>
+</ResourceDictionary>

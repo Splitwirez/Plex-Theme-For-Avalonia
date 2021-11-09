@@ -1,0 +1,74 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:sys="clr-namespace:System;assembly=netstandard">
+		
+	<LinearGradientBrush x:Key="ToggleSwitch-Thumb-Idle-Background" StartPoint="62.5%, 25%" EndPoint="37.5%, 62.5%">
+		<GradientStop Offset="0" Color="{DynamicResource ToggleSwitch-Thumb-Idle-Background-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource ToggleSwitch-Thumb-Idle-Background-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="ToggleSwitch-Thumb-Idle-BorderBrush1" StartPoint="62.5%, 25%" EndPoint="37.5%, 62.5%">
+		<GradientStop Offset="0" Color="{DynamicResource ToggleSwitch-Thumb-Idle-BorderBrush1-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource ToggleSwitch-Thumb-Idle-BorderBrush1-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="ToggleSwitch-Thumb-Hover-Background" StartPoint="62.5%, 25%" EndPoint="37.5%, 62.5%">
+		<GradientStop Offset="0" Color="{DynamicResource ToggleSwitch-Thumb-Hover-Background-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource ToggleSwitch-Thumb-Hover-Background-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="ToggleSwitch-Thumb-Pressed-Background" StartPoint="62.5%, 25%" EndPoint="37.5%, 62.5%">
+		<GradientStop Offset="0" Color="{DynamicResource ToggleSwitch-Thumb-Pressed-Background-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource ToggleSwitch-Thumb-Pressed-Background-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="ToggleSwitch-Thumb-Checked-Background" StartPoint="62.5%, 25%" EndPoint="37.5%, 62.5%">
+		<GradientStop Offset="0" Color="{DynamicResource ToggleSwitch-Thumb-Checked-Background-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource ToggleSwitch-Thumb-Checked-Background-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="ToggleSwitch-Thumb-Disabled-Background" StartPoint="62.5%, 25%" EndPoint="37.5%, 62.5%">
+		<GradientStop Offset="0" Color="{DynamicResource ToggleSwitch-Thumb-Disabled-Background-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource ToggleSwitch-Thumb-Disabled-Background-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<SolidColorBrush x:Key="ToggleSwitch-Thumb-Disabled-BorderBrush0" Color="{DynamicResource ToggleSwitch-Thumb-Disabled-BorderBrush0-Color}"/>
+		
+	<LinearGradientBrush x:Key="ToggleSwitch-Thumb-Disabled-BorderBrush1" StartPoint="62.5%, 25%" EndPoint="37.5%, 62.5%">
+		<GradientStop Offset="0" Color="{DynamicResource ToggleSwitch-Thumb-Disabled-BorderBrush1-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource ToggleSwitch-Thumb-Disabled-BorderBrush1-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<SolidColorBrush x:Key="ToggleSwitch-Thumb-BorderBrush0" Color="{DynamicResource ToggleSwitch-Thumb-BorderBrush0-Color}"/>
+		
+	<SolidColorBrush x:Key="ToggleSwitch-Track-Idle-Background" Color="{DynamicResource ToggleSwitch-Track-Idle-Background-Color}"/>
+		
+	<SolidColorBrush x:Key="ToggleSwitch-Track-Idle-Foreground" Color="{DynamicResource ToggleSwitch-Track-Idle-Foreground-Color}"/>
+		
+	<SolidColorBrush x:Key="ToggleSwitch-Track-Hover-Background" Color="{DynamicResource ToggleSwitch-Track-Hover-Background-Color}"/>
+		
+	<SolidColorBrush x:Key="ToggleSwitch-Track-Pressed-Background" Color="{DynamicResource ToggleSwitch-Track-Pressed-Background-Color}"/>
+		
+	<LinearGradientBrush x:Key="ToggleSwitch-Track-Checked-Background" StartPoint="100%, 0%" EndPoint="50%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource ToggleSwitch-Track-Checked-Background-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource ToggleSwitch-Track-Checked-Background-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<SolidColorBrush x:Key="ToggleSwitch-Track-Disabled-Background" Color="{DynamicResource ToggleSwitch-Track-Disabled-Background-Color}"/>
+		
+	<LinearGradientBrush x:Key="ToggleSwitch-Track-Disabled-BorderBrush" StartPoint="0%, 0%" EndPoint="0%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource ToggleSwitch-Track-Disabled-BorderBrush-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource ToggleSwitch-Track-Disabled-BorderBrush-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="ToggleSwitch-Track-BorderBrush" StartPoint="0%, 0%" EndPoint="0%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource ToggleSwitch-Track-BorderBrush-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource ToggleSwitch-Track-BorderBrush-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<SolidColorBrush x:Key="ToggleSwitch-ToolsMenuArea-Track-Idle-Background" Color="{DynamicResource ToggleSwitch-ToolsMenuArea-Track-Idle-Background-Color}"/>
+		
+	<SolidColorBrush x:Key="ToggleSwitch-ToolsMenuArea-Track-Idle-BorderBrush0" Color="{DynamicResource ToggleSwitch-ToolsMenuArea-Track-Idle-BorderBrush0-Color}"/>
+		
+	<SolidColorBrush x:Key="ToggleSwitch-ToolsMenuArea-Track-Idle-BorderBrush1" Color="{DynamicResource ToggleSwitch-ToolsMenuArea-Track-Idle-BorderBrush1-Color}"/>
+</ResourceDictionary>

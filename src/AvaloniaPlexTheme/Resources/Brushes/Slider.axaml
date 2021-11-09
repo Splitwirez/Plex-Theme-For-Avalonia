@@ -1,0 +1,55 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:sys="clr-namespace:System;assembly=netstandard">
+		
+	<SolidColorBrush x:Key="Slider-Track-Idle-Background" Color="{DynamicResource Slider-Track-Idle-Background-Color}"/>
+		
+	<SolidColorBrush x:Key="Slider-Track-Idle-BorderBrush" Color="{DynamicResource Slider-Track-Idle-BorderBrush-Color}"/>
+		
+	<SolidColorBrush x:Key="Slider-Track-Hover-Background" Color="{DynamicResource Slider-Track-Hover-Background-Color}"/>
+		
+	<SolidColorBrush x:Key="Slider-Track-Hover-BorderBrush" Color="{DynamicResource Slider-Track-Hover-BorderBrush-Color}"/>
+		
+	<SolidColorBrush x:Key="Slider-Track-Pressed-Background" Color="{DynamicResource Slider-Track-Pressed-Background-Color}"/>
+		
+	<SolidColorBrush x:Key="Slider-Track-Pressed-BorderBrush" Color="{DynamicResource Slider-Track-Pressed-BorderBrush-Color}"/>
+		
+	<SolidColorBrush x:Key="Slider-Track-Disabled-Background" Color="{DynamicResource Slider-Track-Disabled-Background-Color}"/>
+		
+	<SolidColorBrush x:Key="Slider-Track-Disabled-BorderBrush" Color="{DynamicResource Slider-Track-Disabled-BorderBrush-Color}"/>
+		
+	<LinearGradientBrush x:Key="Slider-Thumb-TrackGlow-Horizontal" StartPoint="0%, 0%" EndPoint="50%, 0%" SpreadMethod="Reflect">
+		<GradientStop Offset="0" Color="{DynamicResource Slider-Thumb-TrackGlow-Horizontal-Stop0-Color}"/>
+		<GradientStop Offset="0.75" Color="{DynamicResource Slider-Thumb-TrackGlow-Horizontal-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="Slider-Thumb-TrackGlow-Vertical" StartPoint="0%, 0%" EndPoint="0%, 50%" SpreadMethod="Reflect">
+		<GradientStop Offset="0" Color="{DynamicResource Slider-Thumb-TrackGlow-Vertical-Stop0-Color}"/>
+		<GradientStop Offset="0.75" Color="{DynamicResource Slider-Thumb-TrackGlow-Vertical-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="Slider-Thumb-Idle-Background" StartPoint="0%, 0%" EndPoint="0%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource Slider-Thumb-Idle-Background-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource Slider-Thumb-Idle-Background-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<SolidColorBrush x:Key="Slider-Thumb-Idle-BorderBrush" Color="{DynamicResource Slider-Thumb-Idle-BorderBrush-Color}"/>
+		
+	<SolidColorBrush x:Key="Slider-Thumb-Hover-Background" Color="{DynamicResource Slider-Thumb-Hover-Background-Color}"/>
+		
+	<SolidColorBrush x:Key="Slider-Thumb-Hover-BorderBrush" Color="{DynamicResource Slider-Thumb-Hover-BorderBrush-Color}"/>
+		
+	<LinearGradientBrush x:Key="Slider-Thumb-Pressed-Background" StartPoint="0%, 0%" EndPoint="0%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource Slider-Thumb-Pressed-Background-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource Slider-Thumb-Pressed-Background-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<SolidColorBrush x:Key="Slider-Thumb-Pressed-BorderBrush" Color="{DynamicResource Slider-Thumb-Pressed-BorderBrush-Color}"/>
+		
+	<LinearGradientBrush x:Key="Slider-Thumb-Disabled-Background" StartPoint="0%, 0%" EndPoint="0%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource Slider-Thumb-Disabled-Background-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource Slider-Thumb-Disabled-Background-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<SolidColorBrush x:Key="Slider-Thumb-Disabled-BorderBrush" Color="{DynamicResource Slider-Thumb-Disabled-BorderBrush-Color}"/>
+</ResourceDictionary>

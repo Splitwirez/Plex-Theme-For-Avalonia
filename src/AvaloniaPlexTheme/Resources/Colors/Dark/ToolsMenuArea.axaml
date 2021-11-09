@@ -1,0 +1,20 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:sys="clr-namespace:System;assembly=netstandard">
+		
+	<Color x:Key="ToolsMenuArea-Background-Stop0-Color">#ff232323</Color>
+	<Color x:Key="ToolsMenuArea-Background-Stop1-Color">#ff515151</Color>
+		
+	<Color x:Key="ToolsMenuArea-SideBorderBrush-Color">#ff383838</Color>
+		
+	<Color x:Key="ToolsMenuArea-BottomBorderBrush0-Stop0-Color">#ff161616</Color>
+	<Color x:Key="ToolsMenuArea-BottomBorderBrush0-Stop1-Color">Black</Color>
+		
+	<Color x:Key="ToolsMenuArea-BottomBorderBrush1-Stop0-Color">#ff494949</Color>
+	<Color x:Key="ToolsMenuArea-BottomBorderBrush1-Stop1-Color">#ff707070</Color>
+		
+	<Color x:Key="ToolsMenuArea-BottomBorderBrush2-Stop0-Color">#ff383838</Color>
+	<Color x:Key="ToolsMenuArea-BottomBorderBrush2-Stop1-Color">#ff606060</Color>
+		
+	<Color x:Key="ToolsMenuArea-Foreground-Color">White</Color>
+</ResourceDictionary>

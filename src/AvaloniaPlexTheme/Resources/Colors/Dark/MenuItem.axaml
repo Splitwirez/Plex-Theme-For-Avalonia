@@ -1,0 +1,13 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:sys="clr-namespace:System;assembly=netstandard">
+		
+	<Color x:Key="MenuItem-Hover-Background0-Stop0-Color">#ffc7e5f9</Color>
+	<Color x:Key="MenuItem-Hover-Background0-Stop1-Color">#ff9acaed</Color>
+	<Color x:Key="MenuItem-Hover-Background0-Stop2-Color">#ff92c4e8</Color>
+		
+	<Color x:Key="MenuItem-Hover-Background1-Stop0-Color">#ff68a2cc</Color>
+	<Color x:Key="MenuItem-Hover-Background1-Stop1-Color">#0068a2cc</Color>
+		
+	<Color x:Key="MenuItem-Pressed-Background-Color">#ff4e9cd3</Color>
+</ResourceDictionary>

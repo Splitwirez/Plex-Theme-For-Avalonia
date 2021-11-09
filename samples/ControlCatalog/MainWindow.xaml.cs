@@ -6,7 +6,11 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using ControlCatalog.ViewModels;
 using System;
+using System.Linq;
 using System.Runtime.InteropServices;
+
+using Avalonia.Markup.Xaml.MarkupExtensions;
+using Avalonia.Styling;
 
 namespace ControlCatalog
 {
@@ -33,7 +37,20 @@ namespace ControlCatalog
             _recentMenu = ((NativeMenu.GetMenu(this).Items[0] as NativeMenuItem).Menu.Items[2] as NativeMenuItem).Menu;
 
             var mainMenu = this.FindControl<Menu>("MainMenu");
-            mainMenu.AttachedToVisualTree += MenuAttached;   
+            mainMenu.AttachedToVisualTree += MenuAttached;
+
+            var lightSwitch = this.Find<ToggleSwitch>("LightSwitch");
+            
+            lightSwitch.Checked += (s, e) => SetBrightness("Bright");
+            lightSwitch.Unchecked += (s, e) => SetBrightness("Dark");    
+        }
+
+        void SetBrightness(string newBrightness)
+        {
+            (App.Current.Styles[0] as Styles).Resources.MergedDictionaries[0] = (new ResourceInclude()
+            {
+                Source = new Uri(@"avares://AvaloniaPlexTheme/Resources/Colors/" + newBrightness + ".axaml", UriKind.Absolute)
+            });
         }
 
         public static string MenuQuitHeader => RuntimeInformation.IsOSPlatform(OSPlatform.OSX) ? "Quit Avalonia" : "E_xit";

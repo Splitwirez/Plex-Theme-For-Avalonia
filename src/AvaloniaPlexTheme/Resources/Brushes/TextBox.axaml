@@ -1,0 +1,15 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:sys="clr-namespace:System;assembly=netstandard">
+		
+	<SolidColorBrush x:Key="TextBox-Idle-Background" Color="{DynamicResource TextBox-Idle-Background-Color}"/>
+		
+	<LinearGradientBrush x:Key="TextBox-Idle-BorderBrush" StartPoint="0%, 0%" EndPoint="0%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource TextBox-Idle-BorderBrush-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource TextBox-Idle-BorderBrush-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<SolidColorBrush x:Key="TextBox-Idle-Watermark" Color="{DynamicResource TextBox-Idle-Watermark-Color}"/>
+		
+	<SolidColorBrush x:Key="TextBox-Idle-Foreground" Color="{DynamicResource TextBox-Idle-Foreground-Color}"/>
+</ResourceDictionary>

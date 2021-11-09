@@ -1,0 +1,19 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:sys="clr-namespace:System;assembly=netstandard">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Brushes/Button.axaml"/>
+		<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Brushes/CaptionButtons.axaml"/>
+		<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Brushes/CheckBox.axaml"/>
+		<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Brushes/Menu.axaml"/>
+		<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Brushes/MenuItem.axaml"/>
+		<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Brushes/Slider.axaml"/>
+		<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Brushes/TextBlock.axaml"/>
+		<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Brushes/TextBox.axaml"/>
+		<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Brushes/ToggleSwitch.axaml"/>
+		<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Brushes/ToolsMenuArea.axaml"/>
+		<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Brushes/ToolsMenuAreaControl.axaml"/>
+		<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Brushes/Window.axaml"/>
+		<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Brushes/WindowTitleBar.axaml"/>
+	</ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

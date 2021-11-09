@@ -14,10 +14,6 @@ namespace ControlCatalog
         public override void Initialize()
         {
             AvaloniaXamlLoader.Load(this);
-#if OLD_COLORS
-            Styles.Remove(Styles.OfType<StyleInclude>().FirstOrDefault());
-            Styles.Add(new PlexTheme());
-#endif
         }
 
         public override void OnFrameworkInitializationCompleted()

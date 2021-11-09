@@ -161,7 +161,8 @@
 							</Border>
 							<StackPanel Grid.Column="1"
 								Grid.Row="1"
-								Orientation="Horizontal">
+								Orientation="Horizontal"
+								Spacing="5">
 								<ToggleButton x:Name="WindowOptions"
 											Background="Transparent"
 											Padding="0,5,8,6">
@@ -178,6 +179,7 @@
 										</StackPanel>
 									</Border>
 								</Popup>
+								<ToggleSwitch x:Name="LightSwitch" IsChecked="True" OnContent="Lights on" OffContent="Lights off"/>
 							</StackPanel>
 						</Grid>
 					</DockPanel>

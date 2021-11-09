@@ -1,0 +1,23 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:sys="clr-namespace:System;assembly=netstandard">
+		
+	<Color x:Key="WindowTitleBar-BottomBorderBrush-Stop0-Color">#ff3b6187</Color>
+	<Color x:Key="WindowTitleBar-BottomBorderBrush-Stop1-Color">#ff487bad</Color>
+		
+	<Color x:Key="WindowTitleBar-Active-Background-Stop0-Color">#ff4e90d3</Color>
+	<Color x:Key="WindowTitleBar-Active-Background-Stop1-Color">#ff73b3f4</Color>
+		
+	<Color x:Key="WindowTitleBar-Active-BorderBrush-Stop0-Color">#00a8cff7</Color>
+	<Color x:Key="WindowTitleBar-Active-BorderBrush-Stop1-Color">#ffa8cff7</Color>
+		
+	<Color x:Key="WindowTitleBar-Active-Foreground-Color">White</Color>
+		
+	<Color x:Key="WindowTitleBar-Inactive-Background-Stop0-Color">#ff447fba</Color>
+	<Color x:Key="WindowTitleBar-Inactive-Background-Stop1-Color">#ff649dd6</Color>
+		
+	<Color x:Key="WindowTitleBar-Inactive-BorderBrush-Stop0-Color">#008ab1d8</Color>
+	<Color x:Key="WindowTitleBar-Inactive-BorderBrush-Stop1-Color">#ff8ab1d8</Color>
+		
+	<Color x:Key="WindowTitleBar-Inactive-Foreground-Color">#ffaec9e5</Color>
+</ResourceDictionary>

@@ -1,0 +1,117 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:sys="clr-namespace:System;assembly=netstandard">
+		
+	<LinearGradientBrush x:Key="Button-Idle-Background0" StartPoint="0%, 0%" EndPoint="0%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource Button-Idle-Background0-Stop0-Color}"/>
+		<GradientStop Offset="0.375" Color="{DynamicResource Button-Idle-Background0-Stop1-Color}"/>
+		<GradientStop Offset="0.375" Color="{DynamicResource Button-Idle-Background0-Stop2-Color}"/>
+		<GradientStop Offset="0.625" Color="{DynamicResource Button-Idle-Background0-Stop3-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource Button-Idle-Background0-Stop4-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="Button-Idle-Background1" StartPoint="0%, 0%" EndPoint="0%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource Button-Idle-Background1-Stop0-Color}"/>
+		<GradientStop Offset="0.75" Color="{DynamicResource Button-Idle-Background1-Stop1-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource Button-Idle-Background1-Stop2-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="Button-Idle-BorderBrush0" StartPoint="0%, 0%" EndPoint="0%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource Button-Idle-BorderBrush0-Stop0-Color}"/>
+		<GradientStop Offset="0.625" Color="{DynamicResource Button-Idle-BorderBrush0-Stop1-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource Button-Idle-BorderBrush0-Stop2-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="Button-Idle-BorderBrush1" StartPoint="0%, 0%" EndPoint="0%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource Button-Idle-BorderBrush1-Stop0-Color}"/>
+		<GradientStop Offset="0.625" Color="{DynamicResource Button-Idle-BorderBrush1-Stop1-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource Button-Idle-BorderBrush1-Stop2-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="Button-Idle-BorderBrush2" StartPoint="0%, 0%" EndPoint="50%, 0%" SpreadMethod="Reflect">
+		<GradientStop Offset="0" Color="{DynamicResource Button-Idle-BorderBrush2-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource Button-Idle-BorderBrush2-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="Button-Hover-Background0" StartPoint="0%, 0%" EndPoint="0%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource Button-Hover-Background0-Stop0-Color}"/>
+		<GradientStop Offset="0.375" Color="{DynamicResource Button-Hover-Background0-Stop1-Color}"/>
+		<GradientStop Offset="0.375" Color="{DynamicResource Button-Hover-Background0-Stop2-Color}"/>
+		<GradientStop Offset="0.625" Color="{DynamicResource Button-Hover-Background0-Stop3-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource Button-Hover-Background0-Stop4-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="Button-Hover-Background1" StartPoint="0%, 0%" EndPoint="0%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource Button-Hover-Background1-Stop0-Color}"/>
+		<GradientStop Offset="0.75" Color="{DynamicResource Button-Hover-Background1-Stop1-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource Button-Hover-Background1-Stop2-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="Button-Hover-BorderBrush0" StartPoint="0%, 0%" EndPoint="0%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource Button-Hover-BorderBrush0-Stop0-Color}"/>
+		<GradientStop Offset="0.625" Color="{DynamicResource Button-Hover-BorderBrush0-Stop1-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource Button-Hover-BorderBrush0-Stop2-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="Button-Hover-BorderBrush1" StartPoint="0%, 0%" EndPoint="0%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource Button-Hover-BorderBrush1-Stop0-Color}"/>
+		<GradientStop Offset="0.625" Color="{DynamicResource Button-Hover-BorderBrush1-Stop1-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource Button-Hover-BorderBrush1-Stop2-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="Button-Hover-BorderBrush2" StartPoint="0%, 0%" EndPoint="50%, 0%" SpreadMethod="Reflect">
+		<GradientStop Offset="0" Color="{DynamicResource Button-Hover-BorderBrush2-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource Button-Hover-BorderBrush2-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="Button-Disabled-Background0" StartPoint="0%, 0%" EndPoint="0%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource Button-Disabled-Background0-Stop0-Color}"/>
+		<GradientStop Offset="0.375" Color="{DynamicResource Button-Disabled-Background0-Stop1-Color}"/>
+		<GradientStop Offset="0.375" Color="{DynamicResource Button-Disabled-Background0-Stop2-Color}"/>
+		<GradientStop Offset="0.625" Color="{DynamicResource Button-Disabled-Background0-Stop3-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource Button-Disabled-Background0-Stop4-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="Button-Disabled-Background1" StartPoint="0%, 0%" EndPoint="0%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource Button-Disabled-Background1-Stop0-Color}"/>
+		<GradientStop Offset="0.75" Color="{DynamicResource Button-Disabled-Background1-Stop1-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource Button-Disabled-Background1-Stop2-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="Button-Disabled-BorderBrush0" StartPoint="0%, 0%" EndPoint="0%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource Button-Disabled-BorderBrush0-Stop0-Color}"/>
+		<GradientStop Offset="0.625" Color="{DynamicResource Button-Disabled-BorderBrush0-Stop1-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource Button-Disabled-BorderBrush0-Stop2-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="Button-Disabled-BorderBrush1" StartPoint="0%, 0%" EndPoint="0%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource Button-Disabled-BorderBrush1-Stop0-Color}"/>
+		<GradientStop Offset="0.625" Color="{DynamicResource Button-Disabled-BorderBrush1-Stop1-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource Button-Disabled-BorderBrush1-Stop2-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="Button-Disabled-BorderBrush2" StartPoint="0%, 0%" EndPoint="50%, 0%" SpreadMethod="Reflect">
+		<GradientStop Offset="0" Color="{DynamicResource Button-Disabled-BorderBrush2-Stop0-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource Button-Disabled-BorderBrush2-Stop1-Color}"/>
+	</LinearGradientBrush>
+		
+	<SolidColorBrush x:Key="Button-Disabled-Foreground" Color="{DynamicResource Button-Disabled-Foreground-Color}"/>
+		
+	<SolidColorBrush x:Key="Button-Foreground" Color="{DynamicResource Button-Foreground-Color}"/>
+		
+	<LinearGradientBrush x:Key="Button-Pressed-Background" StartPoint="0%, 0%" EndPoint="0%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource Button-Pressed-Background-Stop0-Color}"/>
+		<GradientStop Offset="0.375" Color="{DynamicResource Button-Pressed-Background-Stop1-Color}"/>
+		<GradientStop Offset="0.375" Color="{DynamicResource Button-Pressed-Background-Stop2-Color}"/>
+		<GradientStop Offset="0.625" Color="{DynamicResource Button-Pressed-Background-Stop3-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource Button-Pressed-Background-Stop4-Color}"/>
+	</LinearGradientBrush>
+		
+	<LinearGradientBrush x:Key="Button-Pressed-BorderBrush" StartPoint="0%, 0%" EndPoint="0%, 100%">
+		<GradientStop Offset="0" Color="{DynamicResource Button-Pressed-BorderBrush-Stop0-Color}"/>
+		<GradientStop Offset="0.625" Color="{DynamicResource Button-Pressed-BorderBrush-Stop1-Color}"/>
+		<GradientStop Offset="1" Color="{DynamicResource Button-Pressed-BorderBrush-Stop2-Color}"/>
+	</LinearGradientBrush>
+		
+	<SolidColorBrush x:Key="Button-Pressed-Foreground" Color="{DynamicResource Button-Pressed-Foreground-Color}"/>
+</ResourceDictionary>

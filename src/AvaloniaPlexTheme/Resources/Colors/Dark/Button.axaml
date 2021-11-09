@@ -1,0 +1,83 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:sys="clr-namespace:System;assembly=netstandard">
+		
+	<Color x:Key="Button-Idle-Background0-Stop0-Color">#ff6a8496</Color>
+	<Color x:Key="Button-Idle-Background0-Stop1-Color">#ff5f7b8e</Color>
+	<Color x:Key="Button-Idle-Background0-Stop2-Color">#ff567287</Color>
+	<Color x:Key="Button-Idle-Background0-Stop3-Color">#ff537084</Color>
+	<Color x:Key="Button-Idle-Background0-Stop4-Color">#ff698293</Color>
+		
+	<Color x:Key="Button-Idle-Background1-Stop0-Color">#ff99afbf</Color>
+	<Color x:Key="Button-Idle-Background1-Stop1-Color">#ff80a3bc</Color>
+	<Color x:Key="Button-Idle-Background1-Stop2-Color">#ffbfbfbf</Color>
+		
+	<Color x:Key="Button-Idle-BorderBrush0-Stop0-Color">#ff294b63</Color>
+	<Color x:Key="Button-Idle-BorderBrush0-Stop1-Color">#ff0c273a</Color>
+	<Color x:Key="Button-Idle-BorderBrush0-Stop2-Color">#ff294b63</Color>
+		
+	<Color x:Key="Button-Idle-BorderBrush1-Stop0-Color">#ff6f8391</Color>
+	<Color x:Key="Button-Idle-BorderBrush1-Stop1-Color">#ffb8b9ba</Color>
+	<Color x:Key="Button-Idle-BorderBrush1-Stop2-Color">#ff6f8391</Color>
+		
+	<Color x:Key="Button-Idle-BorderBrush2-Stop0-Color">#ff8e99a0</Color>
+	<Color x:Key="Button-Idle-BorderBrush2-Stop1-Color">#ffbfbfbf</Color>
+		
+	<Color x:Key="Button-Hover-Background0-Stop0-Color">#ff98bcd6</Color>
+	<Color x:Key="Button-Hover-Background0-Stop1-Color">#ff799cb5</Color>
+	<Color x:Key="Button-Hover-Background0-Stop2-Color">#ff6e93ad</Color>
+	<Color x:Key="Button-Hover-Background0-Stop3-Color">#ff6b90aa</Color>
+	<Color x:Key="Button-Hover-Background0-Stop4-Color">#ff84a3ba</Color>
+		
+	<Color x:Key="Button-Hover-Background1-Stop0-Color">#ffd8d8d8</Color>
+	<Color x:Key="Button-Hover-Background1-Stop1-Color">#ffbecdd8</Color>
+	<Color x:Key="Button-Hover-Background1-Stop2-Color">#ffd8d8d8</Color>
+		
+	<Color x:Key="Button-Hover-BorderBrush0-Stop0-Color">#ff396889</Color>
+	<Color x:Key="Button-Hover-BorderBrush0-Stop1-Color">#ff19527a</Color>
+	<Color x:Key="Button-Hover-BorderBrush0-Stop2-Color">#ff396889</Color>
+		
+	<Color x:Key="Button-Hover-BorderBrush1-Stop0-Color">#ffa1bdd1</Color>
+	<Color x:Key="Button-Hover-BorderBrush1-Stop1-Color">#ffb8b9ba</Color>
+	<Color x:Key="Button-Hover-BorderBrush1-Stop2-Color">#ffa1bdd1</Color>
+		
+	<Color x:Key="Button-Hover-BorderBrush2-Stop0-Color">#ff8e99a0</Color>
+	<Color x:Key="Button-Hover-BorderBrush2-Stop1-Color">#ffbfbfbf</Color>
+		
+	<Color x:Key="Button-Disabled-Background0-Stop0-Color">#ff595959</Color>
+	<Color x:Key="Button-Disabled-Background0-Stop1-Color">#ff4f4f4f</Color>
+	<Color x:Key="Button-Disabled-Background0-Stop2-Color">#ff474747</Color>
+	<Color x:Key="Button-Disabled-Background0-Stop3-Color">#ff3d3d3d</Color>
+	<Color x:Key="Button-Disabled-Background0-Stop4-Color">#ff636363</Color>
+		
+	<Color x:Key="Button-Disabled-Background1-Stop0-Color">#ff828282</Color>
+	<Color x:Key="Button-Disabled-Background1-Stop1-Color">#ff727272</Color>
+	<Color x:Key="Button-Disabled-Background1-Stop2-Color">#ff999999</Color>
+		
+	<Color x:Key="Button-Disabled-BorderBrush0-Stop0-Color">#ff020202</Color>
+	<Color x:Key="Button-Disabled-BorderBrush0-Stop1-Color">Black</Color>
+	<Color x:Key="Button-Disabled-BorderBrush0-Stop2-Color">#ff0c0c0c</Color>
+		
+	<Color x:Key="Button-Disabled-BorderBrush1-Stop0-Color">#ff595959</Color>
+	<Color x:Key="Button-Disabled-BorderBrush1-Stop1-Color">#ff6b6b6b</Color>
+	<Color x:Key="Button-Disabled-BorderBrush1-Stop2-Color">#ff666666</Color>
+		
+	<Color x:Key="Button-Disabled-BorderBrush2-Stop0-Color">#ff707070</Color>
+	<Color x:Key="Button-Disabled-BorderBrush2-Stop1-Color">#ff999999</Color>
+		
+	<Color x:Key="Button-Disabled-Foreground-Color">#ffcccccc</Color>
+		
+	<Color x:Key="Button-Foreground-Color">#ffeaf6ff</Color>
+		
+	<Color x:Key="Button-Pressed-Background-Stop0-Color">#ff72a6cc</Color>
+	<Color x:Key="Button-Pressed-Background-Stop1-Color">#ff64a6d6</Color>
+	<Color x:Key="Button-Pressed-Background-Stop2-Color">#ff5699c9</Color>
+	<Color x:Key="Button-Pressed-Background-Stop3-Color">#ff4e96c9</Color>
+	<Color x:Key="Button-Pressed-Background-Stop4-Color">#ff77aace</Color>
+		
+	<Color x:Key="Button-Pressed-BorderBrush-Stop0-Color">#ff095b96</Color>
+	<Color x:Key="Button-Pressed-BorderBrush-Stop1-Color">#ff013356</Color>
+	<Color x:Key="Button-Pressed-BorderBrush-Stop2-Color">#ff095b96</Color>
+		
+	<Color x:Key="Button-Pressed-Foreground-Color">#ffbedef4</Color>
+</ResourceDictionary>

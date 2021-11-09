@@ -1,0 +1,19 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:sys="clr-namespace:System;assembly=netstandard">
+	<ResourceDictionary.MergedDictionaries>
+	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Bright/Button.axaml"/>
+	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Bright/CaptionButtons.axaml"/>
+	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Bright/CheckBox.axaml"/>
+	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Bright/Menu.axaml"/>
+	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Bright/MenuItem.axaml"/>
+	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Bright/Slider.axaml"/>
+	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Bright/TextBlock.axaml"/>
+	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Bright/TextBox.axaml"/>
+	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Bright/ToggleSwitch.axaml"/>
+	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Bright/ToolsMenuArea.axaml"/>
+	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Bright/ToolsMenuAreaControl.axaml"/>
+	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Bright/Window.axaml"/>
+	<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Bright/WindowTitleBar.axaml"/>
+	</ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

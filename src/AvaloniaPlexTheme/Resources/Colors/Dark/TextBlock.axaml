@@ -1,0 +1,10 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:sys="clr-namespace:System;assembly=netstandard">
+		
+	<Color x:Key="TextBlock-Header-Normal-Color">#ff2469d8</Color>
+		
+	<Color x:Key="TextBlock-Header-Emphasized-Color">#ff3f87fc</Color>
+		
+	<Color x:Key="TextBlock-Soft-Color">#ff999999</Color>
+</ResourceDictionary>

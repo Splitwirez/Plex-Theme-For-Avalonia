@@ -5,129 +5,139 @@
 			x:Class="ControlCatalog.App">
 			<!--xmlns:plex="splitwirez://AvaloniaPlexTheme"-->
 	<Application.Styles>
-		<StyleInclude Source="avares://AvaloniaPlexTheme/Plex.axaml"/>
-		<!--plex:PlexTheme/-->
+		<Styles>
+			<Styles.Resources>
+				<ResourceDictionary>
+					<ResourceDictionary.MergedDictionaries>
+						<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Colors/Bright.axaml"/>
+						<ResourceInclude Source="avares://AvaloniaPlexTheme/Resources/Brushes.axaml"/>
+					</ResourceDictionary.MergedDictionaries>
+				</ResourceDictionary>
+			</Styles.Resources>
+			<StyleInclude Source="avares://AvaloniaPlexTheme/Plex.axaml"/>
+			<!--plex:PlexTheme/-->
 
-		
-		<Style Selector="TextBlock.subHeader">
-			<Setter Property="FontSize" Value="17" />
-			<Setter Property="Foreground" Value="{DynamicResource TextBlock-Header-Normal}"/>
-		</Style>
-		<Style Selector="TextBlock.header">
-			<Setter Property="FontSize" Value="23" />
-		</Style>
-		<Style Selector="TextBlock.subHeader">
-		</Style>
-		<Style Selector="TextBlock.header,
-						TextBlock.emphasize">
-			<Setter Property="Foreground" Value="{DynamicResource TextBlock-Header-Emphasized}"/>
-		</Style>
-		<Style Selector="TextBlock.description">
-			<Setter Property="Foreground" Value="{DynamicResource TextBlock-Soft}"/>
-		</Style>
+			
+			<Style Selector="TextBlock.subHeader">
+				<Setter Property="FontSize" Value="17" />
+				<Setter Property="Foreground" Value="{DynamicResource TextBlock-Header-Normal}"/>
+			</Style>
+			<Style Selector="TextBlock.header">
+				<Setter Property="FontSize" Value="23" />
+			</Style>
+			<Style Selector="TextBlock.subHeader">
+			</Style>
+			<Style Selector="TextBlock.header,
+							TextBlock.emphasize">
+				<Setter Property="Foreground" Value="{DynamicResource TextBlock-Header-Emphasized}"/>
+			</Style>
+			<Style Selector="TextBlock.description">
+				<Setter Property="Foreground" Value="{DynamicResource TextBlock-Soft}"/>
+			</Style>
 
 
 
-		<!--Style Selector="TextBlock.beegHeader,
-										TextBlock.beegSubHeader,
-										TextBlock.groupHeader,
-										TextBlock.description">
-			<Setter Property="TextWrapping" Value="Wrap" />
-			<Setter Property="TextAlignment" Value="Left" />
-		</Style>
-		<Style Selector="Label.beegSubHeader">
-			<Setter Property="TextBlock.TextWrapping" Value="Wrap" />
-			<Setter Property="TextBlock.TextAlignment" Value="Left" />
-		</Style>
-		<Style Selector="TextBlock.beegSubHeader">
-			<!-Setter Property="Foreground" Value="#FF656565"/->
-		</Style>
-		<Style Selector="TextBlock.description">
-			<!-Setter Property="Foreground" Value="#FF656565"/->
-			<!-Setter Property="Foreground" Value="{DynamicResource TextBlock-Soft}"/->
-			<Setter Property="Foreground" Value="Green"/>
-		</Style-->
-		<!--Style Selector="TextBlock.description">
-			<Setter Property="Foreground" Value="#FF656565"/>
-		</Style-->
+			<!--Style Selector="TextBlock.beegHeader,
+											TextBlock.beegSubHeader,
+											TextBlock.groupHeader,
+											TextBlock.description">
+				<Setter Property="TextWrapping" Value="Wrap" />
+				<Setter Property="TextAlignment" Value="Left" />
+			</Style>
+			<Style Selector="Label.beegSubHeader">
+				<Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+				<Setter Property="TextBlock.TextAlignment" Value="Left" />
+			</Style>
+			<Style Selector="TextBlock.beegSubHeader">
+				<!-Setter Property="Foreground" Value="#FF656565"/->
+			</Style>
+			<Style Selector="TextBlock.description">
+				<!-Setter Property="Foreground" Value="#FF656565"/->
+				<!-Setter Property="Foreground" Value="{DynamicResource TextBlock-Soft}"/->
+				<Setter Property="Foreground" Value="Green"/>
+			</Style-->
+			<!--Style Selector="TextBlock.description">
+				<Setter Property="Foreground" Value="#FF656565"/>
+			</Style-->
 
-		<Style Selector="HeaderedContentControl.groupBox">
-			<Setter Property="Padding" Value="2"/>
-			<Setter Property="Template">
-				<ControlTemplate>
-					<StackPanel Spacing="8">
-						<ContentPresenter Content="{TemplateBinding Header}"
-										HorizontalAlignment="Left"
-										TextBlock.Foreground="{DynamicResource Window-Foreground}"/>
-						<Panel>
-							<TemplatedControl Classes="toolsMenuBackground"/>
-							<ContentPresenter x:Name="PART_ContentPresenter"
-											ContentTemplate="{TemplateBinding ContentTemplate}"
-											Content="{TemplateBinding Content}"
-											HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-											VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-											Padding="{TemplateBinding Padding}" />
-						</Panel>
-					</StackPanel>
-				</ControlTemplate>
-			</Setter>
-		</Style>
+			<Style Selector="HeaderedContentControl.groupBox">
+				<Setter Property="Padding" Value="2"/>
+				<Setter Property="Template">
+					<ControlTemplate>
+						<StackPanel Spacing="8">
+							<ContentPresenter Content="{TemplateBinding Header}"
+											HorizontalAlignment="Left"
+											TextBlock.Foreground="{DynamicResource Window-Foreground}"/>
+							<Panel>
+								<TemplatedControl Classes="toolsMenuBackground"/>
+								<ContentPresenter x:Name="PART_ContentPresenter"
+												ContentTemplate="{TemplateBinding ContentTemplate}"
+												Content="{TemplateBinding Content}"
+												HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+												VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+												Padding="{TemplateBinding Padding}" />
+							</Panel>
+						</StackPanel>
+					</ControlTemplate>
+				</Setter>
+			</Style>
 
-		<StyleInclude Source="/SideBar.xaml"/>
+			<StyleInclude Source="/SideBar.xaml"/>
 
-		<Style Selector="local|ComparisonControl">
-			<Setter Property="Template">
-				<ControlTemplate>
-					<StackPanel Orientation="Vertical" Spacing="24">
-						<HeaderedContentControl Classes="groupBox"
-												Header="Standard variant"
-												Content="e"
-												ContentTemplate="{TemplateBinding ContentTemplate}"/>
-						<HeaderedContentControl Classes="groupBox toolsMenuArea"
-												Header="Tools/Menu area variant"
-												Content="e"
-												ContentTemplate="{TemplateBinding ContentTemplate}"/>
-					</StackPanel>
-				</ControlTemplate>
-			</Setter>
-		</Style>
-		<!--Style Selector="local|ComparisonControl">
-			<Setter Property="Template">
-				<ControlTemplate>
-        			<ItemsPresenter x:Name="PART_ItemsPresenter"
-									Items="{TemplateBinding Items}"
-									ItemsPanel="{TemplateBinding ItemsPanel}">
-						<ItemsPresenter.ItemTemplate>
-							<DataTemplate DataType="{x:Type local:CompareItem}">
-								<HeaderedContentControl Header="{Binding Title}"
-														Classes="{Binding OutCompareClasses}">
-									<TemplatedControl Template="{Binding $parent[local:ComparisonControl].OutCompareTemplate}"/>
-								</HeaderedContentControl>
-							</DataTemplate>
-						</ItemsPresenter.ItemTemplate>
-					</ItemsPresenter>
-					
-						<!-HeaderedContentControl Classes="groupBox"
-												Header="Standard variant"
-												ContentTemplate="{TemplateBinding ContentTemplate}"/>
-						<HeaderedContentControl Classes="groupBox toolsMenuArea"
-												Header="Tools/Menu area variant"
-												ContentTemplate="{TemplateBinding ContentTemplate}"/->
-					<!-/StackPanel->
-				</ControlTemplate>
-			</Setter>
-			<Setter Property="ItemsPanel">
-				<ItemsPanelTemplate>
-					<StackPanel Orientation="Vertical" Spacing="24"/>
-				</ItemsPanelTemplate>
-			</Setter>
-			<Setter Property="Items">
-				<local:CompareItems>
-					<local:CompareItem Title="Standard variant" />
-					<local:CompareItem Title="Standard variant"
-										CompareClasses="toolsMenuArea"/>
-				</local:CompareItems>
-			</Setter>
-		</Style-->
+			<Style Selector="local|ComparisonControl">
+				<Setter Property="Template">
+					<ControlTemplate>
+						<StackPanel Orientation="Vertical" Spacing="24">
+							<HeaderedContentControl Classes="groupBox"
+													Header="Standard variant"
+													Content="e"
+													ContentTemplate="{TemplateBinding ContentTemplate}"/>
+							<HeaderedContentControl Classes="groupBox toolsMenuArea"
+													Header="Tools/Menu area variant"
+													Content="e"
+													ContentTemplate="{TemplateBinding ContentTemplate}"/>
+						</StackPanel>
+					</ControlTemplate>
+				</Setter>
+			</Style>
+			<!--Style Selector="local|ComparisonControl">
+				<Setter Property="Template">
+					<ControlTemplate>
+						<ItemsPresenter x:Name="PART_ItemsPresenter"
+										Items="{TemplateBinding Items}"
+										ItemsPanel="{TemplateBinding ItemsPanel}">
+							<ItemsPresenter.ItemTemplate>
+								<DataTemplate DataType="{x:Type local:CompareItem}">
+									<HeaderedContentControl Header="{Binding Title}"
+															Classes="{Binding OutCompareClasses}">
+										<TemplatedControl Template="{Binding $parent[local:ComparisonControl].OutCompareTemplate}"/>
+									</HeaderedContentControl>
+								</DataTemplate>
+							</ItemsPresenter.ItemTemplate>
+						</ItemsPresenter>
+						
+							<!-HeaderedContentControl Classes="groupBox"
+													Header="Standard variant"
+													ContentTemplate="{TemplateBinding ContentTemplate}"/>
+							<HeaderedContentControl Classes="groupBox toolsMenuArea"
+													Header="Tools/Menu area variant"
+													ContentTemplate="{TemplateBinding ContentTemplate}"/->
+						<!-/StackPanel->
+					</ControlTemplate>
+				</Setter>
+				<Setter Property="ItemsPanel">
+					<ItemsPanelTemplate>
+						<StackPanel Orientation="Vertical" Spacing="24"/>
+					</ItemsPanelTemplate>
+				</Setter>
+				<Setter Property="Items">
+					<local:CompareItems>
+						<local:CompareItem Title="Standard variant" />
+						<local:CompareItem Title="Standard variant"
+											CompareClasses="toolsMenuArea"/>
+					</local:CompareItems>
+				</Setter>
+			</Style-->
+		</Styles>
 	</Application.Styles>
 </Application>
