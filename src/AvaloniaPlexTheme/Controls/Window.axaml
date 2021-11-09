@@ -188,18 +188,18 @@
 		<Setter Property="Height" Value="{Binding $parent[Window].ExtendClientAreaTitleBarHeightHint}"/>
 	</Style>
 	
-	<Style Selector="Window:not(Window[WindowState=Maximized], Window[WindowState=FullScreen]) /template/ Border#WindowShadowBorder,
-					Window:not(Window[WindowState=Maximized], Window[WindowState=FullScreen]) /template/ Border#PART_TransparencyFallback">
+	<Style Selector="Window[SystemDecorations=None]:not(Window[WindowState=Maximized], Window[WindowState=FullScreen]) /template/ Border#WindowShadowBorder,
+					Window[SystemDecorations=None]:not(Window[WindowState=Maximized], Window[WindowState=FullScreen]) /template/ Border#PART_TransparencyFallback">
 		<Setter Property="CornerRadius" Value="{DynamicResource Window-CornerRadius-All}"/>
 	</Style>
 
-	<Style Selector="Window:not(Window[WindowState=Maximized], Window[WindowState=FullScreen]) /template/ Border#WindowShadowBorder">
+	<Style Selector="Window[SystemDecorations=None]:not(Window[WindowState=Maximized], Window[WindowState=FullScreen]) /template/ Border#WindowShadowBorder">
 		<Setter Property="Margin" Value="8,0,8,12"/>
 	</Style>
-	<Style Selector="Window[IsActive=True]:not(Window[WindowState=Maximized], Window[WindowState=FullScreen]) /template/ Border#WindowShadowBorder">
+	<Style Selector="Window[SystemDecorations=None][IsActive=True]:not(Window[WindowState=Maximized], Window[WindowState=FullScreen]) /template/ Border#WindowShadowBorder">
 		<Setter Property="BoxShadow" Value="0 6 8 0 #7F000000"/>
 	</Style>
-	<Style Selector="Window[IsActive=False]:not(Window[WindowState=Maximized], Window[WindowState=FullScreen]) /template/ Border#WindowShadowBorder">
+	<Style Selector="Window[SystemDecorations=None][IsActive=False]:not(Window[WindowState=Maximized], Window[WindowState=FullScreen]) /template/ Border#WindowShadowBorder">
 		<Setter Property="BoxShadow" Value="0 6 8 0 #5F000000"/>
 	</Style>
 
@@ -225,7 +225,8 @@
 	
 	<Style Selector="Window[WindowState=Maximized] /template/ plex|WindowResizeEdge,
 					Window[WindowState=FullScreen] /template/ plex|WindowResizeEdge
-					Window[CanResize=False] /template/ plex|WindowResizeEdge">
+					Window[CanResize=False] /template/ plex|WindowResizeEdge,
+					Window:not(Window[SystemDecorations=None]) /template/ plex|WindowResizeEdge">
 		<Setter Property="IsVisible" Value="False"/>
 	</Style>
 
@@ -237,17 +238,17 @@
 		<Setter Property="IsVisible" Value="False"/>
 	</Style>
 
-	<Style Selector="Window /template/ ContentPresenter#PART_ContentPresenter">
+	<Style Selector="Window[SystemDecorations=None] /template/ ContentPresenter#PART_ContentPresenter">
 					<!--Window[WindowState=Maximized] /template/ ContentPresenter#PART_ContentPresenter,
 					Window[WindowState=FullScreen] /template/ ContentPresenter#PART_ContentPresenter-->
 		<Setter Property="CornerRadius" Value="{DynamicResource Window-CornerRadius-Top}"/>
 	</Style>
-	<Style Selector="Window:not(Window[ExtendClientAreaToDecorationsHint=true][ExtendClientAreaTitleBarHeightHint=-1]):not(Window[WindowState=Maximized], Window[WindowState=FullScreen]) /template/ ContentPresenter#PART_ContentPresenter">
+	<Style Selector="Window[SystemDecorations=None]:not(Window[ExtendClientAreaToDecorationsHint=true][ExtendClientAreaTitleBarHeightHint=-1]):not(Window[WindowState=Maximized], Window[WindowState=FullScreen]) /template/ ContentPresenter#PART_ContentPresenter">
 		<Setter Property="CornerRadius" Value="{DynamicResource Window-CornerRadius-All}"/>
 	</Style>
 
 
-	<Style Selector="Window[ClipToBounds=True] /template/ ContentPresenter#PART_ContentPresenter">
+	<Style Selector="Window[SystemDecorations=None][ClipToBounds=True] /template/ ContentPresenter#PART_ContentPresenter">
 		<!--[ExtendClientAreaToDecorationsHint=False]:not(Window[WindowState=Maximized], Window[WindowState=FullScreen])-->
 		
 		<!--Setter Property="ClipToBounds" Value="True"/-->

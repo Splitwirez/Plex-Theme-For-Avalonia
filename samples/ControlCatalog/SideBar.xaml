@@ -204,9 +204,11 @@
 										HorizontalAlignment="Stretch"
 										VerticalAlignment="Center">
 								<TextBlock Classes="header"
-										Text="{Binding SelectedItem.Header, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+										Text="{Binding SelectedItem.Header, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+										TextWrapping="Wrap"/>
 								<TextBlock Classes="description"
-										Text="{Binding SelectedItem.Tag, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+										Text="{Binding SelectedItem.Tag, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+										TextWrapping="Wrap"/>
 							</StackPanel>
 						</Panel>
 						<!--Panel x:Name="PageScrollArea">

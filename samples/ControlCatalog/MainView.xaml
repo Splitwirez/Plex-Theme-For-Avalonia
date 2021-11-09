@@ -146,7 +146,7 @@
 			<pages:ScrollViewerPage/>
 		</TabItem>
 		<TabItem Header="Slider"
-				Tag="A control that lets the user select from a range of values by moving a Thumb control along a Track.">
+				Tag="A control that lets the user select from a range of values by moving a Thumb control along a Track.&#x0a;&#x0a;(Tall Trunk's big *what*?)">
 			<!--local:ComparisonControl>
 				<local:ComparisonControl.ContentTemplate>
 					<DataTemplate-->
