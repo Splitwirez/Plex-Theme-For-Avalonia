@@ -121,7 +121,8 @@
 	<Style Selector="Window:not(Window[SystemDecorations=Full]) /template/ ContentPresenter#PART_ContentPresenter">
 		<Setter Property="CornerRadius" Value="{DynamicResource Window-CornerRadius-Top}"/>
 	</Style>
-	<Style Selector="Window:not(Window[SystemDecorations=Full]):not(Window[ExtendClientAreaToDecorationsHint=true][ExtendClientAreaTitleBarHeightHint=-1]):not(Window[WindowState=Maximized], Window[WindowState=FullScreen]) /template/ ContentPresenter#PART_ContentPresenter">
+	<Style Selector="Window:not(Window[SystemDecorations=Full]):not(Window[WindowState=Maximized], Window[WindowState=FullScreen]) /template/ ContentPresenter#PART_ContentPresenter">
+	<!--:not(Window[ExtendClientAreaToDecorationsHint=true][ExtendClientAreaTitleBarHeightHint=-1])-->
 		<Setter Property="CornerRadius" Value="{DynamicResource Window-CornerRadius-All}"/>
 	</Style>
 
