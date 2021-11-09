@@ -178,22 +178,6 @@
 										</StackPanel>
 									</Border>
 								</Popup>
-								<!--ToggleButton x:Name="Colors"
-											Background="Transparent"
-											Padding="0,5,8,6">
-									<DockPanel>
-										<Rectangle Width="16" Height="16" Fill="Red" Margin="10,0" DockPanel.Dock="Left"/>
-										<TextBlock Text="Colors"/>
-									</DockPanel>
-								</ToggleButton>
-								<Popup PlacementTarget="{Binding #Colors}" IsOpen="{Binding #Colors.IsChecked, Mode=TwoWay}" StaysOpen="False">
-									<Border Background="Gray" BorderBrush="#FFFF00FF" BorderThickness="5">
-										<StackPanel>
-											<TextBlock Text="TODO: Make this not look horrible"/>
-											<pages:PlexColorsPage/>
-										</StackPanel>
-									</Border>
-								</Popup-->
 							</StackPanel>
 						</Grid>
 					</DockPanel>
