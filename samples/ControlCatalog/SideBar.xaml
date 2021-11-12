@@ -548,5 +548,6 @@
 
 	<Style Selector="TabControl.sidebar > TabItem.nyiTab">
 		<Setter Property="IsVisible" Value="False"/>
+		<!--Setter Property="Foreground" Value="Red"/-->
 	</Style>
 </Styles>
